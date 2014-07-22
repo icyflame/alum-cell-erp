@@ -7,6 +7,8 @@ class auth extends CI_Controller{
 
 		$this->load->model('userdb');
 
+		$this->load->library('session');
+
 	}
 
 	public function index(){
@@ -15,6 +17,7 @@ class auth extends CI_Controller{
 
 	public function loginval()
 	{
+
 		$this->load->helper('form');
 		$this->load->library('form_validation');
 
@@ -26,9 +29,9 @@ class auth extends CI_Controller{
 		if ($this->form_validation->run() === FALSE)
 		{
 			echo 'Form not yet validated successfully. Try Again.';
-			
+
 			$this->load->view('login');
-			
+
 		}
 		else
 		{
@@ -40,14 +43,38 @@ class auth extends CI_Controller{
 			if($res){
 
 				$data['status'] = 'Logged in successfully';
+				$data['username'] = $this->userdb->getusername();
+
+				$sessdat = array(
+					'loggedin'=>1,
+					'username'=>$this->userdb->getusername()
+					);
+
+				$this->session->set_userdata($sessdat);
 
 			}
 
 			$this->load->view('viewstat', $data);
-			
-		}
-	}
-}
 
+		}
+
+	}
+
+	public function checkloggedin(){
+
+		$last_active = $this->session->userdata('last_activity');
+
+		echo $last_active.'<br/>';
+		echo time().'<br/>';
+
+		if (time() - $last_active > 3){
+
+			$this->session->sess_destroy();
+
+		}
+
+	}
+
+}
 
 ?>

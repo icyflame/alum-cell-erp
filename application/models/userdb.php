@@ -33,6 +33,10 @@ class userdb extends CI_Model{
 
 	}
 
+	public function getusername(){
+		return $this->input->post('username');
+	}
+
 }
 
 ?>
