@@ -11,14 +11,14 @@ class userdb extends CI_Model{
 		$username = $this->input->post('username');
 		$pwentered = $this->input->post('password');
 
-		$data = array(
-			'username'=>'icyflame',
-			'password'=>md5('somepass'),
-			'firstname'=>'siddharth',
-			'lastname'=>'kannan'
-			);
+		// $data = array(
+		// 	'username'=>'icyflame',
+		// 	'password'=>md5('somepass'),
+		// 	'firstname'=>'siddharth',
+		// 	'lastname'=>'kannan'
+		// 	);
 
-		$this->db->insert('users', $data);
+		// $this->db->insert('users', $data);
 
 		$res = $this->db->query("SELECT password FROM users WHERE username='$username'");
 
