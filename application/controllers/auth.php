@@ -43,6 +43,7 @@ class auth extends CI_Controller{
 			if($res){
 
 				$data['status'] = 'Logged in successfully';
+
 				// $data['username'] = $this->userdb->getusername();
 
 				// $sessdat = array(
@@ -72,20 +73,20 @@ class auth extends CI_Controller{
 
 	}
 
-	public function checkloggedin(){
+	// public function checkloggedin(){
 
-		$last_active = $this->session->userdata('last_activity');
+	// 	$last_active = $this->session->userdata('last_activity');
 
-		echo $last_active.'<br/>';
-		echo time().'<br/>';
+	// 	echo $last_active.'<br/>';
+	// 	echo time().'<br/>';
 
-		if (time() - $last_active > 3){
+	// 	if (time() - $last_active > 3){
 
-			$this->session->sess_destroy();
+	// 		$this->session->sess_destroy();
 
-		}
+	// 	}
 
-	}
+	// }
 
 }
 
