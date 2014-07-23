@@ -32,7 +32,7 @@
 		<tr>
 			<td> Total Number of alumni allocated:
 			</td>
-			<td> 
+			<td> <?php echo $totalallocated ?>
 			</td>
 		</tr>
 
