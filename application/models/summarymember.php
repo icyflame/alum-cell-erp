@@ -30,10 +30,10 @@ class summarymember extends CI_Model{
 
 		$y = $res->result_array();
 
-		print_r($y[0]);
+		// print_r($y[0]);
 
 		foreach($y[0] as $count){
-			echo 'Count: '.$count;
+			// echo 'Count: '.$count;
 			return $count;
 		}
 
