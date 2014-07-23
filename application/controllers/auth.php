@@ -30,7 +30,7 @@ class auth extends CI_Controller{
 		{
 			echo 'Form not yet validated successfully. Try Again.';
 
-			$this->load->view('login');
+			$this->load->view('authentication/login');
 
 		}
 		else
@@ -52,13 +52,13 @@ class auth extends CI_Controller{
 
 				$this->session->set_userdata($sessdat);
 
-				$this->load->view('viewstat', $data);
+				$this->load->view('authentication/viewstat', $data);
 
 			}
 
 			else{
 
-				$this->load->view('login');
+				$this->load->view('authentication/login');
 
 				// $this->loginval();
 
