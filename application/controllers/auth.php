@@ -43,12 +43,14 @@ class auth extends CI_Controller{
 			if($res){
 
 				$data['status'] = 'Logged in successfully';
-				$data['username'] = $this->userdb->getusername();
+				// $data['username'] = $this->userdb->getusername();
 
-				$sessdat = array(
-					'loggedin'=>1,
-					'username'=>$this->userdb->getusername()
-					);
+				// $sessdat = array(
+				// 	'loggedin'=>1,
+				// 	'username'=>$this->userdb->getusername()
+				// 	);
+
+				$sessdat = $this->userdb->getdata();
 
 				$this->session->set_userdata($sessdat);
 

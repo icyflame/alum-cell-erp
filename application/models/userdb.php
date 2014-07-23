@@ -21,7 +21,6 @@ class userdb extends CI_Model{
 		// $this->db->insert('users', $data);
 
 		$res = $this->db->query("SELECT password FROM users WHERE username='$username'");
-		$row = $res->result_array();
 
 		$pw = '';
 
@@ -53,7 +52,31 @@ class userdb extends CI_Model{
 	}
 
 	public function getusername(){
+
 		return $this->input->post('username');
+
+	}
+
+	public function getdata(){
+
+		$username = $this->input->post('username');
+		$pwentered = $this->input->post('password');
+
+		$res = $this->db->query("SELECT * FROM users WHERE username='$username'");
+
+		$pw = '';
+
+		foreach($res->result() as $row){
+
+			$privi = $row->privilege;
+			$un = $row->username;
+
+		}
+
+		return array('username' => $un,
+			'privilege' => $privi
+			);
+
 	}
 
 }

@@ -6,7 +6,10 @@
 
 	<?php
 
-	echo $status.'<br/><br/>';
+	echo $status.'<br/>';
+
+	echo 'Hey '.$this->session->userdata('username').'<br/>';
+	echo 'You have a privilege of '.$this->session->userdata('privilege').'<br/>'.'<br/>';
 
 	echo print_r($this->session->all_userdata());
 
