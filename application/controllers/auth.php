@@ -9,6 +9,8 @@ class auth extends CI_Controller{
 
 		$this->load->library('session');
 
+		$this->load->helper('url');
+
 	}
 
 	public function index(){

@@ -67,7 +67,8 @@ class userdb extends CI_Model{
 
 		}
 
-		return array('username' => $un,
+		return array('loggedin'=>1,
+			'username' => $un,
 			'privilege' => $privi
 			);
 

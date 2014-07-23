@@ -13,6 +13,10 @@
 
 	echo print_r($this->session->all_userdata());
 
+	$new_view = site_url("member");
+
+	echo "<br/><br/><a href='$new_view'>Go to summary page</a>"
+
 	?>
 
 	<p>Page End</p>
