@@ -64,11 +64,13 @@ class userdb extends CI_Model{
 
 			$privi = $row->privilege;
 			$un = $row->username;
+			$uid = $row->userid;
 
 		}
 
 		return array('loggedin'=>1,
 			'username' => $un,
+			'userid'=>$uid,
 			'privilege' => $privi
 			);
 
