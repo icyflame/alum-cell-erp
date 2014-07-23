@@ -52,6 +52,8 @@ class auth extends CI_Controller{
 
 				$this->session->set_userdata($sessdat);
 
+				$this->load->view('viewstat', $data);
+
 			}
 
 			else{

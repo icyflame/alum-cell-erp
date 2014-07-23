@@ -21,22 +21,32 @@ class userdb extends CI_Model{
 		// $this->db->insert('users', $data);
 
 		$res = $this->db->query("SELECT password FROM users WHERE username='$username'");
-			$row = $res->result_array();
+		$row = $res->result_array();
 
 		$pw = '';
 
-		try{
+		foreach($res->result() as $row){
 
-			$pw = $row[0]['password'];
-
-		} catch (Exception $e){
-
-			echo 'Username or password incorrect. Try again.';
+			$pw = $row->password;
 
 		}
 
+		// try{
+
+		// 	$pw = $row[0]['password'];
+
+		// } catch (Exception $e){
+
+		// 	echo 'Username or password incorrect. Try again.';
+
+		// }
+
 		echo 'Stored: '.$pw.'<br/>';
 		echo 'Entered: '.md5($pwentered).'<br/>';
+
+		if ($pw == ''){
+			echo 'Username or password incorrect. Try again.';
+		}
 
 		return ($pw === md5($pwentered));
 
