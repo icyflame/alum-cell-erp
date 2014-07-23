@@ -12,7 +12,7 @@ class auth extends CI_Controller{
 	}
 
 	public function index(){
-		$this->load->view('viewstat');
+		$this->loginval();
 	}
 
 	public function loginval()
@@ -54,7 +54,15 @@ class auth extends CI_Controller{
 
 			}
 
-			$this->load->view('viewstat', $data);
+			else{
+
+				$this->load->view('login');
+
+				// $this->loginval();
+
+			}
+
+			// $this->load->view('viewstat', $data);
 
 		}
 
