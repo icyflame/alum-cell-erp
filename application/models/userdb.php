@@ -51,12 +51,6 @@ class userdb extends CI_Model{
 
 	}
 
-	public function getusername(){
-
-		return $this->input->post('username');
-
-	}
-
 	public function getdata(){
 
 		$username = $this->input->post('username');
