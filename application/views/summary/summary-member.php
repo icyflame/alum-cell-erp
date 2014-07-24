@@ -54,7 +54,7 @@
 
 	<h3 style="text-decoration: underline;"> Searching Status </h3>
 
-	<table>
+	<table border="1">
 
 		<tr>
 			<td> Found
@@ -68,19 +68,45 @@
 		</tr>
 
 		<tr>
-			<td>
+			<td> <?php echo $found ?>
 			</td>
-			<td>
+			<td> <?php echo $ready ?>
 			</td>
-			<td>
+			<td> <?php echo $yet ?>
 			</td>
-			<td>
+			<td> <?php echo $notfound ?>
 			</td>
 		</tr>
 
 	</table>
 
 	<h3 style="text-decoration: underline;"> Response Status </h3>
+
+	<table border="1">
+
+		<tr>
+			<td> Called (2-way)
+			</td>
+			<td> Neutral
+			</td>
+			<td> Positive
+			</td>
+			<td> Negative
+			</td>
+		</tr>
+
+		<tr>
+			<td> <?php echo $called2way ?>
+			</td>
+			<td> <?php echo $negative ?>
+			</td>
+			<td> <?php echo $neutral ?>
+			</td>
+			<td> <?php echo $positive ?>
+			</td>
+		</tr>
+
+	</table>
 
 	<p>Page End</p>
 
