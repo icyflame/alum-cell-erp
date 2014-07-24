@@ -20,6 +20,12 @@ class member extends CI_Controller{
 		$this->load->view('summary/summary-member.php', $this->summaryMember->getdata_allyears());
 	}
 
+	public function specificYear($year=''){
+
+		$this->load->view('summary/summary-member.php', $this->summaryMember->getdata_allyears($year));
+
+	}
+
 }
 
 ?>
