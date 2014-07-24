@@ -17,7 +17,7 @@ class member extends CI_Controller{
 		// probably have a check here for the privilege of the user
 		// and then load the appropriate view.
 
-		$this->load->view('summary/summary-member.php', $this->summaryMember->getdata());
+		$this->load->view('summary/summary-member.php', $this->summaryMember->getdata_allyears());
 	}
 
 }

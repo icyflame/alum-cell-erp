@@ -1,5 +1,29 @@
 <html>
 
+<head>
+
+	<style>
+
+	a{
+
+		text-decoration: none !important;
+
+	}
+
+	.selected{
+		font-weight: bold;
+	}
+
+	.overall{
+
+		font-size: 30px;
+
+	}
+
+	</style>
+
+</head>
+
 <body>
 
 	<p>Page Begin</p>
@@ -17,27 +41,46 @@
 
 	<h1>Networking Summary</h1>
 
-	<table border="1">
+	<div class="overall">
+
+		<a href="#" class="selected">All Years</a>
+		<a href="#">1965</a>
+		<a href="#">1975</a>
+		<a href="#">1990</a>
+
+	</div>
+
+	<h3> Total Number of Alumni Allocated: <?php echo $totalallocated ?> </h3>
+
+	<h3 style="text-decoration: underline;"> Searching Status </h3>
+
+	<table>
 
 		<tr>
-			<td> All years
+			<td> Found
 			</td>
-			<td> 1965
+			<td> Ready
 			</td>
-			<td> 1975
+			<td> Yet to be searched
 			</td>
-			<td> 1985
+			<td> Not Found
 			</td>
 		</tr>
+
 		<tr>
-			<td> Total Number of alumni allocated:
+			<td>
 			</td>
-			<td> <?php echo $totalallocated ?>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
 			</td>
 		</tr>
 
 	</table>
 
+	<h3 style="text-decoration: underline;"> Response Status </h3>
 
 	<p>Page End</p>
 

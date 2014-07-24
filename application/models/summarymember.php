@@ -10,7 +10,7 @@ class summarymember extends CI_Model{
 
 	}
 
-	public function getdata(){
+	public function getdata_allyears(){
 
 		// a lot of count queries
 
@@ -19,6 +19,10 @@ class summarymember extends CI_Model{
 		$res = $this->db->query("SELECT COUNT(*) FROM status WHERE touserid='$u'");
 
 		$allocated = $this->getcount($res);
+
+		$res = $this->db->query("SELECT COUNT(*) FROM status WHERE touserid='$u' AND search='1'");
+
+		$yet = $this->getcount($res);
 
 		$result = array('totalallocated'=>$allocated
 			);
@@ -33,8 +37,9 @@ class summarymember extends CI_Model{
 		// print_r($y[0]);
 
 		foreach($y[0] as $count){
-			// echo 'Count: '.$count;
+
 			return $count;
+
 		}
 
 	}
