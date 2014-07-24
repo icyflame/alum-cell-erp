@@ -43,10 +43,10 @@
 
 	<div class="overall">
 
-		<a href="#" class="selected">All Years</a>
-		<a href="#">1965</a>
-		<a href="#">1975</a>
-		<a href="#">1990</a>
+		<a href="<?php echo site_url('member/specificYear') ?>" class="selected">All Years</a>
+		<a href="<?php echo site_url('member/specificYear/1965') ?>">1965</a>
+		<a href="<?php echo site_url('member/specificYear/1975') ?>">1975</a>
+		<a href="<?php echo site_url('member/specificYear/1990') ?>">1990</a>
 
 	</div>
 
