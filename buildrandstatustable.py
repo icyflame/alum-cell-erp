@@ -10,7 +10,7 @@ for i in range(startid, endid+1):
     register =  randrange(1, 3)
     pay =  randrange(1, 3)
     touserid =  randrange(6, 11)
-    year =  choice([1965, 1975, 1985])
+    year =  choice([1965, 1975, 1990])
 
 ##    print "INSERT INTO `status` VALUES (`%d`,`%d`,`%d`,`%d`,`%d`,`%d`,`%d`)" %i %search %called %register %pay %touserid %year
 ##    s = "INSERT INTO `status` VALUES (`"
