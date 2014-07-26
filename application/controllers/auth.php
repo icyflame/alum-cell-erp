@@ -9,6 +9,8 @@ class auth extends CI_Controller{
 
 		$this->load->library('session');
 
+		$this->load->helper('url');
+
 	}
 
 	public function index(){
@@ -43,12 +45,15 @@ class auth extends CI_Controller{
 			if($res){
 
 				$data['status'] = 'Logged in successfully';
-				$data['username'] = $this->userdb->getusername();
 
-				$sessdat = array(
-					'loggedin'=>1,
-					'username'=>$this->userdb->getusername()
-					);
+				// $data['username'] = $this->userdb->getusername();
+
+				// $sessdat = array(
+				// 	'loggedin'=>1,
+				// 	'username'=>$this->userdb->getusername()
+				// 	);
+
+				$sessdat = $this->userdb->getdata();
 
 				$this->session->set_userdata($sessdat);
 
@@ -70,20 +75,20 @@ class auth extends CI_Controller{
 
 	}
 
-	public function checkloggedin(){
+	// public function checkloggedin(){
 
-		$last_active = $this->session->userdata('last_activity');
+	// 	$last_active = $this->session->userdata('last_activity');
 
-		echo $last_active.'<br/>';
-		echo time().'<br/>';
+	// 	echo $last_active.'<br/>';
+	// 	echo time().'<br/>';
 
-		if (time() - $last_active > 3){
+	// 	if (time() - $last_active > 3){
 
-			$this->session->sess_destroy();
+	// 		$this->session->sess_destroy();
 
-		}
+	// 	}
 
-	}
+	// }
 
 }
 
