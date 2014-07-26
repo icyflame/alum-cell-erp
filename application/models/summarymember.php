@@ -66,6 +66,29 @@ class summarymember extends CI_Model{
 
 		$positive = $this->getcount($res);
 
+		// create the classes of the appropriate years
+
+		$ayc = '';
+		$c65 = '';
+		$c75 = '';
+		$c90 = '';
+
+		if ($year == '')
+
+			$ayc = 'selected';
+
+		elseif ($year == '1965')
+
+			$c65 = 'selected';
+
+		elseif ($year == '1975')
+
+			$c75 = 'selected';
+
+		elseif ($year == '1990')
+
+			$c90 = 'selected';
+
 		// send the data to the view
 
 		$result = array('totalallocated'=>$allocated,
@@ -76,7 +99,11 @@ class summarymember extends CI_Model{
 			'called2way'=>$called2way,
 			'negative'=>$negative,
 			'neutral'=>$neutral,
-			'positive'=>$positive
+			'positive'=>$positive,
+			'allyearsclass'=>$ayc,
+			'class_65'=>$c65,
+			'class_75'=>$c75,
+			'class_90'=>$c90
 			);
 
 		return $result;

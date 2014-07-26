@@ -41,12 +41,26 @@
 
 	<h1>Networking Summary</h1>
 
+	<?php
+
+	// to find which year we wanna look at
+
+	// $a = uri_string();
+
+	// $arr = explode('/', $a);
+
+	// if(sizeof($arr) == 3)
+
+		
+
+	?>
+
 	<div class="overall">
 
-		<a href="<?php echo site_url('member/specificYear') ?>" class="selected">All Years</a>
-		<a href="<?php echo site_url('member/specificYear/1965') ?>">1965</a>
-		<a href="<?php echo site_url('member/specificYear/1975') ?>">1975</a>
-		<a href="<?php echo site_url('member/specificYear/1990') ?>">1990</a>
+		<a href="<?php echo site_url('member/specificYear') ?>" class="<?php echo $allyearsclass?>">All Years</a>
+		<a href="<?php echo site_url('member/specificYear/1965') ?>" class="<?php echo $class_65?>">1965</a>
+		<a href="<?php echo site_url('member/specificYear/1975') ?>" class="<?php echo $class_75?>">1975</a>
+		<a href="<?php echo site_url('member/specificYear/1990') ?>" class="<?php echo $class_90?>">1990</a>
 
 	</div>
 
