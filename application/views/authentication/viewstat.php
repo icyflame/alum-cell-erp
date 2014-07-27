@@ -9,13 +9,13 @@
 	echo $status.'<br/>';
 
 	echo 'Hey, '.$this->session->userdata('username').'<br/>';
-	echo 'You have a privilege of '.$this->session->userdata('privilege').'<br/>'.'<br/>';
+	echo 'You have a privilege of '.$this->session->userdata('privilege').'<br/><br/>';
 
 	// echo print_r($this->session->all_userdata());
 
 	$new_view = site_url("member/specificYear/");
 
-	echo "<br/><br/><a href='$new_view'>Go to summary page</a>"
+	echo "<a href='$new_view'>Go to summary page</a>"
 
 	?>
 
