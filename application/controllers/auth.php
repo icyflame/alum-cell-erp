@@ -30,7 +30,7 @@ class auth extends CI_Controller{
 
 		if ($this->form_validation->run() === FALSE)
 		{
-			echo 'Form not yet validated successfully. Try Again.';
+			// echo 'Form not yet validated successfully. Try Again.';
 
 			$this->load->view('authentication/login');
 
