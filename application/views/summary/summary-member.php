@@ -2,7 +2,12 @@
 
 <head>
 
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
 	<style>
+
+	/*
 
 	a{
 
@@ -19,6 +24,8 @@
 		font-size: 30px;
 
 	}
+
+	*/
 
 	</style>
 
@@ -41,26 +48,16 @@
 
 	<h1>Networking Summary</h1>
 
-	<?php
-
-	// to find which year we wanna look at
-
-	// $a = uri_string();
-
-	// $arr = explode('/', $a);
-
-	// if(sizeof($arr) == 3)
-
-		
-
-	?>
-
 	<div class="overall">
 
-		<a href="<?php echo site_url('member/specificYear') ?>" class="<?php echo $allyearsclass ?>">All Years</a>
-		<a href="<?php echo site_url('member/specificYear/'.$year1) ?>" class="<?php echo $class_1 ?>"><?php echo $year1 ?></a>
-		<a href="<?php echo site_url('member/specificYear/'.$year2) ?>" class="<?php echo $class_2 ?>"><?php echo $year2 ?></a>
-		<a href="<?php echo site_url('member/specificYear/'.$year3) ?>" class="<?php echo $class_3 ?>"><?php echo $year3 ?></a>
+		<ul class='nav nav-pills nav-justified' role='tablist'>
+
+			<li class="<?php echo $allyearsclass ?>"><a href="<?php echo site_url('member/specificYear') ?>">All Years</a></li>
+			<li class="<?php echo $class_1 ?>"><a href="<?php echo site_url('member/specificYear/'.$year1) ?>"><?php echo $year1 ?></a></li>
+			<li class="<?php echo $class_2 ?>"><a href="<?php echo site_url('member/specificYear/'.$year2) ?>"><?php echo $year2 ?></a></li>
+			<li class="<?php echo $class_3 ?>"><a href="<?php echo site_url('member/specificYear/'.$year3) ?>"><?php echo $year3 ?></a></li>
+
+		</ul>
 
 	</div>
 

@@ -79,19 +79,19 @@ class summarymember extends CI_Model{
 
 		if ($year == '')
 
-			$ayc = 'selected';
+			$ayc = 'active';
 
 		elseif ($year == $year1)
 
-			$c_year1 = 'selected';
+			$c_year1 = 'active';
 
 		elseif ($year == $year2)
 
-			$c_year2 = 'selected';
+			$c_year2 = 'active';
 
 		elseif ($year == $year3)
 
-			$c_year3 = 'selected';
+			$c_year3 = 'active';
 
 		// send the data to the view
 
