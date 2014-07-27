@@ -7,6 +7,10 @@
 
 	<style>
 
+	table tr th{
+		width: 25%;
+	}
+
 	/*
 
 	a{
@@ -39,7 +43,7 @@
 
 	echo 'Logged in.'.'<br/>'.'<br/>';
 
-	echo 'Hey '.$this->session->userdata('username').'<br/>';
+	echo 'Hey, '.$this->session->userdata('username').'.<br/>';
 	echo 'You have a privilege of '.$this->session->userdata('privilege').'<br/>'.'<br/>';
 
 	echo print_r($this->session->all_userdata());
@@ -65,57 +69,73 @@
 
 	<h3 style="text-decoration: underline;"> Searching Status </h3>
 
-	<table border="1">
+	<table class="table table-bordered">
 
-		<tr>
-			<td> Found
-			</td>
-			<td> Ready
-			</td>
-			<td> Yet to be searched
-			</td>
-			<td> Not Found
-			</td>
-		</tr>
+		<thead>
 
-		<tr>
-			<td> <?php echo $found ?>
-			</td>
-			<td> <?php echo $ready ?>
-			</td>
-			<td> <?php echo $yet ?>
-			</td>
-			<td> <?php echo $notfound ?>
-			</td>
-		</tr>
+			<tr>
+				<th> Found
+				</th>
+				<th> Ready
+				</th>
+				<th> Yet to be searched
+				</th>
+				<th> Not Found
+				</th>
+			</tr>
+
+		</thead>
+
+		<tbody>
+
+			<tr>
+				<td> <?php echo $found ?>
+				</td>
+				<td> <?php echo $ready ?>
+				</td>
+				<td> <?php echo $yet ?>
+				</td>
+				<td> <?php echo $notfound ?>
+				</td>
+			</tr>
+
+		</tbody>
 
 	</table>
 
 	<h3 style="text-decoration: underline;"> Response Status </h3>
 
-	<table border="1">
+	<table class="table table-bordered">
 
-		<tr>
-			<td> Called (2-way)
-			</td>
-			<td> Neutral
-			</td>
-			<td> Positive
-			</td>
-			<td> Negative
-			</td>
-		</tr>
+		<thead>
 
-		<tr>
-			<td> <?php echo $called2way ?>
-			</td>
-			<td> <?php echo $negative ?>
-			</td>
-			<td> <?php echo $neutral ?>
-			</td>
-			<td> <?php echo $positive ?>
-			</td>
-		</tr>
+			<tr>
+				<th> Called (2-way)
+				</th>
+				<th> Neutral
+				</th>
+				<th> Positive
+				</th>
+				<th> Negative
+				</th>
+			</tr>
+
+		</thead>
+
+		<tbody>
+
+			<tr>
+				<td> <?php echo $called2way ?>
+				</td>
+				<td> <?php echo $negative ?>
+				</td>
+				<td> <?php echo $neutral ?>
+				</td>
+				<td> <?php echo $positive ?>
+				</td>
+			</tr>
+
+		</tbody>
 
 	</table>
 
