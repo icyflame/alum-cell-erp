@@ -12,6 +12,10 @@ class summarymember extends CI_Model{
 
 	public function getdata_allyears($year=''){
 
+		$year1 = '1965';
+		$year2 = '1975';
+		$year3 = '1990';
+
 		if ($year == '')
 
 			$yearFilter = '';
@@ -69,25 +73,25 @@ class summarymember extends CI_Model{
 		// create the classes of the appropriate years
 
 		$ayc = '';
-		$c65 = '';
-		$c75 = '';
-		$c90 = '';
+		$c_year1 = '';
+		$c_year2 = '';
+		$c_year3 = '';
 
 		if ($year == '')
 
 			$ayc = 'selected';
 
-		elseif ($year == '1965')
+		elseif ($year == $year1)
 
-			$c65 = 'selected';
+			$c_year1 = 'selected';
 
-		elseif ($year == '1975')
+		elseif ($year == $year2)
 
-			$c75 = 'selected';
+			$c_year2 = 'selected';
 
-		elseif ($year == '1990')
+		elseif ($year == $year3)
 
-			$c90 = 'selected';
+			$c_year3 = 'selected';
 
 		// send the data to the view
 
@@ -101,9 +105,12 @@ class summarymember extends CI_Model{
 			'neutral'=>$neutral,
 			'positive'=>$positive,
 			'allyearsclass'=>$ayc,
-			'class_65'=>$c65,
-			'class_75'=>$c75,
-			'class_90'=>$c90
+			'class_1'=>$c_year1,
+			'class_2'=>$c_year2,
+			'class_3'=>$c_year3,
+			'year1'=>$year1,
+			'year2'=>$year2,
+			'year3'=>$year3
 			);
 
 		return $result;

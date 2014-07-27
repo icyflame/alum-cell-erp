@@ -57,10 +57,10 @@
 
 	<div class="overall">
 
-		<a href="<?php echo site_url('member/specificYear') ?>" class="<?php echo $allyearsclass?>">All Years</a>
-		<a href="<?php echo site_url('member/specificYear/1965') ?>" class="<?php echo $class_65?>">1965</a>
-		<a href="<?php echo site_url('member/specificYear/1975') ?>" class="<?php echo $class_75?>">1975</a>
-		<a href="<?php echo site_url('member/specificYear/1990') ?>" class="<?php echo $class_90?>">1990</a>
+		<a href="<?php echo site_url('member/specificYear') ?>" class="<?php echo $allyearsclass ?>">All Years</a>
+		<a href="<?php echo site_url('member/specificYear/'.$year1) ?>" class="<?php echo $class_1 ?>"><?php echo $year1 ?></a>
+		<a href="<?php echo site_url('member/specificYear/'.$year2) ?>" class="<?php echo $class_2 ?>"><?php echo $year2 ?></a>
+		<a href="<?php echo site_url('member/specificYear/'.$year3) ?>" class="<?php echo $class_3 ?>"><?php echo $year3 ?></a>
 
 	</div>
 
