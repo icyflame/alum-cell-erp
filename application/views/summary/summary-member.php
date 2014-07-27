@@ -2,7 +2,16 @@
 
 <head>
 
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
 	<style>
+
+	table tr th{
+		width: 25%;
+	}
+
+	/*
 
 	a{
 
@@ -20,6 +29,8 @@
 
 	}
 
+	*/
+
 	</style>
 
 </head>
@@ -32,35 +43,25 @@
 
 	echo 'Logged in.'.'<br/>'.'<br/>';
 
-	echo 'Hey '.$this->session->userdata('username').'<br/>';
-	echo 'You have a privilege of '.$this->session->userdata('privilege').'<br/>'.'<br/>';
+	echo 'Hey, '.$this->session->userdata('username').'.<br/>';
+	echo 'You have a privilege of '.$this->session->userdata('privilege').'<br/>';
 
-	echo print_r($this->session->all_userdata());
+	// echo print_r($this->session->all_userdata());
 
 	?>
 
 	<h1>Networking Summary</h1>
 
-	<?php
-
-	// to find which year we wanna look at
-
-	// $a = uri_string();
-
-	// $arr = explode('/', $a);
-
-	// if(sizeof($arr) == 3)
-
-		
-
-	?>
-
 	<div class="overall">
 
-		<a href="<?php echo site_url('member/specificYear') ?>" class="<?php echo $allyearsclass ?>">All Years</a>
-		<a href="<?php echo site_url('member/specificYear/'.$year1) ?>" class="<?php echo $class_1 ?>"><?php echo $year1 ?></a>
-		<a href="<?php echo site_url('member/specificYear/'.$year2) ?>" class="<?php echo $class_2 ?>"><?php echo $year2 ?></a>
-		<a href="<?php echo site_url('member/specificYear/'.$year3) ?>" class="<?php echo $class_3 ?>"><?php echo $year3 ?></a>
+		<ul class='nav nav-pills nav-justified' role='tablist'>
+
+			<li class="<?php echo $allyearsclass ?>"><a href="<?php echo site_url('member/specificYear') ?>">All Years</a></li>
+			<li class="<?php echo $class_1 ?>"><a href="<?php echo site_url('member/specificYear/'.$year1) ?>"><?php echo $year1 ?></a></li>
+			<li class="<?php echo $class_2 ?>"><a href="<?php echo site_url('member/specificYear/'.$year2) ?>"><?php echo $year2 ?></a></li>
+			<li class="<?php echo $class_3 ?>"><a href="<?php echo site_url('member/specificYear/'.$year3) ?>"><?php echo $year3 ?></a></li>
+
+		</ul>
 
 	</div>
 
@@ -68,57 +69,73 @@
 
 	<h3 style="text-decoration: underline;"> Searching Status </h3>
 
-	<table border="1">
+	<table class="table table-bordered">
 
-		<tr>
-			<td> Found
-			</td>
-			<td> Ready
-			</td>
-			<td> Yet to be searched
-			</td>
-			<td> Not Found
-			</td>
-		</tr>
+		<thead>
 
-		<tr>
-			<td> <?php echo $found ?>
-			</td>
-			<td> <?php echo $ready ?>
-			</td>
-			<td> <?php echo $yet ?>
-			</td>
-			<td> <?php echo $notfound ?>
-			</td>
-		</tr>
+			<tr class='active'>
+				<th> Found
+				</th>
+				<th> Ready
+				</th>
+				<th> Yet to be searched
+				</th>
+				<th> Not Found
+				</th>
+			</tr>
+
+		</thead>
+
+		<tbody>
+
+			<tr>
+				<td> <?php echo $found ?>
+				</td>
+				<td> <?php echo $ready ?>
+				</td>
+				<td> <?php echo $yet ?>
+				</td>
+				<td> <?php echo $notfound ?>
+				</td>
+			</tr>
+
+		</tbody>
 
 	</table>
 
 	<h3 style="text-decoration: underline;"> Response Status </h3>
 
-	<table border="1">
+	<table class="table table-bordered">
 
-		<tr>
-			<td> Called (2-way)
-			</td>
-			<td> Neutral
-			</td>
-			<td> Positive
-			</td>
-			<td> Negative
-			</td>
-		</tr>
+		<thead>
 
-		<tr>
-			<td> <?php echo $called2way ?>
-			</td>
-			<td> <?php echo $negative ?>
-			</td>
-			<td> <?php echo $neutral ?>
-			</td>
-			<td> <?php echo $positive ?>
-			</td>
-		</tr>
+			<tr class='active'>
+				<th> Called (2-way)
+				</th>
+				<th> Neutral
+				</th>
+				<th> Positive
+				</th>
+				<th> Negative
+				</th>
+			</tr>
+
+		</thead>
+
+		<tbody>
+
+			<tr>
+				<td> <?php echo $called2way ?>
+				</td>
+				<td> <?php echo $negative ?>
+				</td>
+				<td> <?php echo $neutral ?>
+				</td>
+				<td> <?php echo $positive ?>
+				</td>
+			</tr>
+
+		</tbody>
 
 	</table>
 
