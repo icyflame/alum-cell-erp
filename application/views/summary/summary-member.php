@@ -73,7 +73,7 @@
 
 		<thead>
 
-			<tr>
+			<tr class='active'>
 				<th> Found
 				</th>
 				<th> Ready
@@ -109,7 +109,7 @@
 
 		<thead>
 
-			<tr>
+			<tr class='active'>
 				<th> Called (2-way)
 				</th>
 				<th> Neutral
