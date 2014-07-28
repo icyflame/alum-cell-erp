@@ -57,10 +57,10 @@
 
 			<ul class="nav nav-pills nav-stacked">
 
-				<li class="<?php echo $c_full ?>"><a href="<?php echo current_url() ?>">View full list</a></li>
-				<li class="<?php echo $c_contact ?>"><a href="<?php echo current_url().'/3' ?>">Yet to be contacted</a></li>
-				<li class="<?php echo $c_search ?>"><a href="<?php echo current_url().'/1' ?>">Yet to be searched</a></li>
-				<li class="<?php echo $c_dumped ?>"><a href="<?php echo current_url().'/2' ?>">Dumped</a></li>
+				<li class="<?php echo $c_full ?>"><a href="<?php echo site_url('dbdisplay/buildTable/'.$current_year.'/') ?>">View full list</a></li>
+				<li class="<?php echo $c_contact ?>"><a href="<?php echo site_url('dbdisplay/buildTable/'.$current_year.'/3') ?>">Yet to be contacted</a></li>
+				<li class="<?php echo $c_search ?>"><a href="<?php echo site_url('dbdisplay/buildTable/'.$current_year.'/1') ?>">Yet to be searched</a></li>
+				<li class="<?php echo $c_dumped ?>"><a href="<?php echo site_url('dbdisplay/buildTable/'.$current_year.'/2') ?>">Dumped</a></li>
 
 			</ul>
 
@@ -127,7 +127,7 @@
 
 </div>
 
-<p>Page End</p>
+<br/><p>Page End</p>
 
 </body>
 

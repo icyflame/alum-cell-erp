@@ -40,7 +40,8 @@ class dbdisplay extends CI_Controller{
 
 		// print_r(array_merge($data, $dataDump['class']));
 
-		$all_data = array_merge($data, $dataDump['class']);
+		$all_data_1 = array_merge($data, $dataDump['class']);
+		$all_data = array_merge($all_data_1, array('current_year'=>$year));
 
 		// print_r($data);
 
