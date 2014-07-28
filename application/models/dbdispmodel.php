@@ -12,11 +12,16 @@ class dbdispmodel extends CI_Model{
 
 	public function getAllData(){
 
-		echo "This is the DB Disp Model.";
+		echo "<br/>This is the DB Disp Model<br/>";
 
 		$res = $this->db->query("SELECT * FROM alumni");
 
-		echo print_r($res);
+		foreach($res->result() as $row){
+
+			print_r($row);
+			echo '<br/>';
+
+		}
 
 		return $res;
 	}
