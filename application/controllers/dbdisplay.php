@@ -24,8 +24,11 @@ class dbdisplay extends CI_Controller{
 
 	public function buildTable($year='0', $call=''){
 
+		$res = $this->dbdispmodel->getAllData($year, $call);
+
 		$data = array(
-			'all'=>$this->dbdispmodel->getAllData($year, $call)
+			'all'=>$res,
+			'count'=>count($res)
 			);
 
 		// print_r($data);

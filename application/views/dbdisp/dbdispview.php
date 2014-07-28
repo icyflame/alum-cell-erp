@@ -48,6 +48,8 @@
 
 		<div class="col-md-9">
 
+			<h1> <?php echo $count ?> rows fetched. </h1>
+
 			<table class="table table-bordered table-striped">
 
 				<thead class="active">

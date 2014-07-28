@@ -22,7 +22,7 @@ class summarymember extends CI_Model{
 
 		else
 
-			$yearFilter = "AND year='$year'";
+			$yearFilter = "AND a.alumSince='$year'";
 
 		// a lot of count queries
 
@@ -30,43 +30,43 @@ class summarymember extends CI_Model{
 
 		// all years
 
-		$res = $this->db->query("SELECT COUNT(*) FROM status WHERE touserid='$u' $yearFilter");
+		$res = $this->db->query("SELECT COUNT(*) FROM status s, alumni a WHERE s.alumid = a.alumid AND s.touserid='$u' $yearFilter");
 
 		$allocated = $this->getcount($res);
 
-		// status table.
+		// status s, alumni a table.
 
-		$res = $this->db->query("SELECT COUNT(*) FROM status WHERE touserid='$u' AND search='1' $yearFilter");
+		$res = $this->db->query("SELECT COUNT(*) FROM status s, alumni a WHERE s.alumid = a.alumid AND s.touserid='$u' AND search='1' $yearFilter");
 
 		$yet = $this->getcount($res);
 
-		$res = $this->db->query("SELECT COUNT(*) FROM status WHERE touserid='$u' AND search='2' $yearFilter");
+		$res = $this->db->query("SELECT COUNT(*) FROM status s, alumni a WHERE s.alumid = a.alumid AND s.touserid='$u' AND search='2' $yearFilter");
 
 		$notfound = $this->getcount($res);
 
-		$res = $this->db->query("SELECT COUNT(*) FROM status WHERE touserid='$u' AND search='3' $yearFilter");
+		$res = $this->db->query("SELECT COUNT(*) FROM status s, alumni a WHERE s.alumid = a.alumid AND s.touserid='$u' AND search='3' $yearFilter");
 
 		$found = $this->getcount($res);
 
-		$res = $this->db->query("SELECT COUNT(*) FROM status WHERE touserid='$u' AND search='4' $yearFilter");
+		$res = $this->db->query("SELECT COUNT(*) FROM status s, alumni a WHERE s.alumid = a.alumid AND s.touserid='$u' AND search='4' $yearFilter");
 
 		$ready = $this->getcount($res);
 
 		// response table
 
-		$res = $this->db->query("SELECT COUNT(*) FROM status WHERE touserid='$u' AND called='1' $yearFilter");
+		$res = $this->db->query("SELECT COUNT(*) FROM status s, alumni a WHERE s.alumid = a.alumid AND s.touserid='$u' AND called='1' $yearFilter");
 
 		$called2way = $this->getcount($res);
 
-		$res = $this->db->query("SELECT COUNT(*) FROM status WHERE touserid='$u' AND called='2' $yearFilter");
+		$res = $this->db->query("SELECT COUNT(*) FROM status s, alumni a WHERE s.alumid = a.alumid AND s.touserid='$u' AND called='2' $yearFilter");
 
 		$negative = $this->getcount($res);
 
-		$res = $this->db->query("SELECT COUNT(*) FROM status WHERE touserid='$u' AND called='3' $yearFilter");
+		$res = $this->db->query("SELECT COUNT(*) FROM status s, alumni a WHERE s.alumid = a.alumid AND s.touserid='$u' AND called='3' $yearFilter");
 
 		$neutral = $this->getcount($res);
 
-		$res = $this->db->query("SELECT COUNT(*) FROM status WHERE touserid='$u' AND called='4' $yearFilter");
+		$res = $this->db->query("SELECT COUNT(*) FROM status s, alumni a WHERE s.alumid = a.alumid AND s.touserid='$u' AND called='4' $yearFilter");
 
 		$positive = $this->getcount($res);
 

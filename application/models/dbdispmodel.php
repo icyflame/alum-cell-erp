@@ -33,13 +33,15 @@ class dbdispmodel extends CI_Model{
 		$userIdLoggedIn = $this->session->userdata('userid');
 
 		$query = "SELECT a.*, c.followup, c.lastdate 
-					FROM alumni a, calling c, status s
-					WHERE a.alumid = c.alumid AND a.alumid = s.alumid
-					AND s.touserid = '$userIdLoggedIn' $yearfilt $statusfilt";
+		FROM alumni a, calling c, status s
+		WHERE a.alumid = c.alumid AND a.alumid = s.alumid
+		AND s.touserid = '$userIdLoggedIn' $yearfilt $statusfilt";
 
 		echo $query;
 
 		$res = $this->db->query($query);
+
+		$count = $this->getcount($res);
 
 		// $res_call = $this->db->query("SELECT * FROM calling");
 
@@ -72,7 +74,11 @@ class dbdispmodel extends CI_Model{
 		// return $final_data;
 
 		return $res->result_array();
+
+		// return array_merge($res->result_array(), array('count'=>$count));
 	}
+
+	
 }
 
 ?>
