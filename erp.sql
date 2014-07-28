@@ -229,7 +229,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `privilege` int(11) NOT NULL COMMENT 'can have 4 values',
   `email` varchar(100) NOT NULL,
   PRIMARY KEY (`userid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
 
 --
 -- Dumping data for table `users`
@@ -241,24 +241,13 @@ INSERT INTO `users` (`userid`, `name`, `username`, `password`, `privilege`, `ema
 (3, 'Rahul', 'root', '33ee7e1eb504b6619c1b445ca1442c21', 1, 'namannishesh@gmail.com'),
 (4, 'testuser', 'test', '33ee7e1eb504b6619c1b445ca1442c21', 2, 'user@user.com'),
 (5, 'GSEC 1', 'gsec', '33ee7e1eb504b6619c1b445ca1442c21', 1, 'kannan.siddharth12@gmail.com'),
-(6, 'MEMBER', 'studmem', '33ee7e1eb504b6619c1b445ca1442c21', 2, 'kannan.siddharth12@gmail.com');
+(6, 'MEMBER', 'mem6', '33ee7e1eb504b6619c1b445ca1442c21', 2, 'kannan.siddharth12@gmail.com'),
+(7, 'MEMBER 7', 'mem7', '33ee7e1eb504b6619c1b445ca1442c21', 2, 'kannan.siddharth12@gmail.com'),
+(8, 'MEMBER 8', 'mem8', '33ee7e1eb504b6619c1b445ca1442c21', 2, 'kannan.siddharth12@gmail.com'),
+(9, 'MEMBER 9', 'mem9', '33ee7e1eb504b6619c1b445ca1442c21', 2, 'kannan.siddharth12@gmail.com'),
+(10, 'MEMBER 10', 'mem10', '33ee7e1eb504b6619c1b445ca1442c21', 2, 'kannan.siddharth12@gmail.com');
 
 -- --------------------------------------------------------
-
---
--- Table structure for table `work`
---
-
-CREATE TABLE IF NOT EXISTS `work` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `table` varchar(30) NOT NULL,
-  `description` varchar(100) NOT NULL,
-  `toname` varchar(30) NOT NULL,
-  `fromid` int(11) NOT NULL,
-  `toid` int(11) NOT NULL,
-  `year` year(4) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=32 ;
 
 --
 -- Constraints for dumped tables

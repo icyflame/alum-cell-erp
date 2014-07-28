@@ -35,7 +35,7 @@
 
 </head>
 
-<body>
+<body style="margin-left: 20px; margin-right: 20px;">
 
 	<p>Page Begin</p>
 
@@ -49,6 +49,10 @@
 	// echo print_r($this->session->all_userdata());
 
 	?>
+
+	<h1> View Database </h1>
+
+	<a href="<?php echo site_url('dbdisplay') ?>">View All</a>
 
 	<h1>Networking Summary</h1>
 
