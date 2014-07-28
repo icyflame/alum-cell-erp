@@ -13,16 +13,42 @@
 
 	<table border="1">
 
-		<?php foreach($all as $row): ?>
+		<thead>
+			<th> Alumni ID
+			</th>
+			<th> Year
+			</th>
+			<th> Name
+			</th>
+			<th> Hall
+			</th>
+			<th> Department
+			</th>
 
-		<tr>
+		</thead>
 
-			<td> <?php echo $row['alumid'] ?> </td>
-			<td> <?php echo $row['hall'] ?> </td>
+		<tbody>
 
-		</tr>
+			<?php foreach($all as $row): ?>
 
-	<?php endforeach ?>
+			<tr>
+
+				<td> <?php echo $row['alumid'] ?> 
+				</td>
+				<td> <?php echo $row['alumSince'] ?> 
+				</td>
+				<td> <?php echo $row['name'] ?> 
+				</td>
+				<td> <?php echo $row['hall'] ?> 
+				</td>
+				<td> <?php echo $row['dept'] ?> 
+				</td>
+
+			</tr>
+
+		<?php endforeach ?>
+
+	</tbody>	
 
 </table>
 

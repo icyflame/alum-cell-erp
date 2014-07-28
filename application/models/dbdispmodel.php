@@ -16,7 +16,24 @@ class dbdispmodel extends CI_Model{
 
 		$res = $this->db->query("SELECT * FROM alumni");
 
-		foreach($res->result() as $row){
+		$res_call = $this->db->query("SELECT * FROM calling");
+
+		$res_dates = $res_call->result_array();
+
+		$number = 1;
+
+		foreach($res->result_array() as $row){
+
+			$dates = array(
+				'followup'=>$res_dates[$number-1]['followup'],
+				'lastdate'=>$res_dates[$number-1]['lastdate']
+				);
+
+			$number = $number + 1;
+
+			// print_r($dates);
+
+			$row = array_merge($row, $dates);
 
 			print_r($row);
 			echo '<br/>';
