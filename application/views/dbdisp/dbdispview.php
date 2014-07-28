@@ -35,7 +35,16 @@
 
 			<h1> Database View </h1>
 
-			<div class="btn-group">
+			<ul class="nav nav-pills nav-justified">
+
+				<li class="<?php echo $c_all ?>"><a href="<?php echo site_url('dbdisplay/buildTable/0') ?> ">All years</a></li>
+				<li class="<?php echo $c_1 ?>"><a href="<?php echo site_url('dbdisplay/buildTable/'.$year1) ?>"><?php echo $year1 ?></a></li>
+				<li class="<?php echo $c_2 ?>"><a href="<?php echo site_url('dbdisplay/buildTable/'.$year2) ?>"><?php echo $year2 ?></a></li>
+				<li class="<?php echo $c_3 ?>"><a href="<?php echo site_url('dbdisplay/buildTable/'.$year3) ?>"><?php echo $year3 ?></a></li>
+
+			</ul>
+
+			<!-- <div class="btn-group">
 
 				<button type="button" class="btn btn-default <?php echo $c_all ?>"><a href="<?php echo site_url('dbdisplay/buildTable/0') ?> ">All years</a></button>
 				<button type="button" class="btn btn-default <?php echo $c_1 ?>"><a href="<?php echo site_url('dbdisplay/buildTable/'.$year1) ?>"><?php echo $year1 ?></a></button>
@@ -43,15 +52,15 @@
 				<button type="button" class="btn btn-default <?php echo $c_3 ?>"><a href="<?php echo site_url('dbdisplay/buildTable/'.$year3) ?>"><?php echo $year3 ?></a></button>
 
 			</div>
-
+ -->
 			<hr/>
 
 			<ul class="nav nav-pills nav-stacked">
 
-				<li><a href="<?php echo current_url() ?>">View full list</a></li>
-				<li><a href="<?php echo current_url().'/3' ?>">Yet to be contacted</a></li>
-				<li><a href="<?php echo current_url().'/1' ?>">Yet to be searched</a></li>
-				<li><a href="<?php echo current_url().'/2' ?>">Dumped</a></li>
+				<li class="<?php echo $c_full ?>"><a href="<?php echo current_url() ?>">View full list</a></li>
+				<li class="<?php echo $c_contact ?>"><a href="<?php echo current_url().'/3' ?>">Yet to be contacted</a></li>
+				<li class="<?php echo $c_search ?>"><a href="<?php echo current_url().'/1' ?>">Yet to be searched</a></li>
+				<li class="<?php echo $c_dumped ?>"><a href="<?php echo current_url().'/2' ?>">Dumped</a></li>
 
 			</ul>
 
