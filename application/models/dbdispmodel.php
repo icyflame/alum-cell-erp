@@ -10,41 +10,59 @@ class dbdispmodel extends CI_Model{
 
 	}
 
-	public function getAllData(){
+	public function getAllData($year='', $call=''){
 
-		echo "<br/>This is the DB Disp Model<br/>";
+		// if ($year == '')
 
-		$res = $this->db->query("SELECT * FROM alumni");
+		// 	$yearfilt = '';
 
-		$res_call = $this->db->query("SELECT * FROM calling");
+		// else
 
-		$res_dates = $res_call->result_array();
+		// 	$yearfilt = "WHERE alumSince='$year'";
 
-		$number = 1;
+		// if ($call == '')
 
-		$final_data = array();
+		// 	$callfilt = '';
 
-		foreach($res->result_array() as $row){
+		// else
 
-			$dates = array(
-				'followup'=>$res_dates[$number-1]['followup'],
-				'lastdate'=>$res_dates[$number-1]['lastdate']
-				);
+		// 	$callfilt = "WHERE "
 
-			$number = $number + 1;
+		$query = "SELECT a.*, c.followup, c.lastdate FROM alumni a, calling c WHERE a.alumid = c.alumid";
 
-			// print_r($dates);
+		$res = $this->db->query($query);
 
-			$row = array_merge($row, $dates);
+		// $res_call = $this->db->query("SELECT * FROM calling");
 
-			array_push($final_data, $row);
+		// $res_dates = $res_call->result_array();
 
-			// print_r($row);
-			// echo '<br/>';
+		// $number = 1;
 
-		}
+		// $final_data = array();
 
-		return $final_data;
+		// foreach($res->result_array() as $row){
+
+		// 	$dates = array(
+		// 		'followup'=>$res_dates[$number-1]['followup'],
+		// 		'lastdate'=>$res_dates[$number-1]['lastdate']
+		// 		);
+
+		// 	$number = $number + 1;
+
+		// 	// print_r($dates);
+
+		// 	$row = array_merge($row, $dates);
+
+		// 	array_push($final_data, $row);
+
+		// 	// print_r($row);
+		// 	// echo '<br/>';
+
+		// }
+
+		// return $final_data;
+
+		return $res->result_array();
 	}
 }
 
