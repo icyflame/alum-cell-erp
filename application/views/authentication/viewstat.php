@@ -15,9 +15,11 @@
 
 	$new_view = site_url("member/specificYear/");
 
-	echo "<a href='$new_view'>Go to summary page</a>"
+	// echo "<a href='$new_view'>Go to summary page</a>"
 
 	?>
+
+	<br/><a href="<?php echo $new_view ?>"> Go to summary page </a>
 
 	<p>Page End</p>
 
