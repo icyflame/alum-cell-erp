@@ -12,6 +12,15 @@
 		margin-right: 20px;
 	}
 
+	/*.btn:hover{
+		background: blue;
+		color: white;
+	}*/
+
+	a{
+		text-decoration: none !important;
+	}
+
 	</style>
 
 </head>
@@ -28,7 +37,7 @@
 
 			<div class="btn-group">
 
-				<button type="button" class="btn btn-default"><a href="<?php echo site_url('dbdisplay/buildTable/0') ?>">All years</button>
+				<button type="button" class="btn btn-default"><a href="<?php echo site_url('dbdisplay/buildTable/0') ?>">All years</a></button>
 				<button type="button" class="btn btn-default"><a href="<?php echo site_url('dbdisplay/buildTable/'.$year1) ?>"><?php echo $year1 ?></a></button>
 				<button type="button" class="btn btn-default"><a href="<?php echo site_url('dbdisplay/buildTable/'.$year2) ?>"><?php echo $year2 ?></a></button>
 				<button type="button" class="btn btn-default"><a href="<?php echo site_url('dbdisplay/buildTable/'.$year3) ?>"><?php echo $year3 ?></a></button>
