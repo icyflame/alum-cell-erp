@@ -5,15 +5,19 @@
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
+	<style>
+
+	</style>
+
 </head>
 
 <body>
 
 	<p>Page Begin</p>
 
-	<table border="1">
+	<table class="table table-bordered">
 
-		<thead>
+		<thead class="active">
 			<th> Alumni ID
 			</th>
 			<th> Year
@@ -23,6 +27,10 @@
 			<th> Hall
 			</th>
 			<th> Department
+			</th>
+			<th> Next Follow Up
+			</th>
+			<th> Last Date of Calling
 			</th>
 
 		</thead>
@@ -42,6 +50,10 @@
 				<td> <?php echo $row['hall'] ?> 
 				</td>
 				<td> <?php echo $row['dept'] ?> 
+				</td>
+				<td> <?php echo $row['followup'] ?> 
+				</td>
+				<td> <?php echo $row['lastdate'] ?> 
 				</td>
 
 			</tr>

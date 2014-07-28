@@ -22,6 +22,8 @@ class dbdispmodel extends CI_Model{
 
 		$number = 1;
 
+		$final_data = array();
+
 		foreach($res->result_array() as $row){
 
 			$dates = array(
@@ -35,12 +37,14 @@ class dbdispmodel extends CI_Model{
 
 			$row = array_merge($row, $dates);
 
-			print_r($row);
-			echo '<br/>';
+			array_push($final_data, $row);
+
+			// print_r($row);
+			// echo '<br/>';
 
 		}
 
-		return $res->result_array();
+		return $final_data;
 	}
 }
 
