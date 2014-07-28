@@ -24,6 +24,17 @@
 
 		<div class="col-md-3">
 
+			<h1> Database View </h1>
+
+			<ul class="nav nav-pills nav-stacked">
+
+				<li><a href="<?php echo current_url() ?>">View full list</a></li>
+				<li><a href="<?php echo current_url().'/3' ?>">Yet to be contacted</a></li>
+				<li><a href="<?php echo current_url().'/1' ?>">Yet to be searched</a></li>
+				<li><a href="<?php echo current_url().'/2' ?>">Dumped</a></li>
+
+			</ul>
+
 		</div>
 
 		<div class="col-md-9">

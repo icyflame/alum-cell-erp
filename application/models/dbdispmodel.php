@@ -10,17 +10,17 @@ class dbdispmodel extends CI_Model{
 
 	}
 
-	public function getAllData($year='', $call=''){
+	public function getAllData($year='0', $call=''){
 
 		$yearfilt = '';
 		$tableadd = '';
 		$statusfilt = '';
 
-		if ($year == '0' && $call != '')
+		// if ($year == '0' && $call != '')
 
-			$yearfilt = '';
+		// 	$yearfilt = '';
 
-		if ($year != '' && $year != '0')
+		if ($year != '0')
 
 			$yearfilt = "AND alumSince='$year'";
 
@@ -30,11 +30,14 @@ class dbdispmodel extends CI_Model{
 
 		}
 
+		$userIdLoggedIn = $this->session->userdata('userid');
+
 		$query = "SELECT a.*, c.followup, c.lastdate 
 					FROM alumni a, calling c, status s
-					WHERE a.alumid = c.alumid AND a.alumid = s.alumid $yearfilt $statusfilt";
+					WHERE a.alumid = c.alumid AND a.alumid = s.alumid
+					AND s.touserid = '$userIdLoggedIn' $yearfilt $statusfilt";
 
-		// echo $query;
+		echo $query;
 
 		$res = $this->db->query($query);
 

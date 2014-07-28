@@ -8,17 +8,21 @@ class dbdisplay extends CI_Controller{
 
 		$this->load->model('dbdispmodel');
 
+		$this->load->library('session');
+
 		$this->load->helper('url');
 
 	}
 
 	public function index(){
 
-		$this->buildTable();
+		header('Refresh:2, url="dbdisplay/buildTable/0"');
+
+		// $this->buildTable();
 
 	}
 
-	public function buildTable($year='', $call=''){
+	public function buildTable($year='0', $call=''){
 
 		$data = array(
 			'all'=>$this->dbdispmodel->getAllData($year, $call)
