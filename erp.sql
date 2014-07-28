@@ -30,6 +30,7 @@ CREATE TABLE IF NOT EXISTS `alumni` (
   `alumid` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
   `hall` varchar(100) NOT NULL,
+  `dept` varchar(100) NOT NULL,
   `alumSince` int(11) NOT NULL,
   PRIMARY KEY (`alumid`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=48 ;
@@ -38,53 +39,54 @@ CREATE TABLE IF NOT EXISTS `alumni` (
 -- Dumping data for table `alumni`
 --
 
-INSERT INTO `alumni` (`alumid`, `name`, `hall`, `alumSince`) VALUES
-(2, 'Atanu Das', 'Rajendra Prasad Hall', 1964),
-(3, 'B K Tariyal', '', 1964),
-(4, 'Jyoti Parshad Banerjee', '', 1964),
-(5, 'K K Saxena', 'Rajendra Prasad Hall', 1964),
-(6, 'Kiran Sankar Sahu', '', 1964),
-(7, 'Mithilesh Kumar Sinha', 'Azad Hall', 1964),
-(8, 'Satish Bansal', 'Nehru Hall', 1964),
-(9, 'Tapash Kumar Pal', 'Rajendra Prasad Hall', 1964),
-(10, 'Amitava De', 'Lala Lajpat Rai Hall', 1974),
-(11, 'Ashok Kumar Ghosh', 'Lala Lajpat Rai Hall', 1974),
-(12, 'Niladri Nirjhar Biswas', '', 1974),
-(13, 'Partha Sen', 'Rajendra Prasad Hall', 1974),
-(14, 'Pramod Kumar Gupta', 'Vidya Sagar Hall', 1974),
-(15, 'Shyam Sunder Verma', 'Vidya Sagar Hall', 1974),
-(16, 'Sudip Sen', 'Nehru Hall', 1974),
-(17, 'Sushim Kumar Dasgupta', 'Patel Hall', 1974),
-(18, 'Tirthankar Banerjee', 'Patel Hall', 1974),
-(19, 'Swapan Guha', 'Rajendra Prasad Hall', 1974),
-(20, 'Vinod Rai Juthani', '', 1974),
-(21, 'S Anand', 'Azad Hall', 1989),
-(22, 'Ashis Kumar Roy', 'Azad Hall', 1989),
-(23, 'Dinesh Shastri', 'Patel Hall', 1989),
-(24, 'J Ramesh', 'Radhakrishnan Hall', 1989),
-(25, 'Jayanta Kumar Rudra', '', 1989),
-(26, 'Peshwa Acharya', 'Rajendra Prasad Hall', 1989),
-(27, 'Pradeep Kumar Bhalla', 'Lala Lajpat Rai Hall', 1989),
-(28, 'Rajeev Kumar Saraf', 'Nehru Hall', 1989),
-(29, 'Rakesh Chandubhai Pandya', 'Rajendra Prasad Hall', 1989),
-(30, 'Ramakrishna Manne', 'Azad Hall', 1989),
-(31, 'Ravindra Kumar Sinha', 'Vidya Sagar Hall', 1989),
-(32, 'Sanjay Prakash Gupta', 'Rajendra Prasad Hall', 1989),
-(33, 'Sanjay Dutt', 'Lala Lajpat Rai Hall', 1989),
-(34, 'Sanjiv Kumar Singh', 'Rajendra Prasad Hall', 1989),
-(35, 'Shambhu Sharan', '', 1989),
-(36, 'Sibasish Padhi', 'Vidya Sagar Hall', 1989),
-(37, 'Sujit Bhattacharyya', 'Nehru Hall', 1989),
-(38, 'Sumit Das', 'Lala Lajpat Rai Hall', 1989),
-(39, 'Sumit Chakraborty', 'Radhakrishnan Hall', 1989),
-(40, 'Suresh Adina', 'Azad Hall', 1989),
-(41, 'Tapash Kumar Gupta', 'Patel Hall', 1975),
-(42, 'Chiranjit Ghosh', 'Patel Hall', 1976),
-(43, 'L Ravindra Rao', 'Patel Hall', 1976),
-(44, 'Samir Biswas', '', 1976),
-(45, 'Kunal Bhattacharya', 'Patel Hall', 1977),
-(46, 'Ranjit Kumar Jana', 'Patel Hall', 1977),
-(47, 'Chandra Sekhar Bandyopadhyay', 'Patel Hall', 1978);
+INSERT INTO `alumni` (`alumid`, `name`, `dept`, `hall`, `alumSince`) VALUES
+(1, 'John Doe', 'Rajendra Prasad Hall', 'CS', 1965),
+(2, 'Atanu Das', 'Rajendra Prasad Hall', 'CS', 1965),
+(3, 'B K Tariyal', '', 'CS', 1965),
+(4, 'Jyoti Parshad Banerjee', '', 'CS', 1965),
+(5, 'K K Saxena', 'Rajendra Prasad Hall', 'CS', 1965),
+(6, 'Kiran Sankar Sahu', '', 'CS', 1965),
+(7, 'Mithilesh Kumar Sinha', 'Azad Hall', 'CS', 1965),
+(8, 'Satish Bansal', 'Nehru Hall', 'CS', 1965),
+(9, 'Tapash Kumar Pal', 'Rajendra Prasad Hall', 'CS', 1965),
+(10, 'Amitava De', 'Lala Lajpat Rai Hall', 'CS', 1975),
+(11, 'Ashok Kumar Ghosh', 'Lala Lajpat Rai Hall', 'CS', 1975),
+(12, 'Niladri Nirjhar Biswas', '', 'CS', 1975),
+(13, 'Partha Sen', 'Rajendra Prasad Hall', 'ME' 1975),
+(14, 'Pramod Kumar Gupta', 'Vidya Sagar Hall', 'ME' 1975),
+(15, 'Shyam Sunder Verma', 'Vidya Sagar Hall', 'ME' 1975),
+(16, 'Sudip Sen', 'Nehru Hall', 'ME' 1975),
+(17, 'Sushim Kumar Dasgupta', 'Patel Hall', 'ME' 1975),
+(18, 'Tirthankar Banerjee', 'Patel Hall', 'ME' 1975),
+(19, 'Swapan Guha', 'Rajendra Prasad Hall', 'ME' 1975),
+(20, 'Vinod Rai Juthani', '', 'ME' 1975),
+(21, 'S Anand', 'Azad Hall', 'ME' 1990),
+(22, 'Ashis Kumar Roy', 'Azad Hall', 'ME' 1990),
+(23, 'Dinesh Shastri', 'Patel Hall', 'ME' 1990),
+(24, 'J Ramesh', 'Radhakrishnan Hall', 'ME' 1990),
+(25, 'Jayanta Kumar Rudra', '', 'ME' 1990),
+(26, 'Peshwa Acharya', 'Rajendra Prasad Hall', 'ME' 1990),
+(27, 'Pradeep Kumar Bhalla', 'Lala Lajpat Rai Hall', 'ME' 1990),
+(28, 'Rajeev Kumar Saraf', 'Nehru Hall', 'CH' 1990),
+(29, 'Rakesh Chandubhai Pandya', 'Rajendra Prasad Hall', 'CH' 1990),
+(30, 'Ramakrishna Manne', 'Azad Hall', 'CH' 1990),
+(31, 'Ravindra Kumar Sinha', 'Vidya Sagar Hall', 'CH' 1990),
+(32, 'Sanjay Prakash Gupta', 'Rajendra Prasad Hall', 'CH' 1990),
+(33, 'Sanjay Dutt', 'Lala Lajpat Rai Hall', 'CH' 1990),
+(34, 'Sanjiv Kumar Singh', 'Rajendra Prasad Hall', 'CH' 1990),
+(35, 'Shambhu Sharan', '', 'CH' 1990),
+(36, 'Sibasish Padhi', 'Vidya Sagar Hall', 'CH' 1990),
+(37, 'Sujit Bhattacharyya', 'Nehru Hall', 'CH' 1990),
+(38, 'Sumit Das', 'Lala Lajpat Rai Hall', 'CH' 1990),
+(39, 'Sumit Chakraborty', 'Radhakrishnan Hall', 'CH' 1990),
+(40, 'Suresh Adina', 'Azad Hall', 'CH' 1990),
+(41, 'Tapash Kumar Gupta', 'Patel Hall', 'CH' 1975),
+(42, 'Chiranjit Ghosh', 'Patel Hall', 'CH' 1975),
+(43, 'L Ravindra Rao', 'Patel Hall', 'CH' 1975),
+(44, 'Samir Biswas', '', 'CH' 1975),
+(45, 'Kunal Bhattacharya', 'Patel Hall', 'MF', 1975),
+(46, 'Ranjit Kumar Jana', 'Patel Hall', 'MF', 1975),
+(47, 'Chandra Sekhar Bandyopadhyay', 'Patel Hall', 'MF', 1975);
 
 -- --------------------------------------------------------
 
@@ -191,14 +193,6 @@ CREATE TABLE IF NOT EXISTS `work` (
   `year` year(4) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=32 ;
-
---
--- Dumping data for table `work`
---
-
-INSERT INTO `work` (`id`, `table`, `description`, `toname`, `fromid`, `toid`, `year`) VALUES
-(30, 'alumni', '1965 ready data', 'Arpit', 2, 8, 1964),
-(31, 'alumni', 'PUT description here', 'Arpit', 9, 12, 0000);
 
 --
 -- Constraints for dumped tables
