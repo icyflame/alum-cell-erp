@@ -28,19 +28,23 @@ class dbdisplay extends CI_Controller{
 		$year2 = $this->session->userdata('year2');
 		$year3 = $this->session->userdata('year3');
 
-		$res = $this->dbdispmodel->getAllData($year, $call);
+		$dataDump = $this->dbdispmodel->getAllData($year, $call);
 
 		$data = array(
-			'all'=>$res,
-			'count'=>count($res),
+			'all'=>$dataDump['res'],
+			'count'=>count($dataDump['res']),
 			'year1'=>$year1,
 			'year2'=>$year2,
 			'year3'=>$year3
 			);
 
+		print_r(array_merge($data, $dataDump['class']));
+
+		$all_data = array_merge($data, $dataDump['class']);
+
 		// print_r($data);
 
-		$this->load->view('dbdisp/dbdispview', $data);
+		$this->load->view('dbdisp/dbdispview', $all_data);
 
 	}
 

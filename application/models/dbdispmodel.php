@@ -16,6 +16,10 @@ class dbdispmodel extends CI_Model{
 		$tableadd = '';
 		$statusfilt = '';
 
+		$year1 = $this->session->userdata('year1');
+		$year2 = $this->session->userdata('year2');
+		$year3 = $this->session->userdata('year3');
+
 		// if ($year == '0' && $call != '')
 
 		// 	$yearfilt = '';
@@ -41,42 +45,54 @@ class dbdispmodel extends CI_Model{
 
 		$res = $this->db->query($query);
 
-		// $res_call = $this->db->query("SELECT * FROM calling");
+		$c_all = '';
+		$c_1 = '';
+		$c_2 = '';
+		$c_3 = '';
 
-		// $res_dates = $res_call->result_array();
+		switch($year){
 
-		// $number = 1;
+			case '0':
+			$c_all = 'active';
+			break;
 
-		// $final_data = array();
+			case $year1:
+			$c_1 = 'active';
+			break;
 
-		// foreach($res->result_array() as $row){
+			case $year2:
+			$c_2 = 'active';
+			break;
 
-		// 	$dates = array(
-		// 		'followup'=>$res_dates[$number-1]['followup'],
-		// 		'lastdate'=>$res_dates[$number-1]['lastdate']
-		// 		);
+			case $year3:
+			$c_3 = 'active';
+			break;
 
-		// 	$number = $number + 1;
+		};
 
-		// 	// print_r($dates);
+	$class_data = array(
+		'c_all'=>$c_all,
+		'c_1'=>$c_1,
+		'c_2'=>$c_2,
+		'c_3'=>$c_3
+		);
 
-		// 	$row = array_merge($row, $dates);
+	$final_data = array(
+		'res'=>$res->result_array(),
+		'class'=>$class_data
+		);
 
-		// 	array_push($final_data, $row);
+		// print_r(array_push($res->result_array(), $final_data));
 
-		// 	// print_r($row);
-		// 	// echo '<br/>';
+	print_r($final_data);
+	echo '<br/>';
 
-		// }
-
-		// return $final_data;
-
-		return $res->result_array();
+	return  $final_data;
 
 		// return array_merge($res->result_array(), array('count'=>$count));
-	}
+}
 
-	
+
 }
 
 ?>
