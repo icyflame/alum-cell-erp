@@ -34,7 +34,7 @@ class dbdispmodel extends CI_Model{
 					FROM alumni a, calling c, status s
 					WHERE a.alumid = c.alumid AND a.alumid = s.alumid $yearfilt $statusfilt";
 
-		echo $query;
+		// echo $query;
 
 		$res = $this->db->query($query);
 
