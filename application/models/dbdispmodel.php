@@ -12,13 +12,13 @@ class dbdispmodel extends CI_Model{
 
 	public function getAllData($year='', $call=''){
 
-		// if ($year == '')
+		if ($year == '')
 
-		// 	$yearfilt = '';
+			$yearfilt = '';
 
-		// else
+		else
 
-		// 	$yearfilt = "WHERE alumSince='$year'";
+			$yearfilt = "AND alumSince='$year'";
 
 		// if ($call == '')
 
@@ -28,7 +28,9 @@ class dbdispmodel extends CI_Model{
 
 		// 	$callfilt = "WHERE "
 
-		$query = "SELECT a.*, c.followup, c.lastdate FROM alumni a, calling c WHERE a.alumid = c.alumid";
+		$query = "SELECT a.*, c.followup, c.lastdate 
+					FROM alumni a, calling c 
+					WHERE a.alumid = c.alumid $yearfilt";
 
 		$res = $this->db->query($query);
 
