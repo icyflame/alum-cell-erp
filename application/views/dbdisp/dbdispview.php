@@ -29,15 +29,17 @@
 			<div class="btn-group">
 
 				<button type="button" class="btn btn-default"><a href="<?php echo site_url('dbdisplay/buildTable/0') ?>">All years</button>
-				<button type="button" class="btn btn-default"><a href="<?php echo site_url('dbdisplay/buildTable/1965') ?>">1965</a></button>
-				<button type="button" class="btn btn-default"><a href="<?php echo site_url('dbdisplay/buildTable/1975') ?>">1975</a></button>
-				<button type="button" class="btn btn-default"><a href="<?php echo site_url('dbdisplay/buildTable/1990') ?>">1990</a></button>
+				<button type="button" class="btn btn-default"><a href="<?php echo site_url('dbdisplay/buildTable/'.$year1) ?>"><?php echo $year1 ?></a></button>
+				<button type="button" class="btn btn-default"><a href="<?php echo site_url('dbdisplay/buildTable/'.$year2) ?>"><?php echo $year2 ?></a></button>
+				<button type="button" class="btn btn-default"><a href="<?php echo site_url('dbdisplay/buildTable/'.$year3) ?>"><?php echo $year3 ?></a></button>
 
 			</div>
 
+			<br/>
+
 			<ul class="nav nav-pills nav-stacked">
 
-				<!-- <li><a href="<?php echo current_url() ?>">View full list</a></li> -->
+				<li><a href="<?php echo current_url() ?>">View full list</a></li>
 				<li><a href="<?php echo current_url().'/3' ?>">Yet to be contacted</a></li>
 				<li><a href="<?php echo current_url().'/1' ?>">Yet to be searched</a></li>
 				<li><a href="<?php echo current_url().'/2' ?>">Dumped</a></li>

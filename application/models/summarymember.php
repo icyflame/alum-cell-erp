@@ -8,13 +8,15 @@ class summarymember extends CI_Model{
 
 		$this->load->database();
 
+		$this->load->library('session');
+
 	}
 
 	public function getdata_allyears($year=''){
 
-		$year1 = '1965';
-		$year2 = '1975';
-		$year3 = '1990';
+		$year1 = $this->session->userdata('year1');
+		$year2 = $this->session->userdata('year2');
+		$year3 = $this->session->userdata('year3');
 
 		if ($year == '')
 
