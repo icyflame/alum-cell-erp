@@ -1,7 +1,7 @@
 from random import *
 
-startid = 2
-endid = 26
+startid = 1
+endid = 47
 
 for i in range(startid, endid+1):
 

@@ -11,7 +11,7 @@
 	echo 'Hey, '.$this->session->userdata('username').'<br/>';
 	echo 'You have a privilege of '.$this->session->userdata('privilege').'<br/><br/>';
 
-	// echo print_r($this->session->all_userdata());
+	echo print_r($this->session->all_userdata());
 
 	$new_view = site_url("member/specificYear/");
 

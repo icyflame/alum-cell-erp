@@ -52,7 +52,14 @@
 
 	<h1> View Database </h1>
 
-	<a href="<?php echo site_url('dbdisplay') ?>">View All</a>
+	<ul class="nav nav-pills nav-justified" role="tablist">
+
+		<li><a href="<?php echo site_url('dbdisplay/buildTable/0') ?>">View All</a></li>
+		<li><a href="<?php echo site_url('dbdisplay/buildTable/'.$year1) ?>"><?php echo $year1 ?></a></li>
+		<li><a href="<?php echo site_url('dbdisplay/buildTable/'.$year2) ?>"><?php echo $year2 ?></a></li>
+		<li><a href="<?php echo site_url('dbdisplay/buildTable/'.$year3) ?>"><?php echo $year3 ?></a></li>
+
+	</ul>
 
 	<h1>Networking Summary</h1>
 
