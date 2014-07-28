@@ -11,9 +11,22 @@
 
 	<p>Page Begin</p>
 
-	
+	<table border="1">
 
-	<p>Page End</p>
+		<?php foreach($all as $row): ?>
+
+		<tr>
+
+			<td> <?php echo $row['alumid'] ?> </td>
+			<td> <?php echo $row['hall'] ?> </td>
+
+		</tr>
+
+	<?php endforeach ?>
+
+</table>
+
+<p>Page End</p>
 
 </body>
 

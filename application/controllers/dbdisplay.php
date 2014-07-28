@@ -20,7 +20,9 @@ class dbdisplay extends CI_Controller{
 
 	public function buildTable(){
 
-		$data = $this->dbdispmodel->getAllData();
+		$data = array(
+			'all'=>$this->dbdispmodel->getAllData()
+			);
 
 		// print_r($data);
 

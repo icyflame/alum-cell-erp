@@ -23,7 +23,7 @@ class dbdispmodel extends CI_Model{
 
 		}
 
-		return $res;
+		return $res->result_array();
 	}
 }
 
