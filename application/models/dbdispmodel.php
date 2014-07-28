@@ -41,8 +41,6 @@ class dbdispmodel extends CI_Model{
 
 		$res = $this->db->query($query);
 
-		$count = $this->getcount($res);
-
 		// $res_call = $this->db->query("SELECT * FROM calling");
 
 		// $res_dates = $res_call->result_array();
