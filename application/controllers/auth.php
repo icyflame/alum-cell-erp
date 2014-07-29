@@ -46,6 +46,10 @@ class auth extends CI_Controller{
 
 			if($res){
 
+				$url = site_url('member/specificYear');
+
+				header("Refresh:0, url='$url'");
+
 				$data['status'] = 'Logged in successfully';
 
 				// $data['username'] = $this->userdb->getusername();
