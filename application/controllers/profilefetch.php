@@ -20,7 +20,22 @@ class profilefetch extends CI_Controller{
 		echo 'The index function has been called';
 	}
 
-	public function showprofile($alumid){
+	public function showstatus($alumid){
+
+		if($this->profilefetchmodel->checkallotment($alumid)){
+
+			echo $this->load->view('templates/header.html', array(), TRUE);
+
+			echo '<h2>This Alumni was not allotted to you.<br/><h2>';
+
+			$url = site_url('member/specificYear');
+
+			echo "<h4><a href='$url'>Go back to Summary Page</a><h4>";
+
+			echo $this->load->view('templates/footer.html', array(), TRUE);
+
+			die;
+		}
 
 		$data = $this->profilefetchmodel->getData($alumid);
 
@@ -107,7 +122,7 @@ class profilefetch extends CI_Controller{
 
 		$this->profilefetchmodel->updateSearch($alumid, $value);
 
-		$url = site_url('profilefetch/showprofile/'.$alumid);
+		$url = site_url('profilefetch/showstatus/'.$alumid);
 
 		Header("Refresh: 0, url='$url'");
 
@@ -117,7 +132,7 @@ class profilefetch extends CI_Controller{
 
 		$this->profilefetchmodel->updateCalling($alumid, $value);
 
-		$url = site_url('profilefetch/showprofile/'.$alumid);
+		$url = site_url('profilefetch/showstatus/'.$alumid);
 
 		Header("Refresh: 0, url='$url'");
 

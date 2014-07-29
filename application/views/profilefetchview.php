@@ -1,6 +1,6 @@
 <html>
 
-<body>
+<body style="margin-left: 20px; margin-right: 20px;">
 
 	<h3> Alumni ID <?php echo $alumid ?> </h3>
 	<h2> <?php echo $name ?> </h2>
@@ -29,8 +29,6 @@
 		<li class="<?php echo $c_4 ?>"><a href="<?php echo site_url('profilefetch/updateCalling/'.$alumid.'/4') ?>">Positive</a></li>
 
 	</ul>
-
-
 
 </body>
 

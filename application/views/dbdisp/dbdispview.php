@@ -125,11 +125,9 @@
 					<td> <?php echo $row['lastdate'] ?> 
 					</td>
 					<td>
-						<a href="<?php echo site_url('profilefetch/showprofile/'.$row['alumid']) ?>">
-							<button class="btn btn-primary">
-								
+						<a href="<?php echo site_url('profilefetch/showstatus/'.$row['alumid']) ?>">
+							<button class="btn btn-primary">								
 								View Profile
-								
 							</button>
 						</a>
 					</td>

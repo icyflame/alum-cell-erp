@@ -78,6 +78,19 @@ class profilefetchmodel extends CI_Model{
 		
 	}
 
+	public function checkallotment($alumid){
+
+		// returns false if the allotment is legal
+		// returns true if the allotment is illegal
+
+		$query = "SELECT touserid from status where alumid='$alumid'";
+
+		$res = $this->db->query($query);
+
+		$res = $res->result_array(); 
+
+		return !($res[0]['touserid'] == $this->session->userdata('userid'));
+	}
 
 }
 
