@@ -45,6 +45,8 @@ class dbdisplay extends CI_Controller{
 
 		// print_r($data);
 
+		
+		$this->load->view('templates/header.html');
 		$this->load->view('dbdisp/dbdispview', $all_data);
 
 	}
