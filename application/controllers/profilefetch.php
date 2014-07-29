@@ -24,11 +24,23 @@ class profilefetch extends CI_Controller{
 
 		$data = $this->profilefetchmodel->getData($alumid);
 
-		print_r($data);
+		// print_r($data);
 
 		$this->load->view('templates/header.html');
 		$this->load->view('profilefetchview', $data);
 		$this->load->view('templates/footer.html');
+
+	}
+
+	public function updateSearch($alumid, $value){
+
+		$this->profilefetchmodel->updateSearch($alumid, $value);
+
+	}
+
+	public function updateCalling($alumid, $value){
+
+		$this->profilefetchmodel->updateCalling($alumid, $value);
 
 	}
 

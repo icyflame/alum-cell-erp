@@ -24,8 +24,28 @@ class profilefetchmodel extends CI_Model{
 
 		return $data[0];
 
+	}
+
+	public function updateSearch($alumid, $value){
+
+		$query = "UPDATE status SET search='$value' WHERE alumid='$alumid'";
+
+		// echo $query;
+
+		$res = $this->db->query($query);
 
 	}
+
+	public function updateCalling($alumid, $value){
+
+		$query = "UPDATE status SET called='$value' WHERE alumid='$alumid'";
+
+		// echo $query;
+
+		$res = $this->db->query($query);
+		
+	}
+
 }
 
 ?>
