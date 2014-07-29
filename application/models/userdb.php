@@ -40,8 +40,8 @@ class userdb extends CI_Model{
 
 		// }
 
-		echo 'Stored: '.$pw.'<br/>';
-		echo 'Entered: '.md5($pwentered).'<br/>';
+		// echo 'Stored: '.$pw.'<br/>';
+		// echo 'Entered: '.md5($pwentered).'<br/>';
 
 		if ($pw == ''){
 			echo 'Username or password incorrect. Try again.';

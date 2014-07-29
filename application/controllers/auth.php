@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 class auth extends CI_Controller{
 
 	public function __construct(){
@@ -44,6 +46,10 @@ class auth extends CI_Controller{
 
 			if($res){
 
+				$url = site_url('member/specificYear');
+
+				header("Refresh:0, url='$url'");
+
 				$data['status'] = 'Logged in successfully';
 
 				// $data['username'] = $this->userdb->getusername();
@@ -56,6 +62,8 @@ class auth extends CI_Controller{
 				$sessdat = $this->userdb->getdata();
 
 				$this->session->set_userdata($sessdat);
+
+				$_SESSION['loggedin'] = '0';
 
 				// $this->load->view('authentication/viewstat', $data);
 
@@ -93,6 +101,15 @@ class auth extends CI_Controller{
 	// 	}
 
 	// }
+
+	public function logout(){
+
+		$this->session->sess_destroy();
+
+		unset($_SESSION['loggedin']);
+
+		$this->loginval();
+	}
 
 }
 
