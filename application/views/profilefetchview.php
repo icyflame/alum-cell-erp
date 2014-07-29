@@ -12,10 +12,10 @@
 
 	<ul class="nav nav-pills nav-justified" role="menu">
 
-		<li><a href="<?php echo site_url('profilefetch/updateSearch/'.$alumid.'/1') ?>">Yet to be searched</a></li>
-		<li><a href="<?php echo site_url('profilefetch/updateSearch/'.$alumid.'/2') ?>">Not Found</a></li>
-		<li><a href="<?php echo site_url('profilefetch/updateSearch/'.$alumid.'/3') ?>">Found</a></li>
-		<li><a href="<?php echo site_url('profilefetch/updateSearch/'.$alumid.'/4') ?>">Ready</a></li>
+		<li class='<?php echo $s_1 ?>'><a href="<?php echo site_url('profilefetch/updateSearch/'.$alumid.'/1') ?>">Yet to be searched</a></li>
+		<li class='<?php echo $s_2 ?>'><a href="<?php echo site_url('profilefetch/updateSearch/'.$alumid.'/2') ?>">Not Found</a></li>
+		<li class='<?php echo $s_3 ?>'><a href="<?php echo site_url('profilefetch/updateSearch/'.$alumid.'/3') ?>">Found</a></li>
+		<li class='<?php echo $s_4 ?>'><a href="<?php echo site_url('profilefetch/updateSearch/'.$alumid.'/4') ?>">Ready</a></li>
 
 	</ul>
 
@@ -23,10 +23,10 @@
 
 	<ul class="nav nav-pills nav-justified" role="menu">
 
-		<li><a href="<?php echo site_url('profilefetch/updateCalling/'.$alumid.'/1') ?>">Called (2 way)</a></li>
-		<li><a href="<?php echo site_url('profilefetch/updateCalling/'.$alumid.'/2') ?>">Negative</a></li>
-		<li><a href="<?php echo site_url('profilefetch/updateCalling/'.$alumid.'/3') ?>">Neutral</a></li>
-		<li><a href="<?php echo site_url('profilefetch/updateCalling/'.$alumid.'/4') ?>">Positive</a></li>
+		<li class="<?php echo $c_1 ?>"><a href="<?php echo site_url('profilefetch/updateCalling/'.$alumid.'/1') ?>">Called (2 way)</a></li>
+		<li class="<?php echo $c_2 ?>"><a href="<?php echo site_url('profilefetch/updateCalling/'.$alumid.'/2') ?>">Negative</a></li>
+		<li class="<?php echo $c_3 ?>"><a href="<?php echo site_url('profilefetch/updateCalling/'.$alumid.'/3') ?>">Neutral</a></li>
+		<li class="<?php echo $c_4 ?>"><a href="<?php echo site_url('profilefetch/updateCalling/'.$alumid.'/4') ?>">Positive</a></li>
 
 	</ul>
 

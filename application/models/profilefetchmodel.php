@@ -46,6 +46,39 @@ class profilefetchmodel extends CI_Model{
 		
 	}
 
+	public function getSearch($alumid){
+
+		$query = "SELECT search FROM status WHERE alumid='$alumid'";
+
+		// echo $query;
+
+		$res = $this->db->query($query);
+
+		$res = $res->result_array();
+
+		$res = $res[0]['search'];
+
+		return $res;
+		
+	}
+
+	public function getCalling($alumid){
+
+		$query = "SELECT called FROM status WHERE alumid='$alumid'";
+
+		// echo $query;
+
+		$res = $this->db->query($query);
+
+		$res = $res->result_array();
+
+		$res = $res[0]['called'];
+
+		return $res;
+		
+	}
+
+
 }
 
 ?>
