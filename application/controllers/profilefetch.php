@@ -121,7 +121,6 @@ class profilefetch extends CI_Controller{
 
 		Header("Refresh: 0, url='$url'");
 
-
 	}
 
 }

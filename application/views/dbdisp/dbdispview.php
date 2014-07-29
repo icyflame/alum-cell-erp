@@ -21,6 +21,15 @@
 			text-decoration: none !important;
 		}
 
+/*		tbody tr{
+			cursor: pointer;
+		}
+		*/
+
+		tbody td button{
+			color: black;
+			text-decoration: none !important;
+		}
 		</style>
 
 	</head>
@@ -87,6 +96,8 @@
 				</th>
 				<th> Last Date of Calling
 				</th>
+				<th>
+				</th>
 
 			</thead>
 
@@ -94,14 +105,12 @@
 
 				<?php foreach($all as $row): ?>
 
-
-
 				<tr>
 
 					<td>
-						<a href="<?php echo site_url('profilefetch/showprofile/'.$row['alumid']) ?>">
-							<?php echo $row['alumid'] ?> 
-						</a>
+						
+						<?php echo $row['alumid'] ?> 
+						
 					</td>
 					<td> <?php echo $row['alumSince'] ?> 
 					</td>
@@ -115,9 +124,19 @@
 					</td>
 					<td> <?php echo $row['lastdate'] ?> 
 					</td>
+					<td>
+						<a href="<?php echo site_url('profilefetch/showprofile/'.$row['alumid']) ?>">
+							<button class="btn btn-primary">
+								
+								View Profile
+								
+							</button>
+						</a>
+					</td>
 
 				</tr>
 
+				<!-- </a> -->
 
 			<?php endforeach ?>
 
@@ -136,5 +155,15 @@
 <br/><p>Page End</p>
 
 </body>
+
+<script>
+
+$(document).ready(function($) {
+	$(".goToProfile").click(function() {
+		window.document.location = $(this).attr("href");
+	});
+});
+
+</script>
 
 </html>
