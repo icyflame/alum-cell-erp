@@ -57,7 +57,11 @@ class auth extends CI_Controller{
 
 				$this->session->set_userdata($sessdat);
 
-				$this->load->view('authentication/viewstat', $data);
+				// $this->load->view('authentication/viewstat', $data);
+
+				$url = site_url('member/specificYear');
+
+				header("Refresh:0, url='$url'");
 
 			}
 
