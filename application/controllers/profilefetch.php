@@ -29,8 +29,8 @@ class profilefetch extends CI_Controller{
 		$s_stat = $this->profilefetchmodel->getSearch($alumid);
 		$c_stat = $this->profilefetchmodel->getCalling($alumid);
 
-		echo 'Search: ', $s_stat;
-		echo 'Calling: ', $c_stat;
+		// echo 'Search: ', $s_stat;
+		// echo 'Calling: ', $c_stat;
 
 
 		$s_1 = '';
@@ -107,11 +107,20 @@ class profilefetch extends CI_Controller{
 
 		$this->profilefetchmodel->updateSearch($alumid, $value);
 
+		$url = site_url('profilefetch/showprofile/'.$alumid);
+
+		Header("Refresh: 0, url='$url'");
+
 	}
 
 	public function updateCalling($alumid, $value){
 
 		$this->profilefetchmodel->updateCalling($alumid, $value);
+
+		$url = site_url('profilefetch/showprofile/'.$alumid);
+
+		Header("Refresh: 0, url='$url'");
+
 
 	}
 
