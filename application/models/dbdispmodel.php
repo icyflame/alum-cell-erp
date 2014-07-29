@@ -41,7 +41,7 @@ class dbdispmodel extends CI_Model{
 		WHERE a.alumid = c.alumid AND a.alumid = s.alumid
 		AND s.touserid = '$userIdLoggedIn' $yearfilt $statusfilt";
 
-		echo $query;
+		// echo $query;
 
 		$res = $this->db->query($query);
 

@@ -22,7 +22,9 @@ class member extends CI_Controller{
 
 	public function specificYear($year=''){
 
+		$this->load->view('templates/header.html');
 		$this->load->view('summary/summary-member.php', $this->summaryMember->getdata_allyears($year));
+		$this->load->view('templates/footer.html');
 
 	}
 
