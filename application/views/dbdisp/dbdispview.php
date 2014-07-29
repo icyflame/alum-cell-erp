@@ -88,9 +88,9 @@
 				</th>
 				<th> Name
 				</th>
-				<th> Hall
+				<th> Dept
 				</th>
-				<th> Department
+				<th> Hall
 				</th>
 				<th> Next Follow Up
 				</th>
