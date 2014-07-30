@@ -113,14 +113,20 @@ class profilefetch extends CI_Controller{
 		// print_r($final_data);
 
 		$this->load->view('templates/header.html');
-		$this->load->view('profilefetchview', $final_data);
+		$this->load->view('profileview/profilefetchview', $final_data);
 		$this->load->view('templates/footer.html');
 
 	}
 
 	public function showprofile($alumid){
 
-		return;
+		$data = $this->profilefetchmodel->getProfileData($alumid);
+
+		$final_data['data'] = $data;
+
+		$this->load->view('templates/header.html');
+		$this->load->view('profileview/profilefullview', $final_data);
+		$this->load->view('templates/footer.html');
 
 	}
 
