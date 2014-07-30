@@ -34,9 +34,11 @@ class profilefetchmodel extends CI_Model{
 
 		$res = $this->db->query($query);
 
-		$data = $res->result_array();
+		// $data = $res->result_array();
 
-		return $data[0];
+		// return $data[0];
+
+		return $res;
 
 	}
 	

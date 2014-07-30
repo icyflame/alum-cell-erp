@@ -53,87 +53,93 @@
 
 				</ul>
 
-		<hr/>
+				<hr/>
 
-		<ul class="nav nav-pills nav-stacked">
+				<ul class="nav nav-pills nav-stacked">
 
-			<li class="<?php echo $c_full ?>"><a href="<?php echo site_url('dbdisplay/buildTable/'.$current_year.'/') ?>">View full list</a></li>
-			<li class="<?php echo $c_contact ?>"><a href="<?php echo site_url('dbdisplay/buildTable/'.$current_year.'/3') ?>">Yet to be contacted</a></li>
-			<li class="<?php echo $c_search ?>"><a href="<?php echo site_url('dbdisplay/buildTable/'.$current_year.'/1') ?>">Yet to be searched</a></li>
-			<li class="<?php echo $c_dumped ?>"><a href="<?php echo site_url('dbdisplay/buildTable/'.$current_year.'/2') ?>">Dumped</a></li>
+					<li class="<?php echo $c_full ?>"><a href="<?php echo site_url('dbdisplay/buildTable/'.$current_year.'/') ?>">View full list</a></li>
+					<li class="<?php echo $c_contact ?>"><a href="<?php echo site_url('dbdisplay/buildTable/'.$current_year.'/3') ?>">Yet to be contacted</a></li>
+					<li class="<?php echo $c_search ?>"><a href="<?php echo site_url('dbdisplay/buildTable/'.$current_year.'/1') ?>">Yet to be searched</a></li>
+					<li class="<?php echo $c_dumped ?>"><a href="<?php echo site_url('dbdisplay/buildTable/'.$current_year.'/2') ?>">Dumped</a></li>
 
-		</ul>
+				</ul>
 
-	</div>
+			</div>
 
-	<div class="col-md-9">
+			<div class="col-md-9">
 
-		<h1> <?php echo $count ?> rows fetched. </h1>
+				<h1> <?php echo $count ?> rows fetched. </h1>
 
-		<table class="table table-bordered table-striped">
+				<table class="table table-bordered table-striped">
 
-			<thead class="active">
-				<th> Alumni ID
-				</th>
-				<th> Year
-				</th>
-				<th> Name
-				</th>
-				<th> Dept
-				</th>
-				<th> Hall
-				</th>
-				<th> Next Follow Up
-				</th>
-				<th> Last Date of Calling
-				</th>
-				<th>
-				</th>
+					<thead class="active">
+						<th> Alumni ID
+						</th>
+						<th> Year
+						</th>
+						<th> Name
+						</th>
+						<th> Dept
+						</th>
+						<th> Hall
+						</th>
+						<th> Next Follow Up
+						</th>
+						<th> Last Date of Calling
+						</th>
+						<th>
+						</th>
 
-			</thead>
+					</thead>
 
-			<tbody>
+					<tbody>
 
-				<?php foreach($all as $row): ?>
+						<?php foreach($all as $row): ?>
 
-				<tr>
+						<tr>
 
-					<td>
-						
-						<?php echo $row['alumid'] ?> 
-						
-					</td>
-					<td> <?php echo $row['alumSince'] ?> 
-					</td>
-					<td> <?php echo $row['name'] ?> 
-					</td>
-					<td> <?php echo $row['hall'] ?> 
-					</td>
-					<td> <?php echo $row['dept'] ?> 
-					</td>
-					<td> <?php echo $row['followup'] ?> 
-					</td>
-					<td> <?php echo $row['lastdate'] ?> 
-					</td>
-					<td>
-						<a href="<?php echo site_url('profilefetch/showstatus/'.$row['alumid']) ?>">
-							<button class="btn btn-primary">								
-								View Status
-							</button>
-						</a>
-					</td>
+							<td>
 
-				</tr>
+								<?php echo $row['alumid'] ?> 
 
-				<!-- </a> -->
+							</td>
+							<td> <?php echo $row['alumSince'] ?> 
+							</td>
+							<td> <?php echo $row['name'] ?> 
+							</td>
+							<td> <?php echo $row['hall'] ?> 
+							</td>
+							<td> <?php echo $row['dept'] ?> 
+							</td>
+							<td> <?php echo $row['followup'] ?> 
+							</td>
+							<td> <?php echo $row['lastdate'] ?> 
+							</td>
+							<td>
+								<a href="<?php echo site_url('profilefetch/showstatus/'.$row['alumid']) ?>">
+									<button class="btn btn-primary">								
+										Status
+									</button>
+								</a> <p>   </p>
+								<a href="<?php echo site_url('profilefetch/showprofile/'.$row['alumid']) ?>">
+									<button class="btn btn-success">								
+										Profile
+									</button>
+								</a>
 
-			<?php endforeach ?>
+							</td>
 
-		</tbody>	
+						</tr>
 
-	</table>
+						<!-- </a> -->
 
-</div>
+					<?php endforeach ?>
+
+				</tbody>	
+
+			</table>
+
+		</div>
 
 	<!-- <div class="">
 
@@ -144,15 +150,5 @@
 <br/><p>Page End</p>
 
 </body>
-
-<script>
-
-$(document).ready(function($) {
-	$(".goToProfile").click(function() {
-		window.document.location = $(this).attr("href");
-	});
-});
-
-</script>
 
 </html>
