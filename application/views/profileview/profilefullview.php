@@ -9,6 +9,7 @@
 	<h5> An alumni since <?php echo $alumSince ?> </h5>
 
 	<h5> Date of Birth: <?php echo $dateofbirth ?></h5>
+	<h5> Roll Number: <?php echo $rollnumber ?></h5>
 
 </body>
 
