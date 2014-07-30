@@ -79,9 +79,9 @@
 				</th>
 				<th> Name
 				</th>
-				<th> Dept
-				</th>
 				<th> Hall
+				</th>
+				<th> Department
 				</th>
 				<th> Next Follow Up
 				</th>
