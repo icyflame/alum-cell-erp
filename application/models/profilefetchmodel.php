@@ -26,6 +26,20 @@ class profilefetchmodel extends CI_Model{
 
 	}
 
+	public function getProfileData($alumid){
+
+		$query = "SELECT a.*, afd.* FROM alumni a, alumnifulldata afd WHERE a.alumid = afd.alumid AND a.alumid='$alumid'";
+
+		// echo $query;
+
+		$res = $this->db->query($query);
+
+		$data = $res->result_array();
+
+		return $data[0];
+
+	}
+	
 	public function updateSearch($alumid, $value){
 
 		$query = "UPDATE status SET search='$value' WHERE alumid='$alumid'";
