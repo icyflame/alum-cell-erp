@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 28, 2014 at 11:03 AM
+-- Generation Time: Jul 30, 2014 at 08:59 AM
 -- Server version: 5.5.36
 -- PHP Version: 5.4.25
 
@@ -21,6 +21,7 @@ SET time_zone = "+00:00";
 --
 CREATE DATABASE IF NOT EXISTS `erp` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
 USE `erp`;
+
 -- --------------------------------------------------------
 
 --
@@ -92,15 +93,77 @@ INSERT INTO `alumni` (`alumid`, `name`, `hall`, `dept`, `alumSince`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `assign`
+-- Table structure for table `alumnifulldata`
 --
 
-CREATE TABLE IF NOT EXISTS `assign` (
+CREATE TABLE IF NOT EXISTS `alumnifulldata` (
   `alumid` int(11) NOT NULL AUTO_INCREMENT,
-  `userid` int(10) NOT NULL,
-  `year` int(11) NOT NULL,
+  `dateofbirth` date NOT NULL,
+  `rollnumber` varchar(50) NOT NULL,
+  `company` varchar(80) NOT NULL,
+  `designation` varchar(80) NOT NULL,
+  `address_office` varchar(150) NOT NULL,
+  `address_home` varchar(150) NOT NULL,
+  `phone_office` varchar(20) NOT NULL,
+  `phone_home` varchar(20) NOT NULL,
+  `email_office` varchar(50) NOT NULL,
+  `email_personal` varchar(50) NOT NULL,
+  `remarks` varchar(250) NOT NULL,
   PRIMARY KEY (`alumid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=48 ;
+
+--
+-- Dumping data for table `alumnifulldata`
+--
+
+INSERT INTO `alumnifulldata` (`alumid`, `dateofbirth`, `rollnumber`, `company`, `designation`, `address_office`, `address_home`, `phone_office`, `phone_home`, `email_office`, `email_personal`, `remarks`) VALUES
+(1, '0000-00-00', 'XXXXX000X', '', '', '', '', '', '', '', '', ''),
+(2, '0000-00-00', 'XXXXX000X', '', '', '', '', '', '', '', '', ''),
+(3, '0000-00-00', 'XXXXX000X', '', '', '', '', '', '', '', '', ''),
+(4, '0000-00-00', 'XXXXX000X', '', '', '', '', '', '', '', '', ''),
+(5, '0000-00-00', 'XXXXX000X', '', '', '', '', '', '', '', '', ''),
+(6, '0000-00-00', 'XXXXX000X', '', '', '', '', '', '', '', '', ''),
+(7, '0000-00-00', 'XXXXX000X', '', '', '', '', '', '', '', '', ''),
+(8, '0000-00-00', 'XXXXX000X', '', '', '', '', '', '', '', '', ''),
+(9, '0000-00-00', 'XXXXX000X', '', '', '', '', '', '', '', '', ''),
+(10, '0000-00-00', 'XXXXX000X', '', '', '', '', '', '', '', '', ''),
+(11, '0000-00-00', 'XXXXX000X', '', '', '', '', '', '', '', '', ''),
+(12, '0000-00-00', 'XXXXX000X', '', '', '', '', '', '', '', '', ''),
+(13, '0000-00-00', 'XXXXX000X', '', '', '', '', '', '', '', '', ''),
+(14, '0000-00-00', 'XXXXX000X', '', '', '', '', '', '', '', '', ''),
+(15, '0000-00-00', 'XXXXX000X', '', '', '', '', '', '', '', '', ''),
+(16, '0000-00-00', 'XXXXX000X', '', '', '', '', '', '', '', '', ''),
+(17, '0000-00-00', 'XXXXX000X', '', '', '', '', '', '', '', '', ''),
+(18, '0000-00-00', 'XXXXX000X', '', '', '', '', '', '', '', '', ''),
+(19, '0000-00-00', 'XXXXX000X', '', '', '', '', '', '', '', '', ''),
+(20, '0000-00-00', 'XXXXX000X', '', '', '', '', '', '', '', '', ''),
+(21, '0000-00-00', 'XXXXX000X', '', '', '', '', '', '', '', '', ''),
+(22, '0000-00-00', 'XXXXX000X', '', '', '', '', '', '', '', '', ''),
+(23, '0000-00-00', 'XXXXX000X', '', '', '', '', '', '', '', '', ''),
+(24, '0000-00-00', 'XXXXX000X', '', '', '', '', '', '', '', '', ''),
+(25, '0000-00-00', 'XXXXX000X', '', '', '', '', '', '', '', '', ''),
+(26, '0000-00-00', 'XXXXX000X', '', '', '', '', '', '', '', '', ''),
+(27, '0000-00-00', 'XXXXX000X', '', '', '', '', '', '', '', '', ''),
+(28, '0000-00-00', 'XXXXX000X', '', '', '', '', '', '', '', '', ''),
+(29, '0000-00-00', 'XXXXX000X', '', '', '', '', '', '', '', '', ''),
+(30, '0000-00-00', 'XXXXX000X', '', '', '', '', '', '', '', '', ''),
+(31, '0000-00-00', 'XXXXX000X', '', '', '', '', '', '', '', '', ''),
+(32, '0000-00-00', 'XXXXX000X', '', '', '', '', '', '', '', '', ''),
+(33, '0000-00-00', 'XXXXX000X', '', '', '', '', '', '', '', '', ''),
+(34, '0000-00-00', 'XXXXX000X', '', '', '', '', '', '', '', '', ''),
+(35, '0000-00-00', 'XXXXX000X', '', '', '', '', '', '', '', '', ''),
+(36, '0000-00-00', 'XXXXX000X', '', '', '', '', '', '', '', '', ''),
+(37, '0000-00-00', 'XXXXX000X', '', '', '', '', '', '', '', '', ''),
+(38, '0000-00-00', 'XXXXX000X', '', '', '', '', '', '', '', '', ''),
+(39, '0000-00-00', 'XXXXX000X', '', '', '', '', '', '', '', '', ''),
+(40, '0000-00-00', 'XXXXX000X', '', '', '', '', '', '', '', '', ''),
+(41, '0000-00-00', 'XXXXX000X', '', '', '', '', '', '', '', '', ''),
+(42, '0000-00-00', 'XXXXX000X', '', '', '', '', '', '', '', '', ''),
+(43, '0000-00-00', 'XXXXX000X', '', '', '', '', '', '', '', '', ''),
+(44, '0000-00-00', 'XXXXX000X', '', '', '', '', '', '', '', '', ''),
+(45, '0000-00-00', 'XXXXX000X', '', '', '', '', '', '', '', '', ''),
+(46, '0000-00-00', 'XXXXX000X', '', '', '', '', '', '', '', '', ''),
+(47, '0000-00-00', 'XXXXX000X', '', '', '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -181,29 +244,29 @@ CREATE TABLE IF NOT EXISTS `status` (
   `pay` int(11) NOT NULL,
   `touserid` int(11) NOT NULL,
   PRIMARY KEY (`alumid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='stores status about the alumni' AUTO_INCREMENT=48 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='stores status about the alumni' AUTO_INCREMENT=49 ;
 
 --
 -- Dumping data for table `status`
 --
 
 INSERT INTO `status` (`alumid`, `search`, `called`, `register`, `pay`, `touserid`) VALUES
-(1, 2, 2, 1, 2, 8),
+(1, 2, 4, 1, 2, 8),
 (2, 1, 2, 1, 2, 10),
 (3, 4, 4, 2, 1, 9),
 (4, 1, 3, 1, 1, 9),
 (5, 1, 4, 1, 1, 6),
-(6, 2, 4, 2, 2, 8),
+(6, 2, 1, 2, 2, 8),
 (7, 1, 2, 1, 2, 10),
 (8, 4, 2, 2, 2, 6),
 (9, 1, 4, 1, 2, 10),
 (10, 1, 3, 2, 1, 10),
 (11, 4, 3, 1, 2, 10),
 (12, 1, 3, 1, 2, 6),
-(13, 4, 3, 2, 1, 8),
+(13, 4, 4, 2, 1, 8),
 (14, 4, 3, 1, 2, 6),
 (15, 3, 1, 1, 1, 10),
-(16, 3, 2, 2, 1, 8),
+(16, 3, 4, 2, 1, 8),
 (17, 3, 4, 2, 1, 9),
 (18, 1, 1, 1, 1, 9),
 (19, 2, 4, 2, 1, 9),
@@ -214,7 +277,7 @@ INSERT INTO `status` (`alumid`, `search`, `called`, `register`, `pay`, `touserid
 (24, 4, 1, 1, 2, 9),
 (25, 2, 3, 2, 1, 9),
 (26, 1, 3, 2, 1, 6),
-(27, 4, 1, 1, 1, 8),
+(27, 2, 1, 1, 1, 8),
 (28, 4, 4, 2, 2, 6),
 (29, 4, 1, 2, 1, 7),
 (30, 2, 1, 1, 1, 8),
@@ -229,7 +292,7 @@ INSERT INTO `status` (`alumid`, `search`, `called`, `register`, `pay`, `touserid
 (39, 1, 1, 2, 2, 7),
 (40, 1, 4, 1, 1, 9),
 (41, 2, 1, 1, 1, 8),
-(42, 4, 3, 1, 2, 8),
+(42, 1, 3, 1, 2, 8),
 (43, 3, 3, 2, 1, 10),
 (44, 2, 3, 2, 2, 6),
 (45, 2, 2, 2, 1, 6),
@@ -273,16 +336,20 @@ INSERT INTO `users` (`userid`, `name`, `username`, `password`, `privilege`, `ema
 --
 
 --
--- Constraints for table `assign`
+-- Constraints
 --
-ALTER TABLE `assign`
-  ADD CONSTRAINT `assign_ibfk_1` FOREIGN KEY (`alumid`) REFERENCES `alumni` (`alumid`);
 
---
--- Constraints for table `status`
---
+ALTER TABLE `alumnifulldata`
+ADD CONSTRAINT `alumnifulldata_ibfk_1` FOREIGN KEY (`alumid`) REFERENCES `alumni` (`alumid`);
+
+ALTER TABLE `calling`
+ADD CONSTRAINT `calling_ibfk_1` FOREIGN KEY (`alumid`) REFERENCES `alumni` (`alumid`);
+
 ALTER TABLE `status`
-  ADD CONSTRAINT `status_ibfk_1` FOREIGN KEY (`alumid`) REFERENCES `alumni` (`alumid`);
+ADD CONSTRAINT `status_ibfk_1` FOREIGN KEY (`alumid`) REFERENCES `alumni` (`alumid`);
+
+ALTER TABLE `status`
+ADD CONSTRAINT `status_ibfk_2` FOREIGN KEY (`touserid`) REFERENCES `users` (`userid`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
