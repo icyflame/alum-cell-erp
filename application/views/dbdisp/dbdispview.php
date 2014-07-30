@@ -53,15 +53,6 @@
 
 				</ul>
 
-			<!-- <div class="btn-group">
-
-				<button type="button" class="btn btn-default <?php echo $c_all ?>"><a href="<?php echo site_url('dbdisplay/buildTable/0') ?> ">All years</a></button>
-				<button type="button" class="btn btn-default <?php echo $c_1 ?>"><a href="<?php echo site_url('dbdisplay/buildTable/'.$year1) ?>"><?php echo $year1 ?></a></button>
-				<button type="button" class="btn btn-default <?php echo $c_2 ?>"><a href="<?php echo site_url('dbdisplay/buildTable/'.$year2) ?>"><?php echo $year2 ?></a></button>
-				<button type="button" class="btn btn-default <?php echo $c_3 ?>"><a href="<?php echo site_url('dbdisplay/buildTable/'.$year3) ?>"><?php echo $year3 ?></a></button>
-
-			</div>
-		-->
 		<hr/>
 
 		<ul class="nav nav-pills nav-stacked">
@@ -127,7 +118,7 @@
 					<td>
 						<a href="<?php echo site_url('profilefetch/showstatus/'.$row['alumid']) ?>">
 							<button class="btn btn-primary">								
-								View Profile
+								View Status
 							</button>
 						</a>
 					</td>

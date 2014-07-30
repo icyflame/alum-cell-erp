@@ -37,7 +37,7 @@ class profilefetch extends CI_Controller{
 			die;
 		}
 
-		$data = $this->profilefetchmodel->getData($alumid);
+		$data = $this->profilefetchmodel->getStatusData($alumid);
 
 		// print_r($data);
 
@@ -115,6 +115,12 @@ class profilefetch extends CI_Controller{
 		$this->load->view('templates/header.html');
 		$this->load->view('profilefetchview', $final_data);
 		$this->load->view('templates/footer.html');
+
+	}
+
+	public function showprofile($alumid){
+
+		return;
 
 	}
 

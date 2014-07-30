@@ -12,7 +12,7 @@ class profilefetchmodel extends CI_Model{
 
 	}
 
-	public function getData($alumid){
+	public function getStatusData($alumid){
 
 		$query = "SELECT * FROM alumni WHERE alumid='$alumid'";
 
