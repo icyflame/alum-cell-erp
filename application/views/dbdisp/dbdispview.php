@@ -81,7 +81,7 @@
 				</th>
 				<th> Hall
 				</th>
-				<th> Department
+				<th> Dept
 				</th>
 				<th> Next Follow Up
 				</th>
