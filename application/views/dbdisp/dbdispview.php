@@ -52,7 +52,7 @@
 					<li class="<?php echo $c_3 ?>"><a href="<?php echo site_url('dbdisplay/buildTable/'.$year3) ?>"><?php echo $year3 ?></a></li>
 
 				</ul>
-
+				
 				<hr/>
 
 				<ul class="nav nav-pills nav-stacked">
