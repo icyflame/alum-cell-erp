@@ -6,4 +6,4 @@ This software uses the CodeIgniter framework, created by EllisLab, Inc.
 
 This software is licensed under the Apache v2 License.
 
-&copy Siddharth Kannan, 2014
+Copyright held by Siddharth Kannan.
