@@ -36,12 +36,28 @@ class sponscont extends CI_Controller{
 		// $this->form_validation->set_rules('username', 'Username', 'required');
 		// $this->form_validation->set_rules('password', 'password', 'required');
 
+		$this->form_validation->set_rules('compname', 'compname', 'required');
+		$this->form_validation->set_rules('desc', 'desc', 'required');
+		$this->form_validation->set_rules('contactname', 'contactname', 'required');
+		$this->form_validation->set_rules('contactdesig', 'contactdesig', 'required');
+		$this->form_validation->set_rules('contphone', 'contphone', 'required');
+		$this->form_validation->set_rules('contemailid', 'contemailid', 'required|valid_email');
+
 		if ($this->form_validation->run() === FALSE)
 		{
 			// echo 'Form not yet validated successfully. Try Again.';
 
+			$this->load->view('templates/header.html');
 			$this->load->view('sponsorship/addspons.html');
+			$this->load->view('templates/footer.html');
 
+		}
+
+		else{
+
+			echo 'Thanks a lot! The form was successfully submitted. We will talk with the model now.<br/>';
+
+			 $this->sponsmodel->addRecord();
 		}
 
 
