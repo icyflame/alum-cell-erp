@@ -16,7 +16,19 @@ class auth extends CI_Controller{
 	}
 
 	public function index(){
-		$this->loginval();
+
+		if(isset($_SESSION['loggedin'])){
+
+			$url = site_url('member/specificYear');
+
+			header("Refresh:0, url='$url'");
+		}
+
+		else{
+
+			$this->loginval();
+
+		}
 	}
 
 	public function loginval()
@@ -64,6 +76,7 @@ class auth extends CI_Controller{
 				$this->session->set_userdata($sessdat);
 
 				$_SESSION['loggedin'] = '0';
+				$_SESSION['time'] = time();
 
 				// $this->load->view('authentication/viewstat', $data);
 
