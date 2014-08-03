@@ -9,7 +9,7 @@
 
 <body>
 
-	<p> Entered the newsfeed view. </p>
+	<!-- <p> Entered the newsfeed view. </p> -->
 
 	<table class="table table-striped">
 
@@ -17,6 +17,7 @@
 
 			<th>Time</th>
 			<th>Alumni ID</th>
+			<th>Username</th>
 			<th>News</th>
 
 		</thead>
@@ -30,6 +31,7 @@
 
 				<td><?php echo $row['activitytime']; ?></td>
 				<td><?php echo $row['alumid']; ?></td>
+				<td><?php echo $this->userdb->getusername($row['userid']); ?></td>
 				<td><?php echo $row['newsitem']; ?></td>
 
 			</tr>

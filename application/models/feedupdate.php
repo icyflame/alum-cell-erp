@@ -16,13 +16,13 @@ class feedupdate extends CI_Model{
 
 	public function updateFeed($alumid, $field, $earlier, $present){
 
-		$userid = $this->session->userdata('userid');
+		$uid = $this->session->userdata('userid');
 
 		$username = $this->session->userdata('username');
 
 		$value = $username.' changed the value of '.$field.' from '.$earlier.' to '.$present.' for Alumni ID '.$alumid;
 
-		$query = "INSERT INTO `latestactivity`(`alumid`, `newsitem`) VALUES('$alumid', '$value')";
+		$query = "INSERT INTO `latestactivity`(`alumid`, `userid`, `newsitem`) VALUES('$alumid', '$uid', '$value')";
 
 		$res = $this->db->query($query);
 

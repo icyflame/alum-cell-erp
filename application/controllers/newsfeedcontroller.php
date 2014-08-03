@@ -10,6 +10,8 @@ class newsfeedcontroller extends CI_Controller{
 
 		$this->load->model('feedupdate');
 
+		$this->load->model('userdb');
+
 	}
 
 	public function shownewsfeed(){
