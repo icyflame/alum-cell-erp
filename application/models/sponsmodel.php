@@ -18,7 +18,7 @@ class sponsmodel extends CI_Model{
 
 		$final_data = $res->result_array();
 
-		print_r($final_data);
+		// print_r($final_data);
 
 		return array('data'=>$final_data);
 	}

@@ -23,7 +23,7 @@ class sponscont extends CI_Controller{
 
 		$data = $this->sponsmodel->getDataHome();
 
-		$this->load->view('templates/header.html');
+		$this->load->view('templates/headerspons.html');
 		$this->load->view('sponsorship/sponshome.php', $data);
 		$this->load->view('templates/footer.html');
 	}
@@ -47,7 +47,7 @@ class sponscont extends CI_Controller{
 		{
 			// echo 'Form not yet validated successfully. Try Again.';
 
-			$this->load->view('templates/header.html');
+			$this->load->view('templates/headerspons.html');
 			$this->load->view('sponsorship/addspons.html');
 			$this->load->view('templates/footer.html');
 
