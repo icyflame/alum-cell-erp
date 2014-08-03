@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 30, 2014 at 08:59 AM
+-- Generation Time: Aug 03, 2014 at 12:25 PM
 -- Server version: 5.5.36
 -- PHP Version: 5.4.25
 
@@ -26,6 +26,8 @@ USE `erp`;
 
 --
 -- Table structure for table `alumni`
+--
+-- Creation: Aug 03, 2014 at 10:19 AM
 --
 
 CREATE TABLE IF NOT EXISTS `alumni` (
@@ -95,6 +97,8 @@ INSERT INTO `alumni` (`alumid`, `name`, `hall`, `dept`, `alumSince`) VALUES
 --
 -- Table structure for table `alumnifulldata`
 --
+-- Creation: Aug 03, 2014 at 10:19 AM
+--
 
 CREATE TABLE IF NOT EXISTS `alumnifulldata` (
   `alumid` int(11) NOT NULL AUTO_INCREMENT,
@@ -111,6 +115,12 @@ CREATE TABLE IF NOT EXISTS `alumnifulldata` (
   `remarks` varchar(250) NOT NULL,
   PRIMARY KEY (`alumid`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=48 ;
+
+--
+-- RELATIONS FOR TABLE `alumnifulldata`:
+--   `alumid`
+--       `alumni` -> `alumid`
+--
 
 --
 -- Dumping data for table `alumnifulldata`
@@ -170,12 +180,21 @@ INSERT INTO `alumnifulldata` (`alumid`, `dateofbirth`, `rollnumber`, `company`, 
 --
 -- Table structure for table `calling`
 --
+-- Creation: Aug 03, 2014 at 10:19 AM
+--
 
 CREATE TABLE IF NOT EXISTS `calling` (
   `alumid` int(11) NOT NULL,
   `followup` date NOT NULL DEFAULT '2014-07-20',
-  `lastdate` date NOT NULL DEFAULT '2014-07-01'
+  `lastdate` date NOT NULL DEFAULT '2014-07-01',
+  KEY `calling_ibfk_1` (`alumid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- RELATIONS FOR TABLE `calling`:
+--   `alumid`
+--       `alumni` -> `alumid`
+--
 
 --
 -- Dumping data for table `calling`
@@ -233,7 +252,34 @@ INSERT INTO `calling` (`alumid`, `followup`, `lastdate`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `latestactivity`
+--
+-- Creation: Aug 03, 2014 at 10:19 AM
+--
+
+CREATE TABLE IF NOT EXISTS `latestactivity` (
+  `numid` int(10) NOT NULL AUTO_INCREMENT,
+  `activitytime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `alumid` int(10) NOT NULL,
+  `userid` int(10) NOT NULL,
+  `newsitem` varchar(300) NOT NULL,
+  PRIMARY KEY (`numid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `latestactivity`
+--
+
+INSERT INTO `latestactivity` (`numid`, `activitytime`, `alumid`, `userid`, `newsitem`) VALUES
+(1, '2014-08-03 10:22:14', 41, 8, 'mem8 changed the value of called from 1 to 3 for Alumni ID 41'),
+(2, '2014-08-03 10:22:41', 16, 8, 'mem8 changed the value of search from 3 to 4 for Alumni ID 16');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `status`
+--
+-- Creation: Aug 03, 2014 at 10:19 AM
 --
 
 CREATE TABLE IF NOT EXISTS `status` (
@@ -243,8 +289,17 @@ CREATE TABLE IF NOT EXISTS `status` (
   `register` int(11) NOT NULL,
   `pay` int(11) NOT NULL,
   `touserid` int(11) NOT NULL,
-  PRIMARY KEY (`alumid`)
+  PRIMARY KEY (`alumid`),
+  KEY `status_ibfk_2` (`touserid`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='stores status about the alumni' AUTO_INCREMENT=49 ;
+
+--
+-- RELATIONS FOR TABLE `status`:
+--   `touserid`
+--       `users` -> `userid`
+--   `alumid`
+--       `alumni` -> `alumid`
+--
 
 --
 -- Dumping data for table `status`
@@ -253,10 +308,10 @@ CREATE TABLE IF NOT EXISTS `status` (
 INSERT INTO `status` (`alumid`, `search`, `called`, `register`, `pay`, `touserid`) VALUES
 (1, 2, 4, 1, 2, 8),
 (2, 1, 2, 1, 2, 10),
-(3, 4, 4, 2, 1, 9),
+(3, 3, 4, 2, 1, 9),
 (4, 1, 3, 1, 1, 9),
 (5, 1, 4, 1, 1, 6),
-(6, 2, 1, 2, 2, 8),
+(6, 3, 1, 2, 2, 8),
 (7, 1, 2, 1, 2, 10),
 (8, 4, 2, 2, 2, 6),
 (9, 1, 4, 1, 2, 10),
@@ -266,7 +321,7 @@ INSERT INTO `status` (`alumid`, `search`, `called`, `register`, `pay`, `touserid
 (13, 4, 4, 2, 1, 8),
 (14, 4, 3, 1, 2, 6),
 (15, 3, 1, 1, 1, 10),
-(16, 3, 4, 2, 1, 8),
+(16, 4, 4, 2, 1, 8),
 (17, 3, 4, 2, 1, 9),
 (18, 1, 1, 1, 1, 9),
 (19, 2, 4, 2, 1, 9),
@@ -291,7 +346,7 @@ INSERT INTO `status` (`alumid`, `search`, `called`, `register`, `pay`, `touserid
 (38, 2, 3, 1, 2, 9),
 (39, 1, 1, 2, 2, 7),
 (40, 1, 4, 1, 1, 9),
-(41, 2, 1, 1, 1, 8),
+(41, 2, 3, 1, 1, 8),
 (42, 1, 3, 1, 2, 8),
 (43, 3, 3, 2, 1, 10),
 (44, 2, 3, 2, 2, 6),
@@ -303,6 +358,8 @@ INSERT INTO `status` (`alumid`, `search`, `called`, `register`, `pay`, `touserid
 
 --
 -- Table structure for table `users`
+--
+-- Creation: Aug 03, 2014 at 10:19 AM
 --
 
 CREATE TABLE IF NOT EXISTS `users` (
@@ -336,20 +393,27 @@ INSERT INTO `users` (`userid`, `name`, `username`, `password`, `privilege`, `ema
 --
 
 --
--- Constraints
+-- Constraints for table `alumnifulldata`
 --
-
 ALTER TABLE `alumnifulldata`
-ADD CONSTRAINT `alumnifulldata_ibfk_1` FOREIGN KEY (`alumid`) REFERENCES `alumni` (`alumid`);
+  ADD CONSTRAINT `alumnifulldata_ibfk_1` FOREIGN KEY (`alumid`) REFERENCES `alumni` (`alumid`);
 
+--
+-- Constraints for table `calling`
+--
 ALTER TABLE `calling`
-ADD CONSTRAINT `calling_ibfk_1` FOREIGN KEY (`alumid`) REFERENCES `alumni` (`alumid`);
+  ADD CONSTRAINT `calling_ibfk_1` FOREIGN KEY (`alumid`) REFERENCES `alumni` (`alumid`);
 
+--
+-- Constraints for table `status`
+--
 ALTER TABLE `status`
-ADD CONSTRAINT `status_ibfk_1` FOREIGN KEY (`alumid`) REFERENCES `alumni` (`alumid`);
+  ADD CONSTRAINT `status_ibfk_2` FOREIGN KEY (`touserid`) REFERENCES `users` (`userid`),
+  ADD CONSTRAINT `status_ibfk_1` FOREIGN KEY (`alumid`) REFERENCES `alumni` (`alumid`);
 
-ALTER TABLE `status`
-ADD CONSTRAINT `status_ibfk_2` FOREIGN KEY (`touserid`) REFERENCES `users` (`userid`);
+ALTER TABLE `latestactivity`
+  ADD CONSTRAINT `latestactivity_ibfk_2` FOREIGN KEY (`userid`) REFERENCES `users` (`userid`),
+  ADD CONSTRAINT `latestactivity_ibfk_1` FOREIGN KEY (`alumid`) REFERENCES `alumni` (`alumid`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

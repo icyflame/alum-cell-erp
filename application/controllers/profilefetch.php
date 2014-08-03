@@ -7,6 +7,8 @@ class profilefetch extends CI_Controller{
 
 		$this->load->model('profilefetchmodel');
 
+		$this->load->model('feedupdate');
+
 		$this->load->library('session');
 
 		$this->load->helper('url');
@@ -132,6 +134,10 @@ class profilefetch extends CI_Controller{
 
 	public function updateSearch($alumid, $value){
 
+		$s_stat = $this->profilefetchmodel->getSearch($alumid);
+
+		$this->feedupdate->updateFeed($alumid, 'search', $s_stat, $value);
+
 		$this->profilefetchmodel->updateSearch($alumid, $value);
 
 		$url = site_url('profilefetch/showstatus/'.$alumid);
@@ -141,6 +147,10 @@ class profilefetch extends CI_Controller{
 	}
 
 	public function updateCalling($alumid, $value){
+
+		$c_stat = $this->profilefetchmodel->getCalling($alumid);
+
+		$this->feedupdate->updateFeed($alumid, 'called', $c_stat, $value);
 
 		$this->profilefetchmodel->updateCalling($alumid, $value);
 
