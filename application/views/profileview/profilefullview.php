@@ -1,5 +1,12 @@
 <html>
 
+<head>
+
+	<link rel="stylesheet" href="<?php echo base_url().'bootstrap/bootstrap.min.css'; ?>">
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+</head>
+
 <body style="margin-left: 20px; margin-right: 20px;">
 
 	<?php 
