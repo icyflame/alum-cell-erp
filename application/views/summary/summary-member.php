@@ -2,8 +2,8 @@
 
 <head>
 
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="<?php echo base_url().'bootstrap/bootstrap.min.css'; ?>">
+	<script src="<?php echo base_url().'bootstrap/bootstrap.min.js'; ?>"></script>
 
 	<style>
 

@@ -1,5 +1,12 @@
 <html>
 
+<head>
+
+	<link rel="stylesheet" href="<?php echo base_url().'bootstrap/bootstrap.min.css'; ?>">
+	<script src="<?php echo base_url().'bootstrap/bootstrap.min.js'; ?>"></script>
+
+</head>
+
 <body style="margin-left: 20px; margin-right: 20px;">
 
 	<h3> Alumni ID <?php echo $alumid ?> </h3>
