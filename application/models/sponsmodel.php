@@ -8,11 +8,19 @@ class sponsmodel extends CI_Model{
 
 		$this->load->database();
 
+		$this->load->library('session');
+
 	}
 
 	public function getDataHome(){
 
-		$query = "SELECT sd.name, sd.description, sc.latestcalldate, sc.nextcalldate from sponsdata sd, sponscalling sc where sd.companyid=sc.companyid";
+		$userid = $this->session->userdata('userid');
+
+		$query = "SELECT sd.name, sd.description, sc.latestcalldate, sc.nextcalldate
+				 from sponsdata sd, sponscalling sc 
+				 where sd.companyid=sc.companyid and sd.touserid='$userid'";
+
+		// echo $query;
 
 		$res = $this->db->query($query);
 
