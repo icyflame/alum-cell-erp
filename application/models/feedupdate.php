@@ -24,15 +24,36 @@ class feedupdate extends CI_Model{
 
 		$query = "INSERT INTO `latestactivity`(`alumid`, `newsitem`) VALUES('$alumid', '$value')";
 
-		if($res = $this->db->query($query))
+		$res = $this->db->query($query);
 
-			echo 'Query executed successfully.';
+		// if($res = $this->db->query($query))
 
-		else
+		// 	echo 'Query executed successfully.';
 
-			echo 'Query unsuccessful.';
+		// else
+
+		// 	echo 'Query unsuccessful.';
 
 
+
+	}
+
+	public function getData(){
+
+		$query = "SELECT * FROM latestactivity ORDER BY activitytime DESC";
+
+		$res = $this->db->query($query);
+
+		// print_r($res->result_array());
+
+		$final_data = $res->result_array();
+		// $final_data = $final_data[0];
+
+		// print_r($final_data);
+
+		return array('data'=>$final_data);
+
+		// return $final_data;
 
 	}
 }
