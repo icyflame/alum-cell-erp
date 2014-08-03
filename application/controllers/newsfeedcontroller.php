@@ -19,7 +19,7 @@ class newsfeedcontroller extends CI_Controller{
 		$data = $this->feedupdate->getData();
 
 		$this->load->view('templates/header.html');
-		$this->load->view('newsfeedview', $data);
+		$this->load->view('newsfeedview/newsfeedview.php', $data);
 		$this->load->view('templates/footer.html');
 	}
 }
