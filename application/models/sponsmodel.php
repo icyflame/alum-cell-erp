@@ -76,7 +76,29 @@ class sponsmodel extends CI_Model{
 
 			echo 'Query unsuccessful.';
 
+	}
 
+	public function getFullData($companyid){
+
+		$query = "SELECT * from sponsdata sd 
+		JOIN sponscalling sc on sd.companyid=sc.companyid 
+		JOIN sponsaux sa on sd.companyid=sa.companyid 
+		JOIN sponsproposal sp on sd.companyid=sp.companyid
+		WHERE sd.companyid='$companyid'";
+
+		$res = $this->db->query($query);
+
+		$res = $res->result_array();
+
+		echo '<h1>RES</h1>';
+		print_r($res);
+		echo '<br/><br/>';
+
+		return array('data'=>array_values($res[0]));
+
+	}
+
+	public function updateProfile(){
 
 	}
 }
