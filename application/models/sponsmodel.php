@@ -97,6 +97,20 @@ class sponsmodel extends CI_Model{
 	public function updateProfile(){
 
 	}
+
+	public function checkAllotment($companyid){
+
+		// returns false if the allotment is legal
+		// returns true if the allotment is illegal
+
+		$query = "SELECT touserid from sponsdata where companyid='$companyid'";
+
+		$res = $this->db->query($query);
+
+		$res = $res->result_array(); 
+
+		return !($res[0]['touserid'] == $this->session->userdata('userid'));
+	}
 }
 
 ?>

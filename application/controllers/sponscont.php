@@ -62,6 +62,21 @@ class sponscont extends CI_Controller{
 
 	public function showprofile($companyId){
 
+		if($this->sponsmodel->checkAllotment($companyId)){
+
+			echo $this->load->view('templates/header.html', array(), TRUE);
+
+			echo '<h2>This Sponsor has not been allotted to you.<br/><h2>';
+
+			$url = site_url('sponscont/');
+
+			echo "<h4><a href='$url'>Go back to Summary Page</a><h4>";
+
+			echo $this->load->view('templates/footer.html', array(), TRUE);
+
+			die;
+		}
+
 		$data = $this->sponsmodel->getFullData($companyId);
 
 		$this->load->view('templates/headerspons.html');
