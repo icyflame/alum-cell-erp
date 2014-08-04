@@ -7,7 +7,7 @@
 
 	<style>
 
-	tr td{
+	tr td.field{
 		width: 50%;
 	}
 
@@ -44,81 +44,92 @@
 		'Contact Email ID', // calling details begin
 		'First Call Date',
 		'Latest Call Date',
-		'Next Call Date', // auxilliary data begin
+		'Next Call Date', // proposal data begin
+		'Date the Proposal was sent', 
+		'Name of the person proposal was sent to',
+		'Email ID of person', // auxilliary
 		'How to pitch',
 		'Final Status',
 		'Remarks',
-		'Completion Status', // proposal details
-		'Date the Proposal was sent', 
-		'Name of the person proposal was sent to',
-		'Email ID of person'
+		'Completion Status'
 		);
 
 	$contactDetailsBegin = 4;
+	$callingDetailsBegin = 8;
+	$proposalDetailsBegin = 11;
+	$auxDetailsBegin = 14;
 
-		?>
+	?>
 
-		<table class="table table-bordered table-striped">
+	<table class="table table-bordered table-striped">
 
-			<tbody>
-
-				<?php for($i = 0; $i < count($name_fields); $i = $i + 1): ?>
-
-				<?php if($i == $contactDetailsBegin): ?>
-
-				<tr>
-					<td>
-						Contact Details
-					</td>
-				</tr>
-
-			<?php endif;?>
+		<tbody>
 
 			<tr>
-
 				<td>
-
-					<?php echo $name_fields[$i]; ?>
-
+					<h1>Company Details</h1>
 				</td>
-
-				<td>
-
-					<?php echo $ent[$i]; ?>
-
-				</td>
-
 			</tr>
 
-		<?php endfor; ?>
+			<?php for($i = 0; $i < count($name_fields); $i = $i + 1): ?>
 
-	</tbody>
+			<?php if($i == $contactDetailsBegin): ?>
+
+			<tr>
+				<td>
+					<h1>Contact Details</h1>
+				</td>
+			</tr>
+
+		<?php elseif($i == $callingDetailsBegin): ?>
+
+		<tr>
+			<td>
+				<h1>Details regarding Calling</h1>
+			</td>
+		</tr>
+
+	<?php elseif($i == $proposalDetailsBegin): ?>
+
+	<tr>
+		<td>
+			<h1>Proposal Details</h1>
+		</td>
+	</tr>
+
+<?php elseif($i == $auxDetailsBegin): ?>
+
+	<tr>
+		<td>
+			<h1>Auxilliary Details</h1>
+		</td>
+	</tr>
+
+<?php endif;?>
+
+<tr>
+
+	<td class="field">
+
+		<?php echo $name_fields[$i]; ?>
+
+	</td>
+
+	<td class="field">
+
+		<?php echo $ent[$i]; ?>
+
+	</td>
+
+</tr>
+
+<?php endfor; ?>
+
+</tbody>
 
 
 </table>
 
-		<!-- <h3> Alumni ID  <?php echo $ent[$i]; $i = $i + 1; ?> </h3>
-		<h2> <?php echo $ent[$i]; $i = $i + 1; ?> </h2>
-		<h4> <?php echo $ent[$i]; $i = $i + 1; ?> </h4>
-		<h4> <?php echo $ent[$i]; $i = $i + 1; ?> </h4>
-		<h5> An alumni since  <?php echo $ent[$i]; $i = $i + 1; ?> </h5>
+</body>
 
-		<h5> Date of Birth: <?php echo $ent[$i]; $i = $i + 1; ?> </h5>
-		<h5> Roll Number: <?php echo $ent[$i]; $i = $i + 1; ?> </h5>
-
-		<h5> Company: <?php echo $ent[$i]; $i = $i + 1; ?> </h5>
-		<h5> Designation: <?php echo $ent[$i]; $i = $i + 1; ?> </h5>
-		<h5> Office Address: <?php echo $ent[$i]; $i = $i + 1; ?> </h5>
-		<h5> Home Address: <?php echo $ent[$i]; $i = $i + 1; ?> </h5>
-		<h5> Office Phone: <?php echo $ent[$i]; $i = $i + 1; ?> </h5>
-		<h5> Home Phone: <?php echo $ent[$i]; $i = $i + 1; ?> </h5>
-		<h5> Email Office: <?php echo $ent[$i]; $i = $i + 1; ?> </h5>
-		<h5> Email Personal: <?php echo $ent[$i]; $i = $i + 1; ?> </h5> -->
-
-
-
-
-
-	</body>
-
-	</html>
+</html>

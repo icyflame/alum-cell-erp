@@ -82,8 +82,8 @@ class sponsmodel extends CI_Model{
 
 		$query = "SELECT * from sponsdata sd 
 		JOIN sponscalling sc on sd.companyid=sc.companyid 
+		JOIN sponsproposal sp on sd.companyid=sp.companyid 
 		JOIN sponsaux sa on sd.companyid=sa.companyid 
-		JOIN sponsproposal sp on sd.companyid=sp.companyid
 		WHERE sd.companyid='$companyid'";
 
 		$res = $this->db->query($query);
