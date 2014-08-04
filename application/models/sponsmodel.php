@@ -16,7 +16,7 @@ class sponsmodel extends CI_Model{
 
 		$userid = $this->session->userdata('userid');
 
-		$query = "SELECT sd.name, sd.description, sc.latestcalldate, sc.nextcalldate
+		$query = "SELECT sd.companyid, sd.name, sd.description, sc.latestcalldate, sc.nextcalldate
 				 from sponsdata sd, sponscalling sc 
 				 where sd.companyid=sc.companyid and sd.touserid='$userid'";
 
@@ -89,10 +89,6 @@ class sponsmodel extends CI_Model{
 		$res = $this->db->query($query);
 
 		$res = $res->result_array();
-
-		echo '<h1>RES</h1>';
-		print_r($res);
-		echo '<br/><br/>';
 
 		return array('data'=>array_values($res[0]));
 

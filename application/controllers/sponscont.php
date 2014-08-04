@@ -60,13 +60,19 @@ class sponscont extends CI_Controller{
 
 	}
 
-	public function editProfile($companyId){
+	public function showprofile($companyId){
 
 		$data = $this->sponsmodel->getFullData($companyId);
 
 		$this->load->view('templates/headerspons.html');
 		$this->load->view('sponsorship/sponsprofile.php', $data);
 		$this->load->view('templates/footer.html');
+
+	}
+
+	public function editprofile($companyid){
+
+		return 0;
 
 		// $this->load->helper('form');
 		// $this->load->library('form_validation');

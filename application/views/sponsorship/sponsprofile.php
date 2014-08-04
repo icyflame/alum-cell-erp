@@ -24,13 +24,13 @@
 
 	$ent = $data;
 
-	print_r($ent);
+	// print_r($ent);
 
 	// $ent = array_values($ent);
 
 	?>
 
-	<h1 style="text-align: center; color: #999999"> Sponsor Profile <?php echo $data[2]; ?></h1>
+	<h1 style="text-align: center; color: #777"> Sponsor Profile (<?php echo $data[2]; ?>)</h1>
 
 	<?php
 

@@ -25,6 +25,7 @@
 			<th>Description</th>
 			<th>Latest Call Date</th>
 			<th>Next Call Date</th>
+			<th></th>
 
 		</thead>
 
@@ -39,6 +40,8 @@
 				<td><?php echo $row['description']; ?></td>
 				<td><?php echo $row['latestcalldate']; ?></td>
 				<td><?php echo $row['nextcalldate']; ?></td>
+				<?php $id = $row['companyid']; ?>
+				<td><a href="<?php echo site_url('sponscont/showprofile/'.$id); ?>"><button class="btn btn-success">Profile</button></a></td>
 
 			</tr>
 
