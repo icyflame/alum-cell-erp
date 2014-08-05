@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Aug 03, 2014 at 12:25 PM
+-- Generation Time: Aug 03, 2014 at 08:17 PM
 -- Server version: 5.5.36
 -- PHP Version: 5.4.25
 
@@ -27,7 +27,7 @@ USE `erp`;
 --
 -- Table structure for table `alumni`
 --
--- Creation: Aug 03, 2014 at 10:19 AM
+-- Creation: Aug 03, 2014 at 10:27 AM
 --
 
 CREATE TABLE IF NOT EXISTS `alumni` (
@@ -97,7 +97,7 @@ INSERT INTO `alumni` (`alumid`, `name`, `hall`, `dept`, `alumSince`) VALUES
 --
 -- Table structure for table `alumnifulldata`
 --
--- Creation: Aug 03, 2014 at 10:19 AM
+-- Creation: Aug 03, 2014 at 10:27 AM
 --
 
 CREATE TABLE IF NOT EXISTS `alumnifulldata` (
@@ -180,7 +180,7 @@ INSERT INTO `alumnifulldata` (`alumid`, `dateofbirth`, `rollnumber`, `company`, 
 --
 -- Table structure for table `calling`
 --
--- Creation: Aug 03, 2014 at 10:19 AM
+-- Creation: Aug 03, 2014 at 10:27 AM
 --
 
 CREATE TABLE IF NOT EXISTS `calling` (
@@ -254,7 +254,7 @@ INSERT INTO `calling` (`alumid`, `followup`, `lastdate`) VALUES
 --
 -- Table structure for table `latestactivity`
 --
--- Creation: Aug 03, 2014 at 10:19 AM
+-- Creation: Aug 03, 2014 at 10:27 AM
 --
 
 CREATE TABLE IF NOT EXISTS `latestactivity` (
@@ -263,8 +263,18 @@ CREATE TABLE IF NOT EXISTS `latestactivity` (
   `alumid` int(10) NOT NULL,
   `userid` int(10) NOT NULL,
   `newsitem` varchar(300) NOT NULL,
-  PRIMARY KEY (`numid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+  PRIMARY KEY (`numid`),
+  KEY `latestactivity_ibfk_2` (`userid`),
+  KEY `latestactivity_ibfk_1` (`alumid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- RELATIONS FOR TABLE `latestactivity`:
+--   `alumid`
+--       `alumni` -> `alumid`
+--   `userid`
+--       `users` -> `userid`
+--
 
 --
 -- Dumping data for table `latestactivity`
@@ -272,14 +282,120 @@ CREATE TABLE IF NOT EXISTS `latestactivity` (
 
 INSERT INTO `latestactivity` (`numid`, `activitytime`, `alumid`, `userid`, `newsitem`) VALUES
 (1, '2014-08-03 10:22:14', 41, 8, 'mem8 changed the value of called from 1 to 3 for Alumni ID 41'),
-(2, '2014-08-03 10:22:41', 16, 8, 'mem8 changed the value of search from 3 to 4 for Alumni ID 16');
+(2, '2014-08-03 10:22:41', 16, 8, 'mem8 changed the value of search from 3 to 4 for Alumni ID 16'),
+(3, '2014-08-03 12:12:45', 3, 9, 'mem9 changed the value of search from 3 to 2 for Alumni ID 3'),
+(4, '2014-08-03 12:13:08', 25, 9, 'mem9 changed the value of search from 2 to 4 for Alumni ID 25');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sponsaux`
+--
+-- Creation: Aug 03, 2014 at 05:51 PM
+--
+
+CREATE TABLE IF NOT EXISTS `sponsaux` (
+  `companyid` int(10) NOT NULL,
+  `howtopitch` varchar(500) NOT NULL,
+  `finalstatus` varchar(500) NOT NULL,
+  `remarks` varchar(500) NOT NULL,
+  `completed` int(10) NOT NULL,
+  PRIMARY KEY (`companyid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `sponsaux`
+--
+
+INSERT INTO `sponsaux` (`companyid`, `howtopitch`, `finalstatus`, `remarks`, `completed`) VALUES
+(1, '', '', '', 0),
+(2, '', '', '', 0),
+(3, '', '', '', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sponscalling`
+--
+-- Creation: Aug 03, 2014 at 05:49 PM
+--
+
+CREATE TABLE IF NOT EXISTS `sponscalling` (
+  `companyid` int(10) NOT NULL,
+  `firstcalldate` date NOT NULL,
+  `latestcalldate` date NOT NULL,
+  `nextcalldate` date NOT NULL,
+  PRIMARY KEY (`companyid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `sponscalling`
+--
+
+INSERT INTO `sponscalling` (`companyid`, `firstcalldate`, `latestcalldate`, `nextcalldate`) VALUES
+(1, '0000-00-00', '0000-00-00', '0000-00-00'),
+(2, '0000-00-00', '0000-00-00', '0000-00-00'),
+(3, '0000-00-00', '0000-00-00', '0000-00-00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sponsdata`
+--
+-- Creation: Aug 03, 2014 at 05:48 PM
+--
+
+CREATE TABLE IF NOT EXISTS `sponsdata` (
+  `companyid` int(10) NOT NULL AUTO_INCREMENT,
+  `touserid` int(10) NOT NULL,
+  `name` varchar(150) NOT NULL,
+  `description` varchar(300) NOT NULL,
+  `contname` varchar(100) NOT NULL,
+  `contdesig` varchar(200) NOT NULL,
+  `contphone` varchar(50) NOT NULL,
+  `contemailid` varchar(90) NOT NULL,
+  PRIMARY KEY (`companyid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `sponsdata`
+--
+
+INSERT INTO `sponsdata` (`companyid`, `touserid`, `name`, `description`, `contname`, `contdesig`, `contphone`, `contemailid`) VALUES
+(1, 8, 'Google', 'A software company', 'Larry Page', 'CEO', '444', 'larry.page@gmail.com'),
+(2, 8, 'Google', 'A software company', 'Larry Page', 'CEO', '444', 'larry.page@gmail.com'),
+(3, 9, 'GitHub', 'Code together, Code better', 'Tom Preston-Werner', 'CEO and Founder', '555', 'tom.preston.werner@github.com');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sponsproposal`
+--
+-- Creation: Aug 03, 2014 at 12:29 PM
+--
+
+CREATE TABLE IF NOT EXISTS `sponsproposal` (
+  `companyid` int(10) NOT NULL,
+  `datesent` date NOT NULL,
+  `toname` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `sponsproposal`
+--
+
+INSERT INTO `sponsproposal` (`companyid`, `datesent`, `toname`, `email`) VALUES
+(1, '0000-00-00', '', ''),
+(2, '0000-00-00', '', ''),
+(3, '0000-00-00', '', '');
 
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `status`
 --
--- Creation: Aug 03, 2014 at 10:19 AM
+-- Creation: Aug 03, 2014 at 10:27 AM
 --
 
 CREATE TABLE IF NOT EXISTS `status` (
@@ -291,14 +407,14 @@ CREATE TABLE IF NOT EXISTS `status` (
   `touserid` int(11) NOT NULL,
   PRIMARY KEY (`alumid`),
   KEY `status_ibfk_2` (`touserid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='stores status about the alumni' AUTO_INCREMENT=49 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='stores status about the alumni' AUTO_INCREMENT=48 ;
 
 --
 -- RELATIONS FOR TABLE `status`:
---   `touserid`
---       `users` -> `userid`
 --   `alumid`
 --       `alumni` -> `alumid`
+--   `touserid`
+--       `users` -> `userid`
 --
 
 --
@@ -308,7 +424,7 @@ CREATE TABLE IF NOT EXISTS `status` (
 INSERT INTO `status` (`alumid`, `search`, `called`, `register`, `pay`, `touserid`) VALUES
 (1, 2, 4, 1, 2, 8),
 (2, 1, 2, 1, 2, 10),
-(3, 3, 4, 2, 1, 9),
+(3, 2, 4, 2, 1, 9),
 (4, 1, 3, 1, 1, 9),
 (5, 1, 4, 1, 1, 6),
 (6, 3, 1, 2, 2, 8),
@@ -330,7 +446,7 @@ INSERT INTO `status` (`alumid`, `search`, `called`, `register`, `pay`, `touserid
 (22, 3, 1, 2, 2, 6),
 (23, 2, 2, 1, 1, 7),
 (24, 4, 1, 1, 2, 9),
-(25, 2, 3, 2, 1, 9),
+(25, 4, 3, 2, 1, 9),
 (26, 1, 3, 2, 1, 6),
 (27, 2, 1, 1, 1, 8),
 (28, 4, 4, 2, 2, 6),
@@ -359,7 +475,7 @@ INSERT INTO `status` (`alumid`, `search`, `called`, `register`, `pay`, `touserid
 --
 -- Table structure for table `users`
 --
--- Creation: Aug 03, 2014 at 10:19 AM
+-- Creation: Aug 03, 2014 at 10:27 AM
 --
 
 CREATE TABLE IF NOT EXISTS `users` (
@@ -396,24 +512,39 @@ INSERT INTO `users` (`userid`, `name`, `username`, `password`, `privilege`, `ema
 -- Constraints for table `alumnifulldata`
 --
 ALTER TABLE `alumnifulldata`
-  ADD CONSTRAINT `alumnifulldata_ibfk_1` FOREIGN KEY (`alumid`) REFERENCES `alumni` (`alumid`);
+ADD CONSTRAINT `alumnifulldata_ibfk_1` FOREIGN KEY (`alumid`) REFERENCES `alumni` (`alumid`);
 
 --
 -- Constraints for table `calling`
 --
 ALTER TABLE `calling`
-  ADD CONSTRAINT `calling_ibfk_1` FOREIGN KEY (`alumid`) REFERENCES `alumni` (`alumid`);
+ADD CONSTRAINT `calling_ibfk_1` FOREIGN KEY (`alumid`) REFERENCES `alumni` (`alumid`);
+
+--
+-- Constraints for table `latestactivity`
+--
+ALTER TABLE `latestactivity`
+ADD CONSTRAINT `latestactivity_ibfk_1` FOREIGN KEY (`alumid`) REFERENCES `alumni` (`alumid`),
+ADD CONSTRAINT `latestactivity_ibfk_2` FOREIGN KEY (`userid`) REFERENCES `users` (`userid`);
 
 --
 -- Constraints for table `status`
 --
 ALTER TABLE `status`
-  ADD CONSTRAINT `status_ibfk_2` FOREIGN KEY (`touserid`) REFERENCES `users` (`userid`),
-  ADD CONSTRAINT `status_ibfk_1` FOREIGN KEY (`alumid`) REFERENCES `alumni` (`alumid`);
+ADD CONSTRAINT `status_ibfk_1` FOREIGN KEY (`alumid`) REFERENCES `alumni` (`alumid`),
+ADD CONSTRAINT `status_ibfk_2` FOREIGN KEY (`touserid`) REFERENCES `users` (`userid`);
 
-ALTER TABLE `latestactivity`
-  ADD CONSTRAINT `latestactivity_ibfk_2` FOREIGN KEY (`userid`) REFERENCES `users` (`userid`),
-  ADD CONSTRAINT `latestactivity_ibfk_1` FOREIGN KEY (`alumid`) REFERENCES `alumni` (`alumid`);
+ALTER TABLE `sponsdata`
+ADD CONSTRAINT `sponsdata_ibfk_1` FOREIGN KEY (`touserid`) REFERENCES `users` (`userid`);
+
+ALTER TABLE `sponsaux`
+ADD CONSTRAINT `sponsaux_ibfk_1` FOREIGN KEY (`companyid`) REFERENCES `sponsdata` (`companyid`);
+
+ALTER TABLE `sponscalling`
+ADD CONSTRAINT `sponscalling_ibfk_1` FOREIGN KEY (`companyid`) REFERENCES `sponsdata` (`companyid`);
+
+ALTER TABLE `sponsproposal`
+ADD CONSTRAINT `sponsproposal_ibfk_1` FOREIGN KEY (`companyid`) REFERENCES `sponsdata` (`companyid`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
