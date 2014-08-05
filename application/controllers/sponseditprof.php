@@ -12,9 +12,26 @@ class sponseditprof extends CI_Controller{
 
 		$this->load->model('sponseditmodel');
 
+		$this->load->model('sponsmodel');
+
 	}
 
 	public function editprofile($companyid){
+
+		if($this->sponsmodel->checkAllotment($companyid)){
+
+			echo $this->load->view('templates/headerspons.html', array(), TRUE);
+
+			echo '<h2>This Sponsor has not been allotted to you.<br/><h2>';
+
+			$url = site_url('sponscont/');
+
+			echo "<h4><a href='$url'>Go back to Summary Page</a><h4>";
+
+			echo $this->load->view('templates/footer.html', array(), TRUE);
+
+			die;
+		}
 
 		$this->load->helper('form');
 		$this->load->library('form_validation');

@@ -30,8 +30,6 @@
 
 	?>
 
-	<h1 style="text-align: center; color: #777"> Sponsor Profile (<?php echo $data[2]; ?>)</h1>
-
 	<?php
 
 	$name_fields = array('Company ID',
@@ -60,6 +58,20 @@
 	$auxDetailsBegin = 14;
 
 	?>
+
+	<div style="text-align: center;">
+
+		<h1 style="color: #777"> Sponsor Profile (<?php echo $data[2]; ?>)</h1>
+
+		<a href="<?php echo site_url('sponseditprof/editprofile/'.$data[0]); ?>">
+			<button class="btn btn-primary">
+				Edit Profile
+			</button>
+		</a>
+
+	</div>
+
+	<br/>
 
 	<table class="table table-bordered table-striped">
 
