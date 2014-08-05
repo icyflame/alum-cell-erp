@@ -71,30 +71,71 @@
 
 	<form>
 
-	<table class="table table-bordered table-striped">
+		<table class="table table-bordered table-striped">
 
-		<tbody>
+			<tbody>
 
-			<?php for($i = 2; $i < count($name_fields); $i = $i + 1): ?>
+				<tr>
+					<td>
+						<h1>Company Details</h1>
+					</td>
+				</tr>
+
+				<?php for($i = 2; $i < count($name_fields); $i = $i + 1): ?>
+
+				<?php if($i == $contactDetailsBegin): ?>
+
+				<tr>
+					<td>
+						<h1>Contact Details</h1>
+					</td>
+				</tr>
+
+			<?php elseif($i == $callingDetailsBegin): ?>
+
 			<tr>
-
-				<td class="field">
-
-					<?php echo $name_fields[$i]; ?>
-
+				<td>
+					<h1>Details regarding Calling</h1>
 				</td>
-
-				<td class="field">
-
-					<input type="text" name="<?php echo $fields[$i]; ?>" value="<?php echo $values[$i] ?>"></input>
-
-				</td>
-
 			</tr>
 
-		<?php endfor; ?>
+		<?php elseif($i == $proposalDetailsBegin): ?>
 
-	</tbody>
+		<tr>
+			<td>
+				<h1>Proposal Details</h1>
+			</td>
+		</tr>
+
+	<?php elseif($i == $auxDetailsBegin): ?>
+
+	<tr>
+		<td>
+			<h1>Auxilliary Details</h1>
+		</td>
+	</tr>
+
+<?php endif;?>
+
+<tr>
+
+	<td class="field">
+
+		<?php echo $name_fields[$i]; ?>
+
+	</td>
+
+	<td class="field">
+
+		<input type="text" name="<?php echo $fields[$i]; ?>" value="<?php echo $values[$i] ?>"></input>
+
+	</td>
+
+</tr>
+
+<?php endfor; ?>
+
+</tbody>
 
 
 </table>
