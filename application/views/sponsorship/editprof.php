@@ -34,7 +34,7 @@
 
 	?>
 
-	<h1 style="text-align: cfieldser; color: #777"> Sponsor Profile (<?php echo $data[2]; ?>)</h1>
+	<h1 style="text-align: center; color: #777"> Sponsor Profile (<?php echo $values[2]; ?>)</h1>
 
 	<?php
 
@@ -75,7 +75,7 @@
 
 		<tbody>
 
-			<?php for($i = 0; $i < count($name_fields); $i = $i + 1): ?>
+			<?php for($i = 2; $i < count($name_fields); $i = $i + 1): ?>
 			<tr>
 
 				<td class="field">
