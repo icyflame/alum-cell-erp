@@ -80,11 +80,17 @@ class sponsmodel extends CI_Model{
 
 	public function getFullData($companyid){
 
-		$query = "SELECT * from sponsdata sd 
-		JOIN sponscalling sc on sd.companyid=sc.companyid 
-		JOIN sponsproposal sp on sd.companyid=sp.companyid 
-		JOIN sponsaux sa on sd.companyid=sa.companyid 
-		WHERE sd.companyid='$companyid'";
+		// $query = "SELECT * from sponsdata sd 
+		// JOIN sponscalling sc on sd.companyid=sc.companyid 
+		// JOIN sponsproposal sp on sd.companyid=sp.companyid 
+		// JOIN sponsaux sa on sd.companyid=sa.companyid 
+		// WHERE sd.companyid='$companyid'";
+
+		$query = "SELECT * from sponsdata
+		natural join sponscalling
+		natural join sponsproposal
+		natural join sponsaux
+		where companyid='$companyid'";
 
 		$res = $this->db->query($query);
 

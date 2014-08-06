@@ -24,7 +24,8 @@ class sponseditmodel extends CI_Model{
 		$query = "SELECT * from sponsdata
 		natural join sponscalling
 		natural join sponsproposal
-		natural join sponsaux";
+		natural join sponsaux
+		where companyid='$companyid'";
 
 		$res = $this->db->query($query);
 
