@@ -47,13 +47,6 @@ class sponseditmodel extends CI_Model{
 
 		$fields = $input_data['fieldData'];
 
-		// echo '<br/><br/>';
-		// print_r($fields);
-
-		// echo '<br/><br/>';
-
-		// print_r($_POST);
-
 		$query = "update sponsdata 
 					natural join sponscalling
 					natural join sponsproposal
@@ -76,58 +69,18 @@ class sponseditmodel extends CI_Model{
 
 		echo $query;
 
-		if($res = $this->db->query($query))
+		if($res = $this->db->query($query)){
 
-			echo 'Query executed successfully.';
+			echo '<br/><br/>Query executed successfully.';
+			redirect('sponscont/showprofile/'.$companyid);
+
+		}
 
 		else
 
-			echo 'Query not executed successfully.';
+			echo '<br/><br/>Query not executed successfully.';
 
-		// $compname = $this->input->post('compname');
-		// $desc = $this->input->post('desc');
-		// $contactname = $this->input->post('contactname');
-		// $contactdesig = $this->input->post('contactdesig');
-		// $contphone = $this->input->post('contphone');
-		// $contemailid = $this->input->post('contemailid');
-
-		// $userid = $this->session->userdata('userid');
-
-		// $query = "INSERT INTO sponsdata(touserid, name, description, contname, contdesig, contphone, contemailid) 
-		// VALUES('$userid', '$compname', '$desc', '$contactname', '$contactdesig', '$contphone', '$contemailid');";
-
-		// if($res = $this->db->query($query)){
-
-		// 	echo 'Query executed successfully.';
-
-		// 	// add empty rows in all the other tables
-
-		// 	$res = $this->db->query("SELECT COUNT(*) FROM sponsdata");
-
-		// 	$res = $res->result_array();
-		// 	$res = $res[0];
-		// 	$res = array_values($res);
-		// 	// echo $res[0];
-		// 	$count = $res[0];
-
-		// 	// insert empty rows in all other tables with this count as the companyid
-
-		// 	$query = "insert into sponscalling(companyid) values('$count')";
-		// 	$res = $this->db->query($query);
-
-		// 	$query = "insert into sponsaux(companyid) values('$count')";
-		// 	$res = $this->db->query($query);
-
-		// 	$query = "insert into sponsproposal(companyid) values('$count')";
-		// 	$res = $this->db->query($query);
-
-		// }
-
-		// else
-
-		// 	echo 'Query unsuccessful.';
-
-		return;
+		$this->session->unset_userdata('temp_cid');
 
 	}
 

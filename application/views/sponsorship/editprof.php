@@ -24,7 +24,7 @@
 
 	$fields = $fieldData;
 
-	print_r($fields);
+	// print_r($fields);
 
 	$values = $fieldVal;
 
