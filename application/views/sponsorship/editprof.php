@@ -36,8 +36,6 @@
 
 	?>
 
-	<h1 style="text-align: center; color: #777"> Sponsor Profile (<?php echo $values[2]; ?>)</h1>
-
 	<?php
 
 	$name_fields = array('Company ID',
@@ -67,47 +65,65 @@
 
 	?>
 
+	<div style="text-align: center;">
+
+		<h1 style="color: #777"> Sponsor Profile (<?php echo $values[2]; ?>)</h1>
+
+		<a href="<?php echo site_url('sponscont/showprofile/'.$values[0]); ?>">
+			<button class="btn btn-primary">
+				Discard Changes
+			</button>
+		</a>
+
+		<h4 style="color: #888"> All dates must be in YYYY-MM-DD form.</h4>
+
+		<h5 style="color: #888"> That is August 6th, 2014 becomes 2014-08-06 </h5>
+
+	</div>
+
+	<br/>
+
 	<?php echo validation_errors(); ?>
 
 	<?php echo form_open('sponseditprof/editprofile/') ?>
 
-	<table class="table table-bordered table-striped">		
+	<table class="table table-bordered table-striped table-hover">		
 
-			<tbody>
-
-				<tr>
-					<td>
-						<h1>Company Details</h1>
-					</td>
-				</tr>
-
-				<?php for($i = 2; $i < count($name_fields); $i = $i + 1): ?>
-
-				<?php if($i == $contactDetailsBegin): ?>
-
-				<tr>
-					<td>
-						<h1>Contact Details</h1>
-					</td>
-				</tr>
-
-			<?php elseif($i == $callingDetailsBegin): ?>
+		<tbody>
 
 			<tr>
 				<td>
-					<h1>Details regarding Calling</h1>
+					<h1>Company Details</h1>
 				</td>
 			</tr>
 
-		<?php elseif($i == $proposalDetailsBegin): ?>
+			<?php for($i = 2; $i < count($name_fields); $i = $i + 1): ?>
+
+			<?php if($i == $contactDetailsBegin): ?>
+
+			<tr>
+				<td>
+					<h1>Contact Details</h1>
+				</td>
+			</tr>
+
+		<?php elseif($i == $callingDetailsBegin): ?>
 
 		<tr>
 			<td>
-				<h1>Proposal Details</h1>
+				<h1>Details regarding Calling</h1>
 			</td>
 		</tr>
 
-	<?php elseif($i == $auxDetailsBegin): ?>
+	<?php elseif($i == $proposalDetailsBegin): ?>
+
+	<tr>
+		<td>
+			<h1>Proposal Details</h1>
+		</td>
+	</tr>
+
+<?php elseif($i == $auxDetailsBegin): ?>
 
 	<tr>
 		<td>
@@ -139,7 +155,11 @@
 
 </table>
 
-<input type="submit" class="btn btn-success" value="Edit Profile"/>
+<div style="text-align: center;">
+
+	<input type="submit" class="btn btn-success" value="Submit Changes"/>
+
+</div>
 
 </form>
 
