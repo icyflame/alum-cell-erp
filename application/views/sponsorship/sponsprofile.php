@@ -63,7 +63,7 @@
 
 		<h1 style="color: #777"> Sponsor Profile (<?php echo $data[2]; ?>)</h1>
 
-		<a href="<?php echo site_url('sponseditprof/editprofile/'.$data[0]); ?>">
+		<a href="<?php echo site_url('sponseditprof/editnow/'.$data[0]); ?>">
 			<button class="btn btn-primary">
 				Edit Profile
 			</button>

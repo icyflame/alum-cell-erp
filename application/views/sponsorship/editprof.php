@@ -24,6 +24,8 @@
 
 	$fields = $fieldData;
 
+	print_r($fields);
+
 	$values = $fieldVal;
 
 	// print_r($fields);
@@ -67,11 +69,9 @@
 
 	<?php echo validation_errors(); ?>
 
-	<?php echo form_open('sponseditprof/editprofile') ?>
+	<?php echo form_open('sponseditprof/editprofile/') ?>
 
-	<form>
-
-		<table class="table table-bordered table-striped">
+	<table class="table table-bordered table-striped">		
 
 			<tbody>
 
@@ -136,7 +136,6 @@
 <?php endfor; ?>
 
 </tbody>
-
 
 </table>
 

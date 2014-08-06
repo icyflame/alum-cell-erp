@@ -15,11 +15,16 @@ class sponseditmodel extends CI_Model{
 	}
 
 	public function getFields($companyid){
-		$query = "SELECT * from sponsdata sd 
-		JOIN sponscalling sc on sd.companyid=sc.companyid 
-		JOIN sponsproposal sp on sd.companyid=sp.companyid 
-		JOIN sponsaux sa on sd.companyid=sa.companyid 
-		WHERE sd.companyid='$companyid'";
+		// $query = "SELECT * from sponsdata sd 
+		// JOIN sponscalling sc on sd.companyid=sc.companyid 
+		// JOIN sponsproposal sp on sd.companyid=sp.companyid 
+		// JOIN sponsaux sa on sd.companyid=sa.companyid 
+		// WHERE sd.companyid='$companyid'";
+
+		$query = "SELECT * from sponsdata
+		natural join sponscalling
+		natural join sponsproposal
+		natural join sponsaux";
 
 		$res = $this->db->query($query);
 
@@ -33,11 +38,25 @@ class sponseditmodel extends CI_Model{
 		// print_r($res->list_fields());
 
 		return array('fieldData'=>$field_name,
-					'fieldVal'=>$values);
+			'fieldVal'=>$values);
 
 	}
 
-	public function updateProfile(){
+	public function updateRecord($input_data){
+
+		$fields = $input_data['fieldData'];
+
+		echo '<br/><br/>';
+		print_r($fields);
+
+		echo '<br/><br/>';
+
+		print_r($_POST);
+
+		foreach($fields as $field){
+			echo $this->input->post('$field').'<br/>';
+			echo $_POST[$field];
+		}
 
 		// $compname = $this->input->post('compname');
 		// $desc = $this->input->post('desc');
