@@ -64,7 +64,7 @@ class sponscont extends CI_Controller{
 
 		if($this->sponsmodel->checkAllotment($companyId)){
 
-			echo $this->load->view('templates/header.html', array(), TRUE);
+			echo $this->load->view('templates/headerspons.html', array(), TRUE);
 
 			echo '<h2>This Sponsor has not been allotted to you.<br/><h2>';
 
@@ -84,41 +84,6 @@ class sponscont extends CI_Controller{
 		$this->load->view('templates/footer.html');
 
 	}
-
-	public function editprofile($companyid){
-
-		return 0;
-
-		// $this->load->helper('form');
-		// $this->load->library('form_validation');
-
-		// $this->form_validation->set_rules('compname', 'compname', 'required');
-		// $this->form_validation->set_rules('desc', 'desc', 'required');
-		// $this->form_validation->set_rules('contactname', 'contactname', 'required');
-		// $this->form_validation->set_rules('contactdesig', 'contactdesig', 'required');
-		// $this->form_validation->set_rules('contphone', 'contphone', 'required');
-		// $this->form_validation->set_rules('contemailid', 'contemailid', 'required|valid_email');
-
-		// if ($this->form_validation->run() === FALSE)
-		// {
-
-			// $data = $this->sponsmodel->getFullData($companyId);
-
-			// $this->load->view('templates/headerspons.html');
-			// $this->load->view('sponsorship/sponsprofile.php', $data);
-			// $this->load->view('templates/footer.html');
-
-		// }
-
-		// else{
-
-		// 	echo 'Thanks a lot! The form was successfully submitted. We will talk with the model now.<br/>';
-
-		// 	$this->sponsmodel->updateProfile();
-		// }
-
-	}
-
 	
 }
 

@@ -19,14 +19,20 @@
 
 	<?php 
 
-	// $ent = $data->result_array();
-	// $ent = $ent[0];
+	// $fields = $data->result_array();
+	// $fields = $fields[0];
 
-	$ent = $data;
+	$fields = $fieldData;
 
-	// print_r($ent);
+	// print_r($fields);
 
-	// $ent = array_values($ent);
+	$values = $fieldVal;
+
+	// print_r($fields);
+
+	// print_r($fieldVal);
+
+	// $fields = array_values($fields);
 
 	?>
 
@@ -61,19 +67,27 @@
 
 	<div style="text-align: center;">
 
-		<h1 style="color: #777"> Sponsor Profile (<?php echo $data[2]; ?>)</h1>
+		<h1 style="color: #777"> Sponsor Profile (<?php echo $values[2]; ?>)</h1>
 
-		<a href="<?php echo site_url('sponseditprof/editnow/'.$data[0]); ?>">
+		<a href="<?php echo site_url('sponscont/showprofile/'.$values[0]); ?>">
 			<button class="btn btn-primary">
-				Edit Profile
+				Discard Changes
 			</button>
 		</a>
+
+		<h4 style="color: #888"> All dates must be in YYYY-MM-DD form.</h4>
+
+		<h5 style="color: #888"> That is August 6th, 2014 becomes 2014-08-06 </h5>
 
 	</div>
 
 	<br/>
 
-	<table class="table table-bordered table-striped">
+	<?php echo validation_errors(); ?>
+
+	<?php echo form_open('sponseditprof/editprofile/') ?>
+
+	<table class="table table-bordered table-striped table-hover">		
 
 		<tbody>
 
@@ -83,7 +97,7 @@
 				</td>
 			</tr>
 
-			<?php for($i = 0; $i < count($name_fields); $i = $i + 1): ?>
+			<?php for($i = 2; $i < count($name_fields); $i = $i + 1): ?>
 
 			<?php if($i == $contactDetailsBegin): ?>
 
@@ -129,7 +143,7 @@
 
 	<td class="field">
 
-		<?php echo $ent[$i]; ?>
+		<input type="text" class="form-control" name="<?php echo $fields[$i]; ?>" value="<?php echo $values[$i] ?>"></input>
 
 	</td>
 
@@ -139,8 +153,15 @@
 
 </tbody>
 
-
 </table>
+
+<div style="text-align: center;">
+
+	<input type="submit" class="btn btn-success" value="Submit Changes"/>
+
+</div>
+
+</form>
 
 </body>
 
