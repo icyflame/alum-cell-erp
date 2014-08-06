@@ -127,7 +127,7 @@
 
 	<td class="field">
 
-		<input type="text" name="<?php echo $fields[$i]; ?>" value="<?php echo $values[$i] ?>"></input>
+		<input type="text" class="form-control" name="<?php echo $fields[$i]; ?>" value="<?php echo $values[$i] ?>"></input>
 
 	</td>
 

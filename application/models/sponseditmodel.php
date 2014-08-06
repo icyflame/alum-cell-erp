@@ -43,21 +43,46 @@ class sponseditmodel extends CI_Model{
 
 	}
 
-	public function updateRecord($input_data){
+	public function updateRecord($input_data, $companyid){
 
 		$fields = $input_data['fieldData'];
 
-		echo '<br/><br/>';
-		print_r($fields);
+		// echo '<br/><br/>';
+		// print_r($fields);
 
-		echo '<br/><br/>';
+		// echo '<br/><br/>';
 
-		print_r($_POST);
+		// print_r($_POST);
 
-		foreach($fields as $field){
-			echo $this->input->post('$field').'<br/>';
-			echo $_POST[$field];
+		$query = "update sponsdata 
+					natural join sponscalling
+					natural join sponsproposal
+					natural join sponsaux
+					set ";
+
+		$queryEnd = "where companyid='$companyid'";
+
+		$fields = array_values($fields);
+
+		for($i = 2; $i < count($fields); $i = $i + 1){
+			$query = $query.' '.$fields[$i].'="'.$_POST[$fields[$i]].'"' ;
+
+			if($i != count($fields) - 1)
+
+				$query = $query.', ';
 		}
+
+		$query = $query.' '.$queryEnd;
+
+		echo $query;
+
+		if($res = $this->db->query($query))
+
+			echo 'Query executed successfully.';
+
+		else
+
+			echo 'Query not executed successfully.';
 
 		// $compname = $this->input->post('compname');
 		// $desc = $this->input->post('desc');
