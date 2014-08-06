@@ -27,10 +27,25 @@ class sponseditprof extends CI_Controller{
 
 	public function editnow($companyid){
 
+		if($this->sponsmodel->checkAllotment($companyid)){
+
+			echo $this->load->view('templates/headerspons.html', array(), TRUE);
+
+			echo '<h2>This Sponsor has not been allotted to you.<br/><h2>';
+
+			$url = site_url('sponscont/');
+
+			echo "<h4><a href='$url'>Go back to Summary Page</a><h4>";
+
+			echo $this->load->view('templates/footer.html', array(), TRUE);
+
+			die;
+		}
+
 		$this->session->set_userdata('temp_cid', $companyid); // additional userdata that will be temporarily
 															// for this function. once used in the model, it will 
 															// unset.
-		
+
 		$this->load->view('templates/headerspons.html');
 		$this->load->view('sponsorship/editprof.php', $this->sponseditmodel->getFields($companyid));
 		$this->load->view('templates/footer.html');
