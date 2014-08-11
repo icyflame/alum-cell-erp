@@ -14,6 +14,31 @@ if(!isset($_SESSION['loggedin'])){
 	die;
 }
 
+else{
+
+	$timeout = 600;
+
+	$duration = time() - (int)$_SESSION['time'];
+
+	if($duration > $timeout){
+
+		unset($_SESSION['loggedin']);
+		$url = site_url('auth/');
+
+	// echo 'Not logged in.';
+
+		echo '<h1> Session timed out. </h1>';
+
+		Header("Refresh:2, url='$url'");
+		die;
+	}
+
+	else{
+
+		$_SESSION['time'] = time();
+	}
+}
+
 ?>
 <link rel="stylesheet" href="<?php echo base_url().'bootstrap/bootstrap.min.css'; ?>">
 <script src="<?php echo base_url().'bootstrap/bootstrap.min.js'; ?>"></script>
