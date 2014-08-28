@@ -21,7 +21,7 @@
 
 		<div class="col-md-6">
 
-			<h1>Networking Portal</h1>
+			<h1>Sponsorship Portal</h1>
 
 			<form style="text-align: center;">
 
