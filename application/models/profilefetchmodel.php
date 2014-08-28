@@ -30,6 +30,10 @@ class profilefetchmodel extends CI_Model{
 
 		$query = "SELECT a.*, afd.* FROM alumni a, alumnifulldata afd WHERE a.alumid = afd.alumid AND a.alumid='$alumid'";
 
+		$query = "SELECT * from alumni
+		natural join alumnifulldata
+		where alumid='$alumid'";
+
 		// echo $query;
 
 		$res = $this->db->query($query);
