@@ -19,9 +19,7 @@ class auth extends CI_Controller{
 
 		if(isset($_SESSION['loggedin'])){
 
-			$url = site_url('member/specificYear');
-
-			header("Refresh:0, url='$url'");
+			redirect('sponscont/', 'refresh');
 		}
 
 		else{
@@ -45,8 +43,9 @@ class auth extends CI_Controller{
 		if ($this->form_validation->run() === FALSE)
 		{
 			// echo 'Form not yet validated successfully. Try Again.';
-
+			// $this->load->view('templates/header.html');
 			$this->load->view('authentication/login');
+			$this->load->view('templates/footer.html');
 
 		}
 		else
@@ -58,9 +57,7 @@ class auth extends CI_Controller{
 
 			if($res){
 
-				$url = site_url('member/specificYear');
-
-				header("Refresh:0, url='$url'");
+				// redirect('sponscont/', 'refresh');
 
 				$data['status'] = 'Logged in successfully';
 
@@ -80,9 +77,7 @@ class auth extends CI_Controller{
 
 				// $this->load->view('authentication/viewstat', $data);
 
-				$url = site_url('member/specificYear');
-
-				header("Refresh:0, url='$url'");
+				redirect('sponscont/', 'refresh');
 
 			}
 
