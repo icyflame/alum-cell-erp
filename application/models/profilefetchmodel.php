@@ -108,6 +108,31 @@ class profilefetchmodel extends CI_Model{
 		return !($res[0]['touserid'] == $this->session->userdata('userid'));
 	}
 
+	public function getDataForEdit($alumid){
+
+		$query = "SELECT a.*, afd.* FROM alumni a, alumnifulldata afd WHERE a.alumid = afd.alumid AND a.alumid='$alumid'";
+
+		$res = $this->db->query($query);
+
+		$field_name = $res->list_fields();
+
+		$values = $this->getProfileData($alumid);
+
+		$values = $values->result_array(); // the returned value will be an array with the data index
+									// containing all the values.
+
+		$values = $values[0];
+
+		// print_r($res->list_fields());
+
+		$send_data = array('fieldData'=>$field_name, 'fieldVal'=>$values);
+
+		var_dump($send_data);
+
+		return $send_data;
+
+	}
+
 }
 
 ?>
