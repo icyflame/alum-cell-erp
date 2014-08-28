@@ -7,8 +7,8 @@
 -- Server version: 5.5.36
 -- PHP Version: 5.4.25
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
+-- SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+-- SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -19,8 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `erp`
 --
-CREATE DATABASE IF NOT EXISTS `erp` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `erp`;
+-- CREATE DATABASE IF NOT EXISTS `erp` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+-- USE `erp`;
 
 -- --------------------------------------------------------
 
