@@ -19,8 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `erp`
 --
-CREATE DATABASE IF NOT EXISTS `erp` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `erp`;
+-- CREATE DATABASE IF NOT EXISTS `erp` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+-- USE `erp`;
 
 -- --------------------------------------------------------
 
