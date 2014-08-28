@@ -108,6 +108,77 @@ class profilefetchmodel extends CI_Model{
 		return !($res[0]['touserid'] == $this->session->userdata('userid'));
 	}
 
+	public function getDataForEdit($alumid){
+
+		$query = "SELECT a.*, afd.* FROM alumni a, alumnifulldata afd WHERE a.alumid = afd.alumid AND a.alumid='$alumid'";
+
+		$query = "SELECT * from alumni
+		natural join alumnifulldata
+		where alumid='$alumid'";
+
+		$res = $this->db->query($query);
+
+		$field_name = $res->list_fields();
+
+		$values = $this->getProfileData($alumid);
+
+		$values = $values->result_array(); // the returned value will be an array with the data index
+									// containing all the values.
+
+		$values = $values[0];
+
+		// print_r($res->list_fields());
+
+		$send_data = array('fieldData'=>$field_name, 'fieldVal'=>$values);
+
+		// var_dump($send_data);
+
+		return $send_data;
+
+	}
+
+	public function updateProfile(){
+
+		$query = "update alumni
+		natural join alumnifulldata
+		set ";
+
+		$i = 0;
+
+		foreach($_POST as $key => $value){
+
+			if($key == 'alumid')
+
+				continue;
+
+			else{
+
+				$query = $query."`$key`"." = "."'$value'";
+
+			}
+
+			if($i < count($_POST) - 2){
+
+				$query = $query.", ";
+
+			}
+
+			$i = $i + 1;
+
+		}
+
+		$query = $query." where `alumid` = ".$_POST['alumid'];
+
+		if($res = $this->db->query($query))
+			
+			return true;
+
+		else
+			
+			return false;
+
+	}
+
 }
 
 ?>
