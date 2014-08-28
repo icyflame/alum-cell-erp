@@ -2,6 +2,7 @@
 
 session_start();
 
+$loggedin = false;
 // print_r($_SESSION);
 
 if(!isset($_SESSION['loggedin'])){
@@ -26,6 +27,7 @@ else{
 	else{
 
 		$_SESSION['time'] = time();
+		$loggedin = true;
 	}
 }
 
@@ -45,10 +47,18 @@ else{
 
 	<ul class="nav nav-pills" style="float: right !important">
 
-		<li><a href="<?php echo site_url('member/specificYear/') ?>">Networking Home</a></li>
+		<?php if($loggedin): ?>
+
+		<!-- <li><a href="<?php echo site_url('member/specificYear/') ?>">Networking Home</a></li> -->
 		<li><a href="<?php echo site_url('sponscont/') ?>">Sponsorship Home</a></li>
 		<li><a href="<?php echo site_url('sponscont/addspons') ?>">Add Sponsor</a></li>
 		<li><a href="<?php echo site_url('auth/logout') ?>">Logout</a></li>
+
+		<?php else: ?>
+
+		<li>Not Logged in</li>
+
+		<?php endif; ?>
 
 	</ul>
 
