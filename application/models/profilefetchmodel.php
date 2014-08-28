@@ -112,6 +112,10 @@ class profilefetchmodel extends CI_Model{
 
 		$query = "SELECT a.*, afd.* FROM alumni a, alumnifulldata afd WHERE a.alumid = afd.alumid AND a.alumid='$alumid'";
 
+		$query = "SELECT * from alumni
+		natural join alumnifulldata
+		where alumid='$alumid'";
+
 		$res = $this->db->query($query);
 
 		$field_name = $res->list_fields();
@@ -130,6 +134,48 @@ class profilefetchmodel extends CI_Model{
 		var_dump($send_data);
 
 		return $send_data;
+
+	}
+
+	public function updateProfile(){
+
+		$query = "update alumni
+		natural join alumnifulldata
+		set ";
+
+		$i = 0;
+
+		foreach($_POST as $key => $value){
+
+			if($key == 'alumid')
+
+				continue;
+
+			else{
+
+				$query = $query."`$key`"." = "."'$value'";
+
+			}
+
+			if($i < count($_POST) - 2){
+
+				$query = $query.", ";
+
+			}
+
+			$i = $i + 1;
+
+		}
+
+		$query = $query." where `alumid` = ".$_POST['alumid'];
+
+		if($res = $this->db->query($query))
+			
+			return true;
+
+		else
+			
+			return false;
 
 	}
 
