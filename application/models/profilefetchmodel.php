@@ -131,7 +131,7 @@ class profilefetchmodel extends CI_Model{
 
 		$send_data = array('fieldData'=>$field_name, 'fieldVal'=>$values);
 
-		var_dump($send_data);
+		// var_dump($send_data);
 
 		return $send_data;
 

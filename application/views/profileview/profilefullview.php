@@ -18,7 +18,19 @@
 
 	?>
 
-	<h1 style="text-align: center; color: #999999"> Alumni Profile (Alumni ID <?php echo $ent[0]; ?>)</h1>
+	<div style="text-align: center; color: #999999">
+
+		<h1> Alumni Profile (Alumni ID <?php echo $ent[0]; ?>)</h1>
+
+		<a href="<?php echo site_url('alumeditprof/editnow/'.$ent[0]); ?>">
+			<button class="btn btn-primary">
+				Edit Profile
+			</button>
+		</a>
+
+		<h4> All dates are in YYYY-MM-DD format.</h4>
+
+	</div>
 
 	<?php
 
@@ -66,7 +78,7 @@
 			<?php endfor; ?>
 
 		</tbody>
-		
+
 	</table>
 
 </body>

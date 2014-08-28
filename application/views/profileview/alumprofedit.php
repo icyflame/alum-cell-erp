@@ -27,19 +27,19 @@
 
 	<div style="text-align: center; color: #999999">
 
-	<h1> Alumni Profile (Alumni ID <?php echo $ent[0]; ?>)</h1>
+		<h1> Alumni Profile (Alumni ID <?php echo $ent[0]; ?>)</h1>
 
-	<a href="<?php echo site_url('profilefetch/showprofile/'.$ent[0]); ?>">
-		<button class="btn btn-primary">
-			Discard Changes
-		</button>
-	</a>
+		<a href="<?php echo site_url('profilefetch/showprofile/'.$ent[0]); ?>">
+			<button class="btn btn-primary">
+				Discard Changes
+			</button>
+		</a>
 
-	<h3>All dates must be in YYYY-MM-DD format</h3>
+		<h3>All dates must be in YYYY-MM-DD format</h3>
 
-	<h4>August 28th, 2014 becomes 2014-08-28</h4>
+		<h4>August 28th, 2014 becomes 2014-08-28</h4>
 
-</div>
+	</div>
 
 	<?php
 
