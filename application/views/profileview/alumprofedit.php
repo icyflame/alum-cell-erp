@@ -25,7 +25,21 @@
 
 	?>
 
-	<h1 style="text-align: center; color: #999999"> Alumni Profile (Alumni ID <?php echo $ent[0]; ?>)</h1>
+	<div style="text-align: center; color: #999999">
+
+	<h1> Alumni Profile (Alumni ID <?php echo $ent[0]; ?>)</h1>
+
+	<a href="<?php echo site_url('profilefetch/showprofile/'.$ent[0]); ?>">
+		<button class="btn btn-primary">
+			Discard Changes
+		</button>
+	</a>
+
+	<h3>All dates must be in YYYY-MM-DD format</h3>
+
+	<h4>August 28th, 2014 becomes 2014-08-28</h4>
+
+</div>
 
 	<?php
 
@@ -48,6 +62,12 @@
 
 		?>
 
+		<?php echo validation_errors(); ?>
+
+		<?php echo form_open('alumeditprof/editprofile/') ?>
+
+		<input type="text" style="display: none;" value="<?php echo $ent[0]; ?>" name="alumid"></input>
+
 		<table class="table table-bordered table-striped">
 
 			<tbody>
@@ -64,17 +84,33 @@
 
 					<td>
 
-						<?php echo $ent[$i]; ?>
+						<?php if($i > 4): ?>
 
-					</td>
+						<input type="text" value="<?php echo $ent[$i]; ?>" name="<?php echo $ent_field[$i]; ?>" class="form-control"></input>
 
-				</tr>
+					<?php else: ?>
 
-			<?php endfor; ?>
+					<?php echo $ent[$i]; ?>
 
-		</tbody>
+				<?php endif; ?>
 
-	</table>
+			</td>
+
+		</tr>
+
+	<?php endfor; ?>
+
+</tbody>
+
+</table>
+
+<div style="text-align: center; ">
+
+	<input type="submit" class="btn btn-success" value="Update Profile"></input>
+
+</div> 
+
+</form>
 
 </body>
 
