@@ -1,6 +1,8 @@
 # Networking Portal
 
-Prototype of internal ERP to be used by Students' Alumni Cell, IIT Kharagpur.
+Internal Networking Portal, used for keeping track of number of alumni contacted, before every meet. 
+
+This is a prototype, to be used by Students' Alumni Cell, IIT Kharagpur.
 
 This software uses the CodeIgniter framework, created by EllisLab, Inc.
 
