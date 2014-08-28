@@ -66,6 +66,10 @@ class alumeditprof extends CI_Controller{
 
 	public function editprofile(){
 
+		// var_dump($_POST);
+
+		$this->profilefetchmodel->updateProfile();
+
 		return;
 
 	}

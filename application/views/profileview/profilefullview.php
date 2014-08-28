@@ -66,32 +66,9 @@
 			<?php endfor; ?>
 
 		</tbody>
-
-
+		
 	</table>
 
-		<!-- <h3> Alumni ID  <?php echo $ent[$i]; $i = $i + 1; ?> </h3>
-		<h2> <?php echo $ent[$i]; $i = $i + 1; ?> </h2>
-		<h4> <?php echo $ent[$i]; $i = $i + 1; ?> </h4>
-		<h4> <?php echo $ent[$i]; $i = $i + 1; ?> </h4>
-		<h5> An alumni since  <?php echo $ent[$i]; $i = $i + 1; ?> </h5>
+</body>
 
-		<h5> Date of Birth: <?php echo $ent[$i]; $i = $i + 1; ?> </h5>
-		<h5> Roll Number: <?php echo $ent[$i]; $i = $i + 1; ?> </h5>
-
-		<h5> Company: <?php echo $ent[$i]; $i = $i + 1; ?> </h5>
-		<h5> Designation: <?php echo $ent[$i]; $i = $i + 1; ?> </h5>
-		<h5> Office Address: <?php echo $ent[$i]; $i = $i + 1; ?> </h5>
-		<h5> Home Address: <?php echo $ent[$i]; $i = $i + 1; ?> </h5>
-		<h5> Office Phone: <?php echo $ent[$i]; $i = $i + 1; ?> </h5>
-		<h5> Home Phone: <?php echo $ent[$i]; $i = $i + 1; ?> </h5>
-		<h5> Email Office: <?php echo $ent[$i]; $i = $i + 1; ?> </h5>
-		<h5> Email Personal: <?php echo $ent[$i]; $i = $i + 1; ?> </h5> -->
-
-
-
-
-
-	</body>
-
-	</html>
+</html>

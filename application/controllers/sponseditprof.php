@@ -59,7 +59,6 @@ class sponseditprof extends CI_Controller{
 		echo 'The submitted function has been called. We will now talk with the model.<br/>';
 		echo 'Query executed against Company ID '.$cid.'<br/>';
 
-
 		$this->sponseditmodel->updateRecord($this->sponseditmodel->getFields(1), $cid);
 
 	}
