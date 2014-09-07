@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 class auth extends CI_Controller{
 
 	public function __construct(){
@@ -14,7 +16,19 @@ class auth extends CI_Controller{
 	}
 
 	public function index(){
-		$this->loginval();
+
+		if(isset($_SESSION['loggedin'])){
+
+			$url = site_url('member/specificYear');
+
+			header("Refresh:0, url='$url'");
+		}
+
+		else{
+
+			$this->loginval();
+
+		}
 	}
 
 	public function loginval()
@@ -30,7 +44,7 @@ class auth extends CI_Controller{
 
 		if ($this->form_validation->run() === FALSE)
 		{
-			echo 'Form not yet validated successfully. Try Again.';
+			// echo 'Form not yet validated successfully. Try Again.';
 
 			$this->load->view('authentication/login');
 
@@ -57,7 +71,12 @@ class auth extends CI_Controller{
 
 				$this->session->set_userdata($sessdat);
 
-				$this->load->view('authentication/viewstat', $data);
+				$_SESSION['loggedin'] = '0';
+				$_SESSION['time'] = time();
+
+				// $this->load->view('authentication/viewstat', $data);
+
+				redirect('member/specificYear', 'refresh');
 
 			}
 
@@ -89,6 +108,15 @@ class auth extends CI_Controller{
 	// 	}
 
 	// }
+
+	public function logout(){
+
+		$this->session->sess_destroy();
+
+		unset($_SESSION['loggedin']);
+
+		$this->loginval();
+	}
 
 }
 

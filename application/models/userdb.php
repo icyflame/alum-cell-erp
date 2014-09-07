@@ -11,15 +11,6 @@ class userdb extends CI_Model{
 		$username = $this->input->post('username');
 		$pwentered = $this->input->post('password');
 
-		// $data = array(
-		// 	'username'=>'icyflame',
-		// 	'password'=>md5('somepass'),
-		// 	'firstname'=>'siddharth',
-		// 	'lastname'=>'kannan'
-		// 	);
-
-		// $this->db->insert('users', $data);
-
 		$res = $this->db->query("SELECT password FROM users WHERE username='$username'");
 
 		$pw = '';
@@ -29,19 +20,6 @@ class userdb extends CI_Model{
 			$pw = $row->password;
 
 		}
-
-		// try{
-
-		// 	$pw = $row[0]['password'];
-
-		// } catch (Exception $e){
-
-		// 	echo 'Username or password incorrect. Try again.';
-
-		// }
-
-		echo 'Stored: '.$pw.'<br/>';
-		echo 'Entered: '.md5($pwentered).'<br/>';
 
 		if ($pw == ''){
 			echo 'Username or password incorrect. Try again.';
@@ -71,9 +49,27 @@ class userdb extends CI_Model{
 		return array('loggedin'=>1,
 			'username' => $un,
 			'userid'=>$uid,
-			'privilege' => $privi
+			'privilege' => $privi,
+			'year1'=>'1965',
+			'year2'=>'1975',
+			'year3'=>'1990'
 			);
 
+	}
+
+	public function getusername($userid=0){
+
+		if($userid == 0)
+
+			return 'unknown';
+
+		else{
+			$res = $this->db->query("SELECT username FROM users WHERE userid='$userid'");
+
+			$d = $res->result_array();
+
+			return $d[0]['username'];
+		}
 	}
 
 }
