@@ -120,11 +120,12 @@ class profilefetch extends CI_Controller{
 
 	}
 
-	public function showprofile($alumid){
+	public function showprofile($alumid, $hashtag=''){
 
 		$data = $this->profilefetchmodel->getProfileData($alumid);
 
 		$final_data['data'] = $data;
+		$final_data['hashtag'] = $hashtag;
 
 		$this->load->view('templates/header.html');
 		$this->load->view('profileview/profilefullview', $final_data);

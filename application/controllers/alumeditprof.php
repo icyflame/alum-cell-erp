@@ -68,7 +68,19 @@ class alumeditprof extends CI_Controller{
 
 		// var_dump($_POST);
 
-		$this->profilefetchmodel->updateProfile();
+		$alum = $_POST['alumid'];
+
+		if($this->profilefetchmodel->updateProfile()){
+
+			redirect('profilefetch/showprofile/'.$alum.'/editsuccess', 'refresh');
+
+		}
+
+		else{
+
+			redirect('profilefetch/showprofile/'.$alum.'/editfail', 'refresh');
+
+		}
 
 		return;
 
