@@ -55,9 +55,9 @@
 	<ul class="nav nav-pills nav-justified" role="tablist">
 
 		<li><a href="<?php echo site_url('dbdisplay/buildTable/0') ?>">View All</a></li>
-		<li><a href="<?php echo site_url('dbdisplay/buildTable/'.$year1) ?>"><?php echo $year1 ?></a></li>
-		<li><a href="<?php echo site_url('dbdisplay/buildTable/'.$year2) ?>"><?php echo $year2 ?></a></li>
-		<li><a href="<?php echo site_url('dbdisplay/buildTable/'.$year3) ?>"><?php echo $year3 ?></a></li>
+		<li><a href="<?php echo site_url('dbdisplay/buildTable/'.YEAR1) ?>"><?php echo YEAR1 ?></a></li>
+		<li><a href="<?php echo site_url('dbdisplay/buildTable/'.YEAR2) ?>"><?php echo YEAR2 ?></a></li>
+		<li><a href="<?php echo site_url('dbdisplay/buildTable/'.YEAR3) ?>"><?php echo YEAR3 ?></a></li>
 
 	</ul>
 
@@ -68,9 +68,9 @@
 		<ul class='nav nav-pills nav-justified' role='tablist'>
 
 			<li class="<?php echo $allyearsclass ?>"><a href="<?php echo site_url('member/specificYear') ?>">All Years</a></li>
-			<li class="<?php echo $class_1 ?>"><a href="<?php echo site_url('member/specificYear/'.$year1) ?>"><?php echo $year1 ?></a></li>
-			<li class="<?php echo $class_2 ?>"><a href="<?php echo site_url('member/specificYear/'.$year2) ?>"><?php echo $year2 ?></a></li>
-			<li class="<?php echo $class_3 ?>"><a href="<?php echo site_url('member/specificYear/'.$year3) ?>"><?php echo $year3 ?></a></li>
+			<li class="<?php echo $class_1 ?>"><a href="<?php echo site_url('member/specificYear/'.YEAR1) ?>"><?php echo YEAR1 ?></a></li>
+			<li class="<?php echo $class_2 ?>"><a href="<?php echo site_url('member/specificYear/'.YEAR2) ?>"><?php echo YEAR2 ?></a></li>
+			<li class="<?php echo $class_3 ?>"><a href="<?php echo site_url('member/specificYear/'.YEAR3) ?>"><?php echo YEAR3 ?></a></li>
 
 		</ul>
 

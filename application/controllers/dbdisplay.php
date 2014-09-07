@@ -24,18 +24,11 @@ class dbdisplay extends CI_Controller{
 
 	public function buildTable($year='0', $call=''){
 
-		$year1 = $this->session->userdata('year1');
-		$year2 = $this->session->userdata('year2');
-		$year3 = $this->session->userdata('year3');
-
 		$dataDump = $this->dbdispmodel->getAllData($year, $call);
 
 		$data = array(
 			'all'=>$dataDump['res'],
 			'count'=>count($dataDump['res']),
-			'year1'=>$year1,
-			'year2'=>$year2,
-			'year3'=>$year3
 			);
 
 		// print_r(array_merge($data, $dataDump['class']));

@@ -14,10 +14,6 @@ class summarymember extends CI_Model{
 
 	public function getdata_allyears($year=''){
 
-		$year1 = $this->session->userdata('year1');
-		$year2 = $this->session->userdata('year2');
-		$year3 = $this->session->userdata('year3');
-
 		if ($year == '')
 
 			$yearFilter = '';
@@ -83,15 +79,15 @@ class summarymember extends CI_Model{
 
 			$ayc = 'active';
 
-		elseif ($year == $year1)
+		elseif ($year == YEAR1)
 
 			$c_year1 = 'active';
 
-		elseif ($year == $year2)
+		elseif ($year == YEAR2)
 
 			$c_year2 = 'active';
 
-		elseif ($year == $year3)
+		elseif ($year == YEAR3)
 
 			$c_year3 = 'active';
 
@@ -110,9 +106,6 @@ class summarymember extends CI_Model{
 			'class_1'=>$c_year1,
 			'class_2'=>$c_year2,
 			'class_3'=>$c_year3,
-			'year1'=>$year1,
-			'year2'=>$year2,
-			'year3'=>$year3
 			);
 
 		return $result;

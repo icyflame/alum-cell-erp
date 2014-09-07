@@ -47,9 +47,9 @@
 				<ul class="nav nav-pills nav-justified">
 
 					<li class="<?php echo $c_all ?>"><a href="<?php echo site_url('dbdisplay/buildTable/0') ?> ">All years</a></li>
-					<li class="<?php echo $c_1 ?>"><a href="<?php echo site_url('dbdisplay/buildTable/'.$year1) ?>"><?php echo $year1 ?></a></li>
-					<li class="<?php echo $c_2 ?>"><a href="<?php echo site_url('dbdisplay/buildTable/'.$year2) ?>"><?php echo $year2 ?></a></li>
-					<li class="<?php echo $c_3 ?>"><a href="<?php echo site_url('dbdisplay/buildTable/'.$year3) ?>"><?php echo $year3 ?></a></li>
+					<li class="<?php echo $c_1 ?>"><a href="<?php echo site_url('dbdisplay/buildTable/'.YEAR1) ?>"><?php echo YEAR1 ?></a></li>
+					<li class="<?php echo $c_2 ?>"><a href="<?php echo site_url('dbdisplay/buildTable/'.YEAR2) ?>"><?php echo YEAR2 ?></a></li>
+					<li class="<?php echo $c_3 ?>"><a href="<?php echo site_url('dbdisplay/buildTable/'.YEAR3) ?>"><?php echo YEAR3 ?></a></li>
 
 				</ul>
 				
