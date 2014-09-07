@@ -20,6 +20,16 @@ class feedupdate extends CI_Model{
 
 		$username = $this->session->userdata('username');
 
+		// if(strcmp('search', $field) == 0){
+		// 	$earlier_str = $SEARCH_STATUS[$earlier];
+		// 	$present_str = $SEARCH_STATUS[$present];
+		// }
+
+		// if(strcmp('search', $field) == 0){
+		// 	$earlier_str = $CALLING_STATUS[$earlier];
+		// 	$present_str = $CALLING_STATUS[$present];
+		// }
+
 		$value = $username.' changed the value of '.$field.' from '.$earlier.' to '.$present.' for Alumni ID '.$alumid;
 
 		$query = "INSERT INTO `latestactivity`(`alumid`, `userid`, `newsitem`) VALUES('$alumid', '$uid', '$value')";

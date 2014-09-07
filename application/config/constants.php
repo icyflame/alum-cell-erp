@@ -40,6 +40,24 @@ define('YEAR1', 1965);
 define('YEAR2', 1975);
 define('YEAR3', 1990);
 
+$SEARCH_STATUS = array(
+	0=>'Yet to be searched',
+	1=>'Not Found',
+	2=>'Found',
+	3=>'Ready'
+	);
+
+// define('SEARCH_STATUS', $temp_search);
+
+$CALLING_STATUS = array(
+	0=>'Called (2-way)',
+	1=>'Negative',
+	2=>'Neutral',
+	3=>'Positive'
+	);
+
+// define('CALLING_STATUS', $temp_call);
+
 
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */
