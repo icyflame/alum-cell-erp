@@ -15,11 +15,7 @@ class dbdispmodel extends CI_Model{
 		$yearfilt = '';
 		$tableadd = '';
 		$statusfilt = '';
-
-		$year1 = $this->session->userdata('year1');
-		$year2 = $this->session->userdata('year2');
-		$year3 = $this->session->userdata('year3');
-
+		
 		// if ($year == '0' && $call != '')
 
 		// 	$yearfilt = '';
@@ -56,15 +52,15 @@ class dbdispmodel extends CI_Model{
 			$c_all = 'active';
 			break;
 
-			case $year1:
+			case YEAR1:
 			$c_1 = 'active';
 			break;
 
-			case $year2:
+			case YEAR2:
 			$c_2 = 'active';
 			break;
 
-			case $year3:
+			case YEAR3:
 			$c_3 = 'active';
 			break;
 

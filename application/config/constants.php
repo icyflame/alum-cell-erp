@@ -36,6 +36,10 @@ define('FOPEN_READ_WRITE_CREATE',				'a+b');
 define('FOPEN_WRITE_CREATE_STRICT',				'xb');
 define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 
+define('YEAR1', 1965);
+define('YEAR2', 1975);
+define('YEAR3', 1990);
+
 
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */

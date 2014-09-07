@@ -50,9 +50,6 @@ class userdb extends CI_Model{
 			'username' => $un,
 			'userid'=>$uid,
 			'privilege' => $privi,
-			'year1'=>'1965',
-			'year2'=>'1975',
-			'year3'=>'1990'
 			);
 
 	}
