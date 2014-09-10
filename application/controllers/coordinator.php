@@ -2,7 +2,7 @@
 
 class coordinator extends CI_Controller{
 
-	function __construct(){
+	public function __construct(){
 
 		parent::__construct();
 
@@ -13,19 +13,35 @@ class coordinator extends CI_Controller{
 		$this->load->helper('url');
 	}
 
-	function index(){
+	public function index(){
 
 		$users = $this->userdb->getallusers();
 
 		// var_dump($users);
 
-		echo "This is the index function!";
+		// echo "This is the index function!";
 
 		$final_data = array('users'=>$users);
 
 		$this->load->view('templates/header.html');
 		$this->load->view('coordinator/mainview.php', $final_data);
 		$this->load->view('templates/footer.html');
+
+	}
+
+	private function setalias($memberid){
+
+		$this->session->set_userdata('aliasuserid', "$memberid");
+
+	}
+
+	public function viewalias($memberid){
+
+		echo $memberid;
+
+		echo 'In the set alias function!';
+
+		$this->setalias($memberid);
 
 	}
 

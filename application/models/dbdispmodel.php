@@ -31,11 +31,11 @@ class dbdispmodel extends CI_Model{
 
 		}
 
-		echo "Alias is: ".$alias;
+		// echo "Alias is: ".$alias;
 
 		if($alias != '0')
 
-			$userIdLoggedIn = 'AND s.touserid='.$this->session->userdata('aliasuserid');
+			$userIdLoggedIn = "AND s.touserid=".$this->session->userdata('aliasuserid');
 
 		$query = "SELECT a.*, c.followup, c.lastdate 
 		FROM alumni a, calling c, status s

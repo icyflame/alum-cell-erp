@@ -72,16 +72,18 @@ class userdb extends CI_Model{
 
 	public function getallusers(){
 
-		$res = $this->db->query("SELECT username FROM users WHERE privilege=".MEMBER);
+		$res = $this->db->query("SELECT username, userid FROM users WHERE privilege=".MEMBER);
 
 		$d = $res->result_array();
 
 		$fin = array();
 
 		foreach($d as $record){
-			// var_dump($record['username']);
+			// var_dump($record);
 
-			$fin = array_merge($fin, array($record['username']));
+			// $fin = array_merge($fin, array($record['userid'] => $record['username']));
+
+			$fin = $fin + array($record['userid'] => $record['username']);
 
 			// echo '<br/><br/>';
 		}
