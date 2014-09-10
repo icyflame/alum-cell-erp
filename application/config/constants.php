@@ -40,6 +40,9 @@ define('YEAR1', 1965);
 define('YEAR2', 1975);
 define('YEAR3', 1990);
 
+define('COORDINATOR', 5);
+define('MEMBER', 10);
+
 
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */
