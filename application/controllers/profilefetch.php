@@ -135,6 +135,36 @@ class profilefetch extends CI_Controller{
 
 	public function updateSearch($alumid, $value){
 
+		if($this->profilefetchmodel->checkallotment($alumid)){
+
+			echo $this->load->view('templates/header.html', array(), TRUE);
+
+			echo '<h2>This Alumni has not been allotted to you.<br/><h2>';
+
+			$url = site_url('sponscont/');
+
+			echo "<h4><a href='$url'>Go back to Summary Page</a><h4>";
+
+			echo $this->load->view('templates/footer.html', array(), TRUE);
+
+			die;
+		}
+
+		if($this->session->userdata('privilege') != MEMBER){
+
+			echo $this->load->view('templates/header.html', array(), TRUE);
+
+			echo '<h2>Only Student Members have the privilege of editing Alumni Profiles.<br/><h2>';
+
+			$url = site_url('sponscont/');
+
+			echo "<h4><a href='$url'>Go back to Summary Page</a><h4>";
+
+			echo $this->load->view('templates/footer.html', array(), TRUE);
+
+			die;
+		}
+
 		$s_stat = $this->profilefetchmodel->getSearch($alumid);
 
 		$this->feedupdate->updateFeed($alumid, 'search', $s_stat, $value);
@@ -148,6 +178,36 @@ class profilefetch extends CI_Controller{
 	}
 
 	public function updateCalling($alumid, $value){
+
+		if($this->profilefetchmodel->checkallotment($alumid)){
+
+			echo $this->load->view('templates/header.html', array(), TRUE);
+
+			echo '<h2>This Alumni has not been allotted to you.<br/><h2>';
+
+			$url = site_url('sponscont/');
+
+			echo "<h4><a href='$url'>Go back to Summary Page</a><h4>";
+
+			echo $this->load->view('templates/footer.html', array(), TRUE);
+
+			die;
+		}
+
+		if($this->session->userdata('privilege') != MEMBER){
+
+			echo $this->load->view('templates/header.html', array(), TRUE);
+
+			echo '<h2>Only Student Members have the privilege of editing Alumni Profiles.<br/><h2>';
+
+			$url = site_url('sponscont/');
+
+			echo "<h4><a href='$url'>Go back to Summary Page</a><h4>";
+
+			echo $this->load->view('templates/footer.html', array(), TRUE);
+
+			die;
+		}
 
 		$c_stat = $this->profilefetchmodel->getCalling($alumid);
 

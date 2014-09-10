@@ -17,7 +17,7 @@ class coordinator extends CI_Controller{
 
 		$users = $this->userdb->getallusers();
 
-		var_dump($users);
+		// var_dump($users);
 
 		echo "This is the index function!";
 
