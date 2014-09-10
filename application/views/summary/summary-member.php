@@ -37,8 +37,6 @@
 
 <body style="margin-left: 20px; margin-right: 20px;">
 
-	<p>Page Begin</p>
-
 	<?php
 
 	echo 'Logged in.'.'<br/>'.'<br/>';
@@ -149,8 +147,6 @@
 		</tbody>
 
 	</table>
-
-	<p>Page End</p>
 
 </body>
 
