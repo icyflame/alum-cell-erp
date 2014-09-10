@@ -46,10 +46,10 @@
 
 				<ul class="nav nav-pills nav-justified">
 
-					<li class="<?php echo $c_all ?>"><a href="<?php echo site_url('dbdisplay/buildTable/0') ?> ">All years</a></li>
-					<li class="<?php echo $c_1 ?>"><a href="<?php echo site_url('dbdisplay/buildTable/'.YEAR1) ?>"><?php echo YEAR1 ?></a></li>
-					<li class="<?php echo $c_2 ?>"><a href="<?php echo site_url('dbdisplay/buildTable/'.YEAR2) ?>"><?php echo YEAR2 ?></a></li>
-					<li class="<?php echo $c_3 ?>"><a href="<?php echo site_url('dbdisplay/buildTable/'.YEAR3) ?>"><?php echo YEAR3 ?></a></li>
+					<li class="<?php echo $c_all ?>"><a href="<?php echo site_url('dbdisplay/buildTable/0/0') ?> ">All years</a></li>
+					<li class="<?php echo $c_1 ?>"><a href="<?php echo site_url('dbdisplay/buildTable/'.YEAR1.'/0') ?>"><?php echo YEAR1 ?></a></li>
+					<li class="<?php echo $c_2 ?>"><a href="<?php echo site_url('dbdisplay/buildTable/'.YEAR2.'/0') ?>"><?php echo YEAR2 ?></a></li>
+					<li class="<?php echo $c_3 ?>"><a href="<?php echo site_url('dbdisplay/buildTable/'.YEAR3.'/0') ?>"><?php echo YEAR3 ?></a></li>
 
 				</ul>
 				
@@ -57,7 +57,7 @@
 
 				<ul class="nav nav-pills nav-stacked">
 
-					<li class="<?php echo $c_full ?>"><a href="<?php echo site_url('dbdisplay/buildTable/'.$current_year.'/') ?>">View full list</a></li>
+					<li class="<?php echo $c_full ?>"><a href="<?php echo site_url('dbdisplay/buildTable/'.$current_year.'/0') ?>">View full list</a></li>
 					<li class="<?php echo $c_contact ?>"><a href="<?php echo site_url('dbdisplay/buildTable/'.$current_year.'/3') ?>">Yet to be contacted</a></li>
 					<li class="<?php echo $c_search ?>"><a href="<?php echo site_url('dbdisplay/buildTable/'.$current_year.'/1') ?>">Yet to be searched</a></li>
 					<li class="<?php echo $c_dumped ?>"><a href="<?php echo site_url('dbdisplay/buildTable/'.$current_year.'/2') ?>">Dumped</a></li>
