@@ -21,6 +21,12 @@ class coordinator extends CI_Controller{
 
 		echo "This is the index function!";
 
+		$final_data = array('users'=>$users);
+
+		$this->load->view('templates/header.html');
+		$this->load->view('coordinator/mainview.php', $final_data);
+		$this->load->view('templates/footer.html');
+
 	}
 
 }
