@@ -38,7 +38,13 @@
 
 	<?php if($this->session->userdata('userid') != $this->session->userdata('aliasuserid')):?>
 
-	<h4>Alias Mode: Viewing this database as user ID <?php echo $this->session->userdata('aliasuserid'); ?></h4>
+	<h4>
+		Alias Mode: Viewing this database as <span class="label label-info">
+			<?php echo $this->userdb->getusername($this->session->userdata('aliasuserid')); ?>
+		</span>
+
+		( user ID <?php echo $this->session->userdata('aliasuserid'); ?> )
+	</h4>
 
 <?php endif; ?>
 
