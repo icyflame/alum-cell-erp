@@ -97,6 +97,16 @@ class userdb extends CI_Model{
 		return $fin;
 	}
 
+	public function getprivilege($userid){
+
+		$res = $this->db->query("SELECT privilege FROM users WHERE userid=".$userid);
+
+		$d = $res->result_array();
+
+		return $d[0]['privilege'];
+
+	}
+
 }
 
 ?>
