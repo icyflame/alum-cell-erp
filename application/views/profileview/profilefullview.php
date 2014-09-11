@@ -28,7 +28,7 @@
 		<h1> Alumni Profile (Alumni ID <?php echo $ent[0]; ?>)</h1>
 
 		<a href="<?php echo site_url('alumeditprof/editnow/'.$ent[0]); ?>">
-			<button class="btn btn-primary">
+			<button class="btn btn-primary" <?php if($this->session->userdata("privilege") == COORDINATOR) echo "disabled"; ?> >
 				Edit Profile
 			</button>
 		</a>

@@ -8,6 +8,8 @@ class dbdisplay extends CI_Controller{
 
 		$this->load->model('dbdispmodel');
 
+		$this->load->model('userdb');
+
 		$this->load->library('session');
 
 		$this->load->helper('url');
@@ -22,9 +24,9 @@ class dbdisplay extends CI_Controller{
 
 	}
 
-	public function buildTable($year='0', $call=''){
+	public function buildTable($year='0', $call='0', $alias='1'){
 
-		$dataDump = $this->dbdispmodel->getAllData($year, $call);
+		$dataDump = $this->dbdispmodel->getAllData($year, $call, $alias);
 
 		$data = array(
 			'all'=>$dataDump['res'],

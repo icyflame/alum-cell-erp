@@ -10,11 +10,12 @@ class dbdispmodel extends CI_Model{
 
 	}
 
-	public function getAllData($year='0', $call=''){
+	public function getAllData($year='0', $call='0', $alias='1'){
 
 		$yearfilt = '';
 		$tableadd = '';
 		$statusfilt = '';
+		$userIdLoggedIn = '';
 		
 		// if ($year == '0' && $call != '')
 
@@ -24,18 +25,22 @@ class dbdispmodel extends CI_Model{
 
 			$yearfilt = "AND alumSince='$year'";
 
-		if ($call != ''){
+		if ($call != '0'){
 
 			$statusfilt = "AND s.search=$call";
 
 		}
 
-		$userIdLoggedIn = $this->session->userdata('userid');
+		// echo "Alias is: ".$alias;
+
+		if($alias != '0')
+
+			$userIdLoggedIn = "AND s.touserid=".$this->session->userdata('aliasuserid');
 
 		$query = "SELECT a.*, c.followup, c.lastdate 
 		FROM alumni a, calling c, status s
 		WHERE a.alumid = c.alumid AND a.alumid = s.alumid
-		AND s.touserid = '$userIdLoggedIn' $yearfilt $statusfilt";
+		$userIdLoggedIn $yearfilt $statusfilt";
 
 		// echo $query;
 
@@ -85,7 +90,7 @@ class dbdispmodel extends CI_Model{
 			$c_contact = 'active';
 			break;
 
-			case '':
+			case '0':
 			$c_full = 'active';
 			break;
 		}

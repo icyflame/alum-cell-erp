@@ -24,7 +24,7 @@ class profilefetch extends CI_Controller{
 
 	public function showstatus($alumid){
 
-		if($this->profilefetchmodel->checkallotment($alumid)){
+		if($this->profilefetchmodel->checkallotment($alumid) && $this->session->userdata('privilege') == MEMBER){
 
 			echo $this->load->view('templates/header.html', array(), TRUE);
 

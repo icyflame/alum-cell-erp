@@ -49,6 +49,7 @@ class userdb extends CI_Model{
 		return array('loggedin'=>1,
 			'username' => $un,
 			'userid'=>$uid,
+			'aliasuserid'=>$uid,
 			'privilege' => $privi,
 			);
 
@@ -71,16 +72,18 @@ class userdb extends CI_Model{
 
 	public function getallusers(){
 
-		$res = $this->db->query("SELECT username FROM users WHERE privilege=".MEMBER);
+		$res = $this->db->query("SELECT username, userid FROM users WHERE privilege=".MEMBER);
 
 		$d = $res->result_array();
 
 		$fin = array();
 
 		foreach($d as $record){
-			// var_dump($record['username']);
+			// var_dump($record);
 
-			$fin = array_merge($fin, array($record['username']));
+			// $fin = array_merge($fin, array($record['userid'] => $record['username']));
+
+			$fin = $fin + array($record['userid'] => $record['username']);
 
 			// echo '<br/><br/>';
 		}
@@ -92,6 +95,16 @@ class userdb extends CI_Model{
 		// echo '<br/><br/>';
 
 		return $fin;
+	}
+
+	public function getprivilege($userid){
+
+		$res = $this->db->query("SELECT privilege FROM users WHERE userid=".$userid);
+
+		$d = $res->result_array();
+
+		return $d[0]['privilege'];
+
 	}
 
 }
