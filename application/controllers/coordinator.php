@@ -31,15 +31,36 @@ class coordinator extends CI_Controller{
 
 	private function setalias($memberid){
 
-		$this->session->set_userdata('aliasuserid', "$memberid");
+		if($this->session->userdata('privilege') == COORDINATOR){
+
+			// echo 'You are a coordinator.';
+
+			if($this->userdb->getprivilege($memberid) == MEMBER){
+
+				$this->session->set_userdata('aliasuserid', "$memberid");
+
+				// echo 'Alias has been set.';
+
+				redirect('dbdisplay/buildTable/0/0', 'refresh');
+			}
+
+			else{
+				echo '<h3>You can alias to a student member only.</h3>';
+			}
+		}
+
+		else{
+			echo '<h3>You are not a coordinator.</h3>';
+		}
+		
 
 	}
 
 	public function viewalias($memberid){
 
-		echo $memberid;
+		// echo $memberid;
 
-		echo 'In the set alias function!';
+		// echo 'In the set alias function!';
 
 		$this->setalias($memberid);
 
