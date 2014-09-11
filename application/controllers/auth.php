@@ -19,9 +19,19 @@ class auth extends CI_Controller{
 
 		if(isset($_SESSION['loggedin'])){
 
-			$url = site_url('member/specificYear');
+			if($this->session->userdata('privilege') == MEMBER){
 
-			header("Refresh:0, url='$url'");
+				redirect('member/specificYear', 'refresh');
+
+			}
+
+			else{
+
+				if($this->session->userdata('privilege') == COORDINATOR){
+
+					redirect('coordinator', 'refresh');
+				}
+			}
 		}
 
 		else{
