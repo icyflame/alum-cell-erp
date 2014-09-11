@@ -113,6 +113,20 @@
 
 $(document).ready(function(){
 
+	<?php if($this->session->userdata('privilege') == COORDINATOR): ?>
+
+	$("#callingTabs li").each(function(){
+		$(this).addClass("disabled");
+	});
+
+	$("#searchTabs li").each(function(){
+		$(this).addClass("disabled");
+	});
+
+	<?php endif; ?>
+
+	<?php if($this->session->userdata('privilege') == MEMBER): ?>
+
 	/**************
 
 	Search Buttons
@@ -254,6 +268,8 @@ $(document).ready(function(){
 		$("#doing").toggle();
 
 	});
+
+	<?php endif; ?>
 
 });
 
