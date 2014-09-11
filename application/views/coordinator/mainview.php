@@ -87,6 +87,32 @@
 	</div>
 </div>
 
+<div class="modal fade" id="fail" style="z-index:10003" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content" >
+
+			<div class="modal-header" style="text-align: center; ">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title" id="myModalLabel">Edit successful.</h4>
+			</div>
+
+			<div class="modal-body" style="text-align: center; ">
+
+				<p> You are a student member! You can't move into alias mode.
+				</p>
+
+				<div style="font-size: 72px;">
+
+					<i class="fa fa-thumbs-down fa-5x"></i>
+
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+</div>
+
 </body>
 
 <script>
@@ -95,9 +121,19 @@ $(document).ready(function(){
 
 	$(".aliaschangebutton").click(function(){
 
+		<?php if($this->session->userdata("privilege") == COORDINATOR): ?>
+
 		$.get($(this).attr("target"), function(){
 			$("#success").modal();
 		});
+
+		<?php endif; ?>
+
+		<?php if($this->session->userdata("privilege") == MEMBER): ?>
+
+			$("#fail").modal();
+
+		<?php endif; ?>
 
 	});
 
