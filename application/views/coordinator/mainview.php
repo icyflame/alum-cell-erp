@@ -37,13 +37,9 @@
 
 	<?php foreach ($users as $userid => $username): ?>
 
-	<a href="<?php echo site_url("coordinator/viewalias/".$userid); ?>">
-
-		<button class="aliaschangebutton btn btn-lg btn-primary" target="<?php echo site_url("coordinator/viewalias/".$userid); ?>">
-			<?php echo $username; ?>
-		</button>
-
-	</a>
+	<button class="aliaschangebutton btn btn-lg btn-primary" target="<?php echo site_url("coordinator/viewalias/".$userid); ?>">
+		<?php echo $username; ?>
+	</button>
 
 <?php endforeach; ?>
 
@@ -75,6 +71,10 @@
 				<p> Alias Mode activated! Press Redirect to go to the database view page.
 				</p>
 
+				<a href="<?php echo site_url('dbdisplay/buildTable/0/0'); ?>">
+					<button type="button" class="btn btn-success">Redirect</button>
+				</a>
+
 				<div style="font-size: 72px;">
 
 					<i class="icon-ok icon-5x"></i>
@@ -83,11 +83,6 @@
 
 			</div>
 
-			<div class="modal-footer">
-				<a href="<?php echo base_url('dbdisplay/buildTable/0/0'); ?>">
-					<button type="button" class="btn btn-success" data-dismiss="modal">Redirect</button>
-				</a>
-			</div>
 		</div>
 	</div>
 </div>
@@ -96,29 +91,17 @@
 
 <script>
 
-/*
-
 $(document).ready(function(){
 
-	$.each(".aliaschangebutton", function(i, j){
+	$(".aliaschangebutton").click(function(){
 
-		$(this).on("click", function(){
-
-			var t = $(this);
-
-			alert("" + t.attr("target"));
-
-			$.get(t.attr("target"), function(){
-				$("#success").modal();
-			});
-
+		$.get($(this).attr("target"), function(){
+			$("#success").modal();
 		});
 
 	});
 
-}
-
-*/
+});
 
 </script>
 
