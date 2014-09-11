@@ -47,6 +47,16 @@
 
 <?php endforeach; ?>
 
+<h3>View full Alumni Database</h3>
+
+<a href="<?php echo site_url('dbdisplay/buildTable/0/0/0'); ?>">
+
+	<button class="btn btn-lg btn-success">
+		View Full Alumni Database
+	</button>
+
+</a>
+
 <!-- Modals -->
 
 <!-- Modal to be shown if the profile edit is successful -->

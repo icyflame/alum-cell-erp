@@ -76,23 +76,31 @@ class auth extends CI_Controller{
 
 				// $this->load->view('authentication/viewstat', $data);
 
-				redirect('member/specificYear', 'refresh');
+				if($this->session->userdata('privilege') == MEMBER)
 
-			}
+					redirect('member/specificYear', 'refresh');
 
-			else{
+				else
 
-				$this->load->view('authentication/login');
+					if($this->session->userdata('privilege') == COORDINATOR)
+
+						redirect('coordinator', 'refresh');
+
+				}
+
+				else{
+
+					$this->load->view('authentication/login');
 
 				// $this->loginval();
 
-			}
+				}
 
 			// $this->load->view('viewstat', $data);
 
-		}
+			}
 
-	}
+		}
 
 	// public function checkloggedin(){
 
@@ -109,15 +117,15 @@ class auth extends CI_Controller{
 
 	// }
 
-	public function logout(){
+		public function logout(){
 
-		$this->session->sess_destroy();
+			$this->session->sess_destroy();
 
-		unset($_SESSION['loggedin']);
+			unset($_SESSION['loggedin']);
 
-		$this->loginval();
+			$this->loginval();
+		}
+
 	}
 
-}
-
-?>
+	?>
