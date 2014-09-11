@@ -45,7 +45,16 @@ class coordinator extends CI_Controller{
 			}
 
 			else{
-				echo '<h3>You can alias to a student member only.</h3>';
+
+				if($this->session->userdata('userid') == $memberid){
+
+					$this->session->set_userdata('aliasuserid', "$memberid");
+
+				}
+
+				else{
+					echo '<h3>You can alias to a student member only.</h3>';
+				}
 			}
 		}
 
