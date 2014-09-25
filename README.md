@@ -1,4 +1,6 @@
-# Networking Portal
+# Assyst
+
+## ASset management SYSTem
 
 Internal Networking Portal, used for keeping track of number of alumni contacted, before every meet. 
 
